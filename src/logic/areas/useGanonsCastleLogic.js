@@ -1,0 +1,102 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { makeReachable, makeUnreachable } from "../../features/checks";
+import { selectChecks } from "../../utils/selectors";
+import useAccess from "../useAccess";
+import useItems from "../useItems";
+import useKeys from "../useKeys";
+import useSongs from "../useSongs";
+
+function useGanonsCastleLogic() {
+  const areas = useSelector(selectChecks);
+  const ganonsCastleChecks = areas[33].checks;
+  const ganonsCastleAccess = useAccess("ganon");
+  const fireArrows = useItems("fire arrows");
+  const magic = useItems("magic");
+  const hookshot = useItems("hookshot");
+  const longshot = useItems("longshot");
+  const dins = useItems("dins");
+  const hoverBoots = useItems("hover boots");
+  const strength3 = useItems("strength 3");
+  const explosive = useItems("explosive");
+  const keys = useKeys("ganon");
+  const zeldasLullaby = useSongs("zelda");
+  const sot = useSongs("sot");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (ganonsCastleAccess) {
+      dispatch(makeReachable(33, 0));
+      dispatch(makeReachable(33, 1));
+      dispatch(makeReachable(33, 2));
+      dispatch(makeReachable(33, 3));
+      dispatch(makeReachable(33, 4));
+      dispatch(makeReachable(33, 5));
+      dispatch(makeReachable(33, 6));
+      dispatch(makeReachable(33, 19));
+      if ((fireArrows && magic) || hookshot || hoverBoots || sot) {
+        dispatch(makeReachable(33, 7));
+      } else {
+        dispatch(makeUnreachable(33, 7));
+      }
+      if ((fireArrows && magic) || (longshot && (dins || hoverBoots))) {
+        dispatch(makeReachable(33, 8));
+      } else {
+        dispatch(makeUnreachable(33, 8));
+      }
+      if (strength3) {
+        dispatch(makeReachable(33, 9));
+        dispatch(makeReachable(33, 10));
+        dispatch(makeReachable(33, 11));
+        dispatch(makeReachable(33, 12));
+        dispatch(makeReachable(33, 13));
+        dispatch(makeReachable(33, 14));
+        dispatch(makeReachable(33, 15));
+      } else {
+        dispatch(makeUnreachable(33, 9));
+        dispatch(makeUnreachable(33, 10));
+        dispatch(makeUnreachable(33, 11));
+        dispatch(makeUnreachable(33, 12));
+        dispatch(makeUnreachable(33, 13));
+        dispatch(makeUnreachable(33, 14));
+        dispatch(makeUnreachable(33, 15));
+      }
+      if (keys === 1 && zeldasLullaby && strength3) {
+        dispatch(makeReachable(33, 16));
+      } else {
+        dispatch(makeUnreachable(33, 16));
+      }
+      if (hookshot) {
+        dispatch(makeReachable(33, 17));
+      } else {
+        dispatch(makeUnreachable(33, 17));
+      }
+      if (hookshot && explosive) {
+        dispatch(makeReachable(33, 18));
+      } else {
+        dispatch(makeUnreachable(33, 18));
+      }
+    } else {
+      for (let i = 0; i < ganonsCastleChecks.length; i++) {
+        dispatch(makeUnreachable(33, i));
+      }
+    }
+  }, [
+    ganonsCastleAccess,
+    ganonsCastleChecks,
+    dispatch,
+    fireArrows,
+    magic,
+    hookshot,
+    longshot,
+    dins,
+    hoverBoots,
+    sot,
+    strength3,
+    explosive,
+    keys,
+    zeldasLullaby,
+  ]);
+}
+
+export default useGanonsCastleLogic;

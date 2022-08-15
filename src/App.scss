@@ -1,0 +1,265 @@
+$font-stack: Helvetica, sans-serif;
+$font-color: aliceblue;
+$primary-color: #282c34;
+$nav-background-color: #000000;
+
+.App {
+  font-family: $font-stack;
+  background-color: $primary-color;
+  color: $font-color;
+  min-height: 100vh;
+}
+
+.nav-list {
+  display: inline;
+  list-style: none;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.nav-elements {
+  display: flex;
+  justify-content: space-between;
+  background-color: $nav-background-color;
+}
+
+.tracker-name {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(92, 92, 255);
+}
+
+.main-elements,
+.songs,
+.tracker-elements {
+  display: flex;
+}
+
+.aside {
+  width: 15%;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.main {
+  width: 70%;
+}
+
+.items-tracker {
+  flex-direction: column;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+  row-gap: 5px;
+}
+
+.stones {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.medallions {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 1.4fr 1.4fr 1.4fr 1.4fr;
+  margin-top: 0.9rem;
+}
+
+.img-stone,
+.img-medallion {
+  margin-right: 3px;
+}
+
+.songs {
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.dungeon-name {
+  position:relative;
+  width:35px;
+  bottom:10px;
+  z-index:2;
+  font-size: small;
+  font-weight: bold;
+}
+.skull-number {
+  align-self: center;
+}
+.item-image {
+  text-align: center;
+}
+
+.main-display {
+  display: flex;
+}
+
+.area-name {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.checks-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check {
+  margin-bottom: 2px;
+  font-size: 12px;
+  display: flex
+}
+
+.check-undone {
+  opacity: 1;
+}
+
+.check-done {
+  opacity: 0.3;
+}
+
+.areas {
+  margin-right: 15px;
+}
+
+.input-item {
+  width: 20px;
+  height: 20px;
+  border: solid 1px;
+  border-color: aliceblue;
+  margin-right: 2px;
+  background-color: #000000;
+}
+
+.image-small {
+  width: 20px;
+  height: 20px;
+}
+.image-medium {
+  width: 25px;
+  height: 25px;
+}
+.image-song {
+  width: 32px;
+  height: 32px;
+}
+.image-max {
+  width: 35px;
+  height: 35px;
+}
+
+.box {
+  display: inline-block;
+  background-color: darkgray;
+  width: 250px;
+  position: relative;
+  z-index: 3;
+}
+
+.input-field {
+  width: 16px;
+  margin-left: 5px;
+  height:15px;
+}
+
+.field-list {
+  list-style: none;
+  padding: 0;
+}
+
+.hint-name {
+  font-size: 12px;
+  margin-left: 5px;
+  display:flex;
+}
+
+.blue {
+  border: solid 1px;
+  border-radius: 5px;
+  border-color: Lightblue;
+}
+
+.lightblue {
+  color: Lightblue;
+}
+
+.purple {
+  border: solid 1px;
+  border-radius: 5px;
+  border-color: pink;
+}
+
+.pink {
+  color: pink;
+}
+
+.red {
+  color: #c3423d;
+}
+
+.green {
+  color: #51aa3a;
+}
+
+.transparent {
+  background-color: transparent;
+}
+.hint-image {
+  display: inline-block;
+}
+.other-hint-display {
+  display:flex;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.other-hint-name {
+  margin-right: 5px;
+}
+fieldset {
+  margin-top:3px;
+  margin-bottom:3px;
+  width:40%;
+}
+.settings {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.number_keys {
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: bold;
+}
+.keys {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hint-name-display {
+  margin-bottom: 5px;
+  margin-top:10px;
+}
+
+.hint-player-name {
+  font-size: small;
+  text-shadow: 0 0 2px red;
+  margin-top:-4px;
+}
+
+.image-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
