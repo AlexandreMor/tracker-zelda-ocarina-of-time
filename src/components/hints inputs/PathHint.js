@@ -1,10 +1,9 @@
 import React from "react";
 import InputField from "./InputField";
-import { useSelector } from "react-redux";
-import { selectSettings } from "../../utils/selectors";
+import useSettings from "../../logic/useSettings";
 
 function PathHint({ hint }) {
-  const settings = useSelector(selectSettings);
+  const multiworld = useSettings("multiworld");
   return (
     <li key={hint.name} className="hint-name">
       {hint.name}
@@ -21,8 +20,8 @@ function PathHint({ hint }) {
         fieldType="boss"
         hint={hint.boss}
       />{" "}
-      {settings[0].value==="true" && "for" }
-      {settings[0].value==="true" && (
+      {multiworld==="true" && "for" }
+      {multiworld==="true" && (
         <InputField hintField={hint.player} id={hint.id} fieldType="player" />
       )}
     </li>

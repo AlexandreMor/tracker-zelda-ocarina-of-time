@@ -1,12 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { box, done, setPlayer } from "../../features/checks";
-import { selectSettings } from "../../utils/selectors";
+import { useDispatch } from "react-redux";
+import { box, done, setPlayer, setRupee } from "../../features/checks";
+import useSettings from "../../logic/useSettings";
 import ItemsBox from "./ItemsBox";
 
 function Check({ check, idArea }) {
+  const multiworld = useSettings("multiworld");
+  const shopsanity = useSettings("shopsanity");
   const dispatch = useDispatch();
-  const settings = useSelector(selectSettings);
+
   return (
     <li className={"check"}>
       <div
@@ -25,7 +27,7 @@ function Check({ check, idArea }) {
       >
         {check.name}
       </span>
-      {settings[0].value === "true" && (
+      {multiworld==="true" && (
         <input
           type="text"
           className="input-field"
@@ -33,6 +35,17 @@ function Check({ check, idArea }) {
           value={check.player}
           onChange={(e) => {
             return dispatch(setPlayer(idArea, check.id, e.target.value));
+          }}
+        />
+      )}
+      {shopsanity==="true" && (
+        <input
+          type="text"
+          className="input-field"
+          placeholder="rup"
+          value={check.player}
+          onChange={(e) => {
+            return dispatch(setRupee(idArea, check.id, e.target.value));
           }}
         />
       )}

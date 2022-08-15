@@ -61,6 +61,10 @@ export const setPlayer = createAction("check/setPlayer", (idArea, idCheck, value
   payload: { idArea, idCheck, value },
 }));
 
+export const setRupee = createAction("check/setRupee", (idArea, idCheck, value) => ({
+  payload: { idArea, idCheck, value },
+}));
+
 export default createReducer(areasState, (builder) => {
   builder.addCase(makeReachable, (draft, action) => {
     draft[action.payload.idArea].checks[
@@ -120,5 +124,10 @@ export default createReducer(areasState, (builder) => {
     draft[action.payload.idArea].checks[
       action.payload.idCheck
     ].player = action.payload.value;
+  });
+  builder.addCase(setRupee, (draft, action) => {
+    draft[action.payload.idArea].checks[
+      action.payload.idCheck
+    ].rupee = action.payload.value;
   });
 });

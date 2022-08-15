@@ -3,6 +3,10 @@ $font-color: aliceblue;
 $primary-color: #282c34;
 $nav-background-color: #000000;
 
+input {
+background-color: darkgray;
+}
+
 .App {
   font-family: $font-stack;
   background-color: $primary-color;

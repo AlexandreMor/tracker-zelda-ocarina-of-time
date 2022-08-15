@@ -73,6 +73,27 @@ export const settingsState = [
   },
   {
     id: 4,
+    name: "Shopsanity",
+    value: "false",
+    datasComponent: [
+      {
+        id: 0,
+        name: "Yes",
+        html: "shop-on",
+        inputValue: "true",
+        checked: false,
+      },
+      {
+        id: 1,
+        name: "No",
+        html: "shop-off",
+        inputValue: "false",
+        checked: true,
+      },
+    ],
+  },
+  {
+    id: 5,
     name: "Skullsanity dungeons",
     value: "false",
     datasComponent: [
@@ -93,7 +114,7 @@ export const settingsState = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Scrubsanity",
     value: "false",
     datasComponent: [
@@ -114,16 +135,28 @@ export const settingsState = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "Cowsanity",
     value: "false",
     datasComponent: [
-      { id: 0, name: "Yes", html: "cow-on", inputValue: "true", checked: false },
-      { id: 1, name: "No", html: "cow-off", inputValue: "false", checked: true },
+      {
+        id: 0,
+        name: "Yes",
+        html: "cow-on",
+        inputValue: "true",
+        checked: false,
+      },
+      {
+        id: 1,
+        name: "No",
+        html: "cow-off",
+        inputValue: "false",
+        checked: true,
+      },
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "Dungeon Shuffle",
     value: "false",
     datasComponent: [
@@ -144,7 +177,7 @@ export const settingsState = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Bridge",
     value: "6",
     datasComponent: [
@@ -156,49 +189,7 @@ export const settingsState = [
     ],
   },
   {
-    id: 9,
-    name: "Bombchu in Logic",
-    value: "false",
-    datasComponent: [
-      {
-        id: 0,
-        name: "Yes",
-        html: "chu-logic-on",
-        inputValue: "true",
-        checked: false,
-      },
-      {
-        id: 1,
-        name: "No",
-        html: "chu-logic-off",
-        inputValue: "false",
-        checked: true,
-      },
-    ],
-  },
-  {
     id: 10,
-    name: "Door of Time",
-    value: "opened",
-    datasComponent: [
-      {
-        id: 0,
-        name: "Opened",
-        html: "dot-opened",
-        inputValue: "opened",
-        checked: true,
-      },
-      {
-        id: 1,
-        name: "Closed",
-        html: "dot-closed",
-        inputValue: "closed",
-        checked: false,
-      },
-    ],
-  },
-  {
-    id: 11,
     name: "Shuffle Medigoron & Carpet Salesman",
     value: "false",
     datasComponent: [
@@ -219,7 +210,7 @@ export const settingsState = [
     ],
   },
   {
-    id: 12,
+    id: 11,
     name: "Keysy",
     value: "false",
     datasComponent: [
@@ -240,7 +231,7 @@ export const settingsState = [
     ],
   },
   {
-    id: 13,
+    id: 12,
     name: "Boss Keysy",
     value: "false",
     datasComponent: [
@@ -255,27 +246,6 @@ export const settingsState = [
         id: 1,
         name: "No",
         html: "bkeysy-off",
-        inputValue: "false",
-        checked: true,
-      },
-    ],
-  },
-  {
-    id: 14,
-    name: "Boss Shuffle",
-    value: "false",
-    datasComponent: [
-      {
-        id: 0,
-        name: "Yes",
-        html: "boss-shuf-on",
-        inputValue: "true",
-        checked: false,
-      },
-      {
-        id: 1,
-        name: "No",
-        html: "boss-shuf-off",
         inputValue: "false",
         checked: true,
       },

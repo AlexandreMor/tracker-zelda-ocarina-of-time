@@ -1,14 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeInvisible, makeVisible } from "../features/checks";
-import { selectChecks, selectSettings } from "../utils/selectors";
+import { selectChecks } from "../utils/selectors";
+import useSettings from "./useSettings";
 
 function useChecksVisibility() {
   const areas = useSelector(selectChecks);
-  const settings = useSelector(selectSettings);
+  const skullsanity = useSettings("skullsanity");
+  const scrubsanity = useSettings("scrubsanity");
+  const cowsanity = useSettings("cowsanity");
+  const shuffleCarpetSalesman = useSettings("shuffle carpet salesman & medigoron");
   const dispatch = useDispatch();
   useEffect(() => {
-    if (settings[4].value === "true") {
+    if (skullsanity === "true") {
       areas.map((area) =>
         area.checks
           .filter((check) => check.setting === "skullsanity")
@@ -28,7 +32,7 @@ function useChecksVisibility() {
   });
 
   useEffect(() => {
-    if (settings[5].value === "true") {
+    if (scrubsanity === "true") {
       areas.map((area) =>
         area.checks
           .filter((check) => check.setting === "scrubsanity")
@@ -47,7 +51,7 @@ function useChecksVisibility() {
     }
   });
   useEffect(() => {
-    if (settings[6].value === "true") {
+    if (cowsanity === "true") {
       areas.map((area) =>
         area.checks
           .filter((check) => check.setting === "cowsanity")
@@ -67,7 +71,7 @@ function useChecksVisibility() {
   });
 
   useEffect(() => {
-    if (settings[11].value === "true") {
+    if (shuffleCarpetSalesman === "true") {
       areas.map((area) =>
         area.checks
           .filter((check) => check.setting === "medigoron & carpet salesman")

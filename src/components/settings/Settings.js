@@ -5,7 +5,6 @@ import Setting from "./Setting";
 
 export default function Settings() {
   const settings = useSelector(selectSettings);
-  console.log(settings)
   const settingsDisplay = settings.map((setting) => {
     return <Setting key={setting.name} setting={setting} />;
   });
