@@ -11,6 +11,7 @@ import {
   sometimesName,
 } from "../../features/hints";
 import { selectChecks } from "../../utils/selectors";
+import Input from "../Input";
 
 function InputField({ hintField, id, fieldType, hint }) {
   const areas = useSelector(selectChecks);
@@ -55,19 +56,24 @@ function InputField({ hintField, id, fieldType, hint }) {
         .filter((sometime) => sometime.short === hintField)
         .map((sometime) => {
           return dispatch(
-            sometimesName(id, sometime.location, sometime.idArea, sometime.idCheck)
+            sometimesName(
+              id,
+              sometime.location,
+              sometime.idArea,
+              sometime.idCheck
+            )
           );
         });
     }
   }, [dispatch, id, fieldType, hintField, hint, areas]);
 
   return (
-    <input
+    <Input
       type="text"
+      htmlClass="input-field"
+      placeholder={fieldType}
       value={hintField}
-      className="input-field"
-      onChange={(e) => handleChange(e)}
-      maxLength="3"
+      handleChange={(e) => handleChange(e)}
     />
   );
 }

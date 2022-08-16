@@ -20,8 +20,8 @@ function PathHint({ hint }) {
         fieldType="boss"
         hint={hint.boss}
       />{" "}
-      {multiworld==="true" && "for" }
-      {multiworld==="true" && (
+      {multiworld === "true" && "for"}
+      {multiworld === "true" && (
         <InputField hintField={hint.player} id={hint.id} fieldType="player" />
       )}
     </li>

@@ -54,7 +54,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "KS chest",
+        name: "K.Sword",
         reachable: true,
         checked: false,
         player: "",
@@ -66,7 +66,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "SoS grotto",
+        name: "SoS gr.",
         reachable: false,
         checked: false,
         player: "",
@@ -149,7 +149,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Skull Kid",
+        name: "Skll Kid",
         reachable: false,
         checked: false,
         player: "",
@@ -161,7 +161,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Free Scrub",
+        name: "Fr. Scrub",
         reachable: true,
         checked: false,
         player: "",
@@ -209,7 +209,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull Mask",
+        name: "Skll Mask",
         reachable: true,
         checked: false,
         player: "",
@@ -248,7 +248,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Scrub left gr.",
+        name: "L.Scrub gr.",
         reachable: false,
         checked: false,
         player: "",
@@ -260,7 +260,7 @@ export const areasState = [
       },
       {
         id: 9,
-        name: "Scrub right gr.",
+        name: "R.Scrub gr.",
         reachable: false,
         checked: false,
         player: "",
@@ -315,7 +315,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Wolfos grotto",
+        name: "Wolfos gr.",
         reachable: false,
         song: false,
         checked: false,
@@ -371,7 +371,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Little chest",
+        name: "Sling 1",
         reachable: false,
         checked: false,
         player: "",
@@ -383,7 +383,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Slingshot",
+        name: "Sling 2",
         reachable: false,
         checked: false,
         player: "",
@@ -407,7 +407,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Near compass",
+        name: "N. compass",
         reachable: false,
         checked: false,
         player: "",
@@ -419,7 +419,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull compass",
+        name: "Skll compass",
         reachable: false,
         checked: false,
         player: "",
@@ -443,7 +443,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "B1 Skull",
+        name: "B1 Skll",
         reachable: false,
         checked: false,
         player: "",
@@ -455,7 +455,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "B1 Skull Vine",
+        name: "B1 Skll Vine",
         reachable: false,
         checked: false,
         player: "",
@@ -503,7 +503,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Skull tree",
+        name: "Skll tree",
         reachable: false,
         checked: false,
         player: "",
@@ -527,7 +527,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Skull Stalfos",
+        name: "Skll Stalfos",
         reachable: false,
         checked: false,
         player: "",
@@ -551,7 +551,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Garden chest",
+        name: "Garden",
         reachable: false,
         checked: false,
         player: "",
@@ -563,7 +563,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull garden",
+        name: "Skll garden",
         reachable: false,
         checked: false,
         player: "",
@@ -575,7 +575,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "High chest",
+        name: "Bubble",
         reachable: false,
         checked: false,
         player: "",
@@ -587,7 +587,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Well chest",
+        name: "Well",
         reachable: false,
         checked: false,
         player: "",
@@ -611,7 +611,7 @@ export const areasState = [
       },
       {
         id: 9,
-        name: "Floormaster",
+        name: "Floormstr",
         reachable: false,
         checked: false,
         player: "",
@@ -623,7 +623,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Skull arch",
+        name: "Skll arch",
         reachable: false,
         checked: false,
         player: "",
@@ -635,7 +635,7 @@ export const areasState = [
       },
       {
         id: 11,
-        name: "BK chest",
+        name: "BK",
         reachable: false,
         checked: false,
         player: "",
@@ -659,7 +659,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "Bow chest",
+        name: "Bow",
         reachable: false,
         checked: false,
         player: "",
@@ -683,7 +683,7 @@ export const areasState = [
       },
       {
         id: 15,
-        name: "Plafondbro",
+        name: "Ceiling",
         reachable: false,
         checked: false,
         player: "",
@@ -707,7 +707,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "French Skull",
+        name: "French Skll",
         reachable: false,
         checked: false,
         player: "",
@@ -719,7 +719,7 @@ export const areasState = [
       },
       {
         id: 18,
-        name: "P. Ganon",
+        name: "P.Ganon",
         reachable: false,
         checked: false,
         player: "",
@@ -751,7 +751,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Open grotto",
+        name: "Open gr.",
         reachable: true,
         song: false,
         checked: false,
@@ -823,7 +823,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Ocarina of time",
+        name: "OoT",
         reachable: false,
         song: false,
         checked: false,
@@ -890,7 +890,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Freestanding",
+        name: "Freest.",
         reachable: true,
         song: false,
         checked: false,
@@ -969,7 +969,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Child fishing",
+        name: "Chld fish.",
         reachable: true,
         checked: false,
         player: "",
@@ -993,7 +993,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Adult fishing",
+        name: "Adlt fish.",
         reachable: false,
         checked: false,
         player: "",
@@ -1029,7 +1029,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Shoot the sun",
+        name: "Shoot. sun",
         reachable: false,
         checked: false,
         player: "",
@@ -1041,7 +1041,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Scrub",
+        name: "Scrub 1",
         reachable: true,
         checked: false,
         player: "",
@@ -1053,7 +1053,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Scrub",
+        name: "Scrub 2",
         reachable: true,
         checked: false,
         player: "",
@@ -1065,7 +1065,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Scrub",
+        name: "Scrub 3",
         reachable: true,
         checked: false,
         player: "",
@@ -1089,7 +1089,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Skull gate",
+        name: "Skll gate",
         reachable: false,
         checked: false,
         player: "",
@@ -1149,7 +1149,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull b4 BK",
+        name: "Skll b4 BK",
         reachable: false,
         checked: false,
         player: "",
@@ -1185,7 +1185,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Skull pillar",
+        name: "Skll pillar",
         reachable: false,
         checked: false,
         player: "",
@@ -1209,7 +1209,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Skull plats",
+        name: "Skll plats",
         reachable: false,
         checked: false,
         player: "",
@@ -1233,7 +1233,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "Skull river",
+        name: "Skll river",
         reachable: false,
         checked: false,
         player: "",
@@ -1535,7 +1535,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Light arrows",
+        name: "Light arr.",
         reachable: false,
         checked: false,
         player: "",
@@ -1554,7 +1554,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Din's Fairy",
+        name: "Dins Fairy",
         reachable: false,
         checked: false,
         player: "",
@@ -1664,7 +1664,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Archerie",
+        name: "Archrie",
         reachable: false,
         song: false,
         checked: false,
@@ -1797,7 +1797,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 17,
@@ -1811,7 +1810,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 18,
@@ -1825,7 +1823,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 19,
@@ -1839,7 +1836,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 20,
@@ -1853,7 +1849,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 21,
@@ -1867,7 +1862,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 22,
@@ -1881,7 +1875,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
       {
         id: 23,
@@ -1895,7 +1888,6 @@ export const areasState = [
         visibility: false,
         box: false,
         item: "",
-        price :"",
       },
     ],
   },
@@ -1954,7 +1946,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Dampe race",
+        name: "Race 1",
         reachable: true,
         song: false,
         checked: false,
@@ -1966,7 +1958,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Dampe race",
+        name: "Race 2",
         reachable: true,
         song: false,
         checked: false,
@@ -1978,7 +1970,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Playing Sun",
+        name: "Play. Sun",
         reachable: false,
         song: false,
         checked: false,
@@ -1990,7 +1982,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Royal torches",
+        name: "Royal torch.",
         reachable: false,
         song: false,
         checked: false,
@@ -2012,7 +2004,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Bomb entrance",
+        name: "Bomb entr.",
         reachable: false,
         checked: false,
         player: "",
@@ -2024,7 +2016,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Left chest",
+        name: "Left entr.",
         reachable: false,
         checked: false,
         player: "",
@@ -2036,7 +2028,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Right chest",
+        name: "Right entr.",
         reachable: false,
         checked: false,
         player: "",
@@ -2048,7 +2040,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Skull chest",
+        name: "Skll chest",
         reachable: false,
         checked: false,
         player: "",
@@ -2060,7 +2052,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Skull central 1",
+        name: "Skll key 1",
         reachable: false,
         checked: false,
         player: "",
@@ -2072,7 +2064,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull central 2",
+        name: "Skll key 2",
         reachable: false,
         checked: false,
         player: "",
@@ -2084,7 +2076,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Bomb back",
+        name: "Bomb bck",
         reachable: false,
         checked: false,
         player: "",
@@ -2096,7 +2088,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Chest b4 coffin",
+        name: "b4 coffin",
         reachable: false,
         checked: false,
         player: "",
@@ -2132,7 +2124,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Chest b4 D.hand",
+        name: "b4 D.hand",
         reachable: false,
         checked: false,
         player: "",
@@ -2156,7 +2148,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "Invisible chest",
+        name: "Invsble",
         reachable: false,
         checked: false,
         player: "",
@@ -2168,7 +2160,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "Fire Keeses",
+        name: "Keeses",
         reachable: false,
         checked: false,
         player: "",
@@ -2192,7 +2184,7 @@ export const areasState = [
       },
       {
         id: 15,
-        name: "Skull Like Like",
+        name: "Skll Like",
         reachable: false,
         checked: false,
         player: "",
@@ -2252,7 +2244,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Silver rupees",
+        name: "Silv. rup.",
         reachable: false,
         checked: false,
         player: "",
@@ -2276,7 +2268,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Skull spin",
+        name: "Skll spin",
         reachable: false,
         checked: false,
         player: "",
@@ -2288,7 +2280,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Spinning 1",
+        name: "Spin. 1",
         reachable: false,
         checked: false,
         player: "",
@@ -2300,7 +2292,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Spinning 2",
+        name: "Spin. 2",
         reachable: false,
         checked: false,
         player: "",
@@ -2312,7 +2304,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Spike high 1",
+        name: "Spike h1",
         reachable: false,
         checked: false,
         player: "",
@@ -2324,7 +2316,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Spike high 2",
+        name: "Spike h2",
         reachable: false,
         checked: false,
         player: "",
@@ -2348,7 +2340,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Skull in jail",
+        name: "Skll jail",
         reachable: false,
         checked: false,
         player: "",
@@ -2360,7 +2352,7 @@ export const areasState = [
       },
       {
         id: 11,
-        name: "Redead rupees",
+        name: "Redead rup.",
         reachable: false,
         checked: false,
         player: "",
@@ -2372,7 +2364,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "Skull pot",
+        name: "Skll pot",
         reachable: false,
         checked: false,
         player: "",
@@ -2408,7 +2400,7 @@ export const areasState = [
       },
       {
         id: 15,
-        name: "Last Gibdos",
+        name: "Gibdos",
         reachable: false,
         checked: false,
         player: "",
@@ -2432,7 +2424,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "Skull b4 boat",
+        name: "Skll boat",
         reachable: false,
         checked: false,
         player: "",
@@ -2468,7 +2460,7 @@ export const areasState = [
       },
       {
         id: 20,
-        name: "Skull 3 pots",
+        name: "Skll 3pots",
         reachable: false,
         checked: false,
         player: "",
@@ -2480,7 +2472,7 @@ export const areasState = [
       },
       {
         id: 21,
-        name: "Floormaster",
+        name: "Floormstr",
         reachable: false,
         checked: false,
         player: "",
@@ -2535,7 +2527,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Sos grotto",
+        name: "Sos gr.",
         reachable: false,
         checked: false,
         player: "",
@@ -2592,7 +2584,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Big rolling",
+        name: "Big roll.",
         reachable: false,
         checked: false,
         player: "",
@@ -2628,7 +2620,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Link the Goron",
+        name: "Link",
         reachable: false,
         checked: false,
         player: "",
@@ -2640,7 +2632,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Right Maze 1",
+        name: "R. Maze 1",
         reachable: false,
         checked: false,
         player: "",
@@ -2652,7 +2644,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Right Maze 2",
+        name: "R. Maze 2",
         reachable: false,
         checked: false,
         player: "",
@@ -2664,7 +2656,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Left Maze",
+        name: "L. Maze",
         reachable: false,
         checked: false,
         player: "",
@@ -2722,7 +2714,6 @@ export const areasState = [
         song: false,
         box: false,
         item: "",
-        price:"",
       },
       {
         id: 11,
@@ -2736,7 +2727,6 @@ export const areasState = [
         song: false,
         box: false,
         item: "",
-        price:"",
       },
       {
         id: 12,
@@ -2750,7 +2740,6 @@ export const areasState = [
         song: false,
         box: false,
         item: "",
-        price:"",
       },
       {
         id: 13,
@@ -2764,7 +2753,6 @@ export const areasState = [
         song: false,
         box: false,
         item: "",
-        price:"",
       },
       {
         id: 14,
@@ -2891,7 +2879,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Skull crow",
+        name: "Skll crow",
         reachable: false,
         checked: false,
         player: "",
@@ -2903,7 +2891,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Skull keeses",
+        name: "Skll keeses",
         reachable: false,
         checked: false,
         player: "",
@@ -2927,7 +2915,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Scrub main room",
+        name: "Scrub main r.",
         reachable: false,
         checked: false,
         player: "",
@@ -2963,7 +2951,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Skull Nook",
+        name: "Skll Nook",
         reachable: false,
         checked: false,
         player: "",
@@ -2975,7 +2963,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Skull Vines",
+        name: "Skll Vines",
         reachable: false,
         checked: false,
         player: "",
@@ -3047,7 +3035,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "Skull armos",
+        name: "Skll armos",
         reachable: false,
         checked: false,
         player: "",
@@ -3071,7 +3059,7 @@ export const areasState = [
       },
       {
         id: 15,
-        name: "King Dodongos",
+        name: "King Do.",
         reachable: false,
         checked: false,
         player: "",
@@ -3107,7 +3095,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Skull Dancer",
+        name: "Skll Dancer",
         reachable: false,
         checked: false,
         player: "",
@@ -3155,7 +3143,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull SoT",
+        name: "Skll SoT",
         reachable: false,
         checked: false,
         player: "",
@@ -3167,7 +3155,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Lava room bomb",
+        name: "Lava room bb",
         reachable: false,
         checked: false,
         player: "",
@@ -3179,7 +3167,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Maze lower chest",
+        name: "Maze low",
         reachable: false,
         checked: false,
         player: "",
@@ -3191,7 +3179,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Skull maze",
+        name: "Skll maze",
         reachable: false,
         checked: false,
         player: "",
@@ -3239,7 +3227,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "Shortcut chest",
+        name: "Shortcut",
         reachable: false,
         checked: false,
         player: "",
@@ -3251,7 +3239,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "Skull Pierre 1",
+        name: "Skll Crow 1",
         reachable: false,
         checked: false,
         player: "",
@@ -3263,7 +3251,7 @@ export const areasState = [
       },
       {
         id: 14,
-        name: "Skull Pierre 2",
+        name: "Skll Crow 2",
         reachable: false,
         checked: false,
         player: "",
@@ -3299,7 +3287,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "SoT chest",
+        name: "SoT",
         reachable: false,
         checked: false,
         player: "",
@@ -3311,7 +3299,7 @@ export const areasState = [
       },
       {
         id: 18,
-        name: "Hammer chest",
+        name: "Hammer",
         reachable: false,
         checked: false,
         player: "",
@@ -3403,7 +3391,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Free grotto",
+        name: "Free gr.",
         reachable: true,
         checked: false,
         player: "",
@@ -3446,7 +3434,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Rupees MG",
+        name: "Rup. MG",
         reachable: false,
         checked: false,
         player: "",
@@ -3541,7 +3529,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Icy waters",
+        name: "Icy wat.",
         reachable: false,
         checked: false,
         player: "",
@@ -3573,7 +3561,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Skull Stingers",
+        name: "Skll Stinger",
         reachable: false,
         checked: false,
         player: "",
@@ -3585,7 +3573,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Scrub Octo",
+        name: "Scrub",
         reachable: false,
         checked: false,
         player: "",
@@ -3597,7 +3585,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Boomerang",
+        name: "Boomrng",
         reachable: false,
         checked: false,
         player: "",
@@ -3633,7 +3621,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Skull big Octo 1",
+        name: "Skll basem. 1",
         reachable: false,
         checked: false,
         player: "",
@@ -3645,7 +3633,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Skull big Octo 2",
+        name: "Skull basem. 2",
         reachable: false,
         checked: false,
         player: "",
@@ -3657,7 +3645,7 @@ export const areasState = [
       },
       {
         id: 7,
-        name: "Skull Barinade",
+        name: "Skll Bar.",
         reachable: false,
         checked: false,
         player: "",
@@ -3701,7 +3689,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Skull spin",
+        name: "Skll spin",
         reachable: false,
         checked: false,
         player: "",
@@ -3737,7 +3725,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Skull bl.fire",
+        name: "Skull fire",
         reachable: false,
         checked: false,
         player: "",
@@ -3749,7 +3737,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Freestanding",
+        name: "Freestand.",
         reachable: false,
         checked: false,
         player: "",
@@ -3761,7 +3749,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Skull blocks",
+        name: "Skll blocks",
         reachable: false,
         checked: false,
         player: "",
@@ -3914,7 +3902,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Carpet Salesman",
+        name: "Carpet Sale.",
         reachable: false,
         checked: false,
         player: "",
@@ -4123,7 +4111,7 @@ export const areasState = [
       },
       {
         id: 9,
-        name: "Above statue",
+        name: "Abo. statue",
         reachable: false,
         checked: false,
         player: "",
@@ -4135,7 +4123,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Keeses & Slugs",
+        name: "Keeses&Slugs",
         reachable: false,
         checked: false,
         player: "",
@@ -4159,7 +4147,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "SoT freestanding",
+        name: "Freestand.",
         reachable: false,
         checked: false,
         player: "",
@@ -4171,7 +4159,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "SoT chest",
+        name: "SoT 1",
         reachable: false,
         checked: false,
         player: "",
@@ -4183,7 +4171,7 @@ export const areasState = [
       },
       {
         id: 14,
-        name: "SoT chest",
+        name: "SoT 2",
         reachable: false,
         checked: false,
         player: "",
@@ -4207,7 +4195,7 @@ export const areasState = [
       },
       {
         id: 16,
-        name: "Beamos & Dino",
+        name: "Beamos&Dino",
         reachable: false,
         checked: false,
         player: "",
@@ -4219,7 +4207,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "Left maze 1",
+        name: "L.maze 1",
         reachable: false,
         checked: false,
         player: "",
@@ -4231,7 +4219,7 @@ export const areasState = [
       },
       {
         id: 18,
-        name: "Left maze 2",
+        name: "L.maze 2",
         reachable: false,
         checked: false,
         player: "",
@@ -4243,7 +4231,7 @@ export const areasState = [
       },
       {
         id: 19,
-        name: "Left maze 3",
+        name: "L.maze 3",
         reachable: false,
         checked: false,
         player: "",
@@ -4255,7 +4243,7 @@ export const areasState = [
       },
       {
         id: 20,
-        name: "Left maze 4",
+        name: "L.maze 4",
         reachable: false,
         checked: false,
         player: "",
@@ -4267,7 +4255,7 @@ export const areasState = [
       },
       {
         id: 21,
-        name: "Final thieves",
+        name: "Final",
         reachable: false,
         checked: false,
         player: "",
@@ -4291,7 +4279,7 @@ export const areasState = [
     checks: [
       {
         id: 0,
-        name: "Child crystal",
+        name: "Chld crystal",
         reachable: false,
         checked: false,
         player: "",
@@ -4303,7 +4291,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Child keese",
+        name: "Chld keese",
         reachable: false,
         checked: false,
         player: "",
@@ -4315,7 +4303,7 @@ export const areasState = [
       },
       {
         id: 2,
-        name: "Skull gate",
+        name: "Skll gate",
         reachable: false,
         checked: false,
         player: "",
@@ -4327,7 +4315,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Skull climb",
+        name: "Skll climb",
         reachable: false,
         checked: false,
         player: "",
@@ -4339,7 +4327,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "Child climb",
+        name: "Climb 1",
         reachable: false,
         checked: false,
         player: "",
@@ -4351,7 +4339,7 @@ export const areasState = [
       },
       {
         id: 5,
-        name: "Child climb",
+        name: "Climb 2",
         reachable: false,
         checked: false,
         player: "",
@@ -4387,7 +4375,7 @@ export const areasState = [
       },
       {
         id: 8,
-        name: "Skull knuckle",
+        name: "Skll knckle",
         reachable: false,
         checked: false,
         player: "",
@@ -4399,7 +4387,7 @@ export const areasState = [
       },
       {
         id: 9,
-        name: "Right hand",
+        name: "R. hand",
         reachable: false,
         checked: false,
         player: "",
@@ -4411,7 +4399,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Adult left",
+        name: "L.Adlt",
         reachable: false,
         checked: false,
         player: "",
@@ -4423,7 +4411,7 @@ export const areasState = [
       },
       {
         id: 11,
-        name: "Skull SoT",
+        name: "Skll SoT",
         reachable: false,
         checked: false,
         player: "",
@@ -4435,7 +4423,7 @@ export const areasState = [
       },
       {
         id: 12,
-        name: "Adult right",
+        name: "R.Adlt",
         reachable: false,
         checked: false,
         player: "",
@@ -4447,7 +4435,7 @@ export const areasState = [
       },
       {
         id: 13,
-        name: "Mirror room 1",
+        name: "Mirror 1",
         reachable: false,
         checked: false,
         player: "",
@@ -4459,7 +4447,7 @@ export const areasState = [
       },
       {
         id: 14,
-        name: "Mirror room 2",
+        name: "Mirror 2",
         reachable: false,
         checked: false,
         player: "",
@@ -4471,7 +4459,7 @@ export const areasState = [
       },
       {
         id: 15,
-        name: "Lullaby high",
+        name: "Lul. high",
         reachable: false,
         checked: false,
         player: "",
@@ -4483,7 +4471,7 @@ export const areasState = [
       },
       {
         id: 16,
-        name: "Lullaby hand",
+        name: "Lul. hand",
         reachable: false,
         checked: false,
         player: "",
@@ -4495,7 +4483,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "Skull statue",
+        name: "Skll statue",
         reachable: false,
         checked: false,
         player: "",
@@ -4519,7 +4507,7 @@ export const areasState = [
       },
       {
         id: 19,
-        name: "Invisible 1",
+        name: "Invsble 1",
         reachable: false,
         checked: false,
         player: "",
@@ -4531,7 +4519,7 @@ export const areasState = [
       },
       {
         id: 20,
-        name: "Invisible 2",
+        name: "Invsble 2",
         reachable: false,
         checked: false,
         player: "",
@@ -4543,7 +4531,7 @@ export const areasState = [
       },
       {
         id: 21,
-        name: "Mirror shld",
+        name: "Mir. shld",
         reachable: false,
         checked: false,
         player: "",

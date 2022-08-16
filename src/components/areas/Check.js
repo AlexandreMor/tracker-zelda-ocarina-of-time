@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { box, done, setPlayer, setRupee } from "../../features/checks";
 import useSettings from "../../logic/useSettings";
+import Input from "../Input";
 import ItemsBox from "./ItemsBox";
 
 function Check({ check, idArea }) {
@@ -20,6 +21,26 @@ function Check({ check, idArea }) {
         )}
         {check.box && <ItemsBox idCheck={check.id} idArea={idArea} />}
       </div>
+      {multiworld === "true" && (
+        <Input
+          htmlClass="input-field"
+          placeholder="pla"
+          value={check.player}
+          handleChange={(e) => {
+            return dispatch(setPlayer(idArea, check.id, e.target.value));
+          }}
+        />
+      )}
+      {shopsanity === "true" && check.setting==="shopsanity" && (
+        <Input
+          htmlClass="input-field"
+          placeholder="rup"
+          value={check.rupee}
+          handleChange={(e) => {
+            return dispatch(setRupee(idArea, check.id, e.target.value));
+          }}
+        />
+      )}
       <span
         style={check.reachable ? { color: "#51aa3a" } : { color: "#c3423d" }}
         className={check.checked ? "check-done" : "check-undone"}
@@ -27,28 +48,6 @@ function Check({ check, idArea }) {
       >
         {check.name}
       </span>
-      {multiworld==="true" && (
-        <input
-          type="text"
-          className="input-field"
-          placeholder="pla"
-          value={check.player}
-          onChange={(e) => {
-            return dispatch(setPlayer(idArea, check.id, e.target.value));
-          }}
-        />
-      )}
-      {shopsanity==="true" && (
-        <input
-          type="text"
-          className="input-field"
-          placeholder="rup"
-          value={check.player}
-          onChange={(e) => {
-            return dispatch(setRupee(idArea, check.id, e.target.value));
-          }}
-        />
-      )}
     </li>
   );
 }

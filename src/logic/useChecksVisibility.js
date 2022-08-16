@@ -6,11 +6,33 @@ import useSettings from "./useSettings";
 
 function useChecksVisibility() {
   const areas = useSelector(selectChecks);
+  const shopsanity = useSettings("shopsanity");
   const skullsanity = useSettings("skullsanity");
   const scrubsanity = useSettings("scrubsanity");
   const cowsanity = useSettings("cowsanity");
   const shuffleCarpetSalesman = useSettings("shuffle carpet salesman & medigoron");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (shopsanity === "true") {
+      areas.map((area) =>
+        area.checks
+          .filter((check) => check.setting === "shopsanity")
+          .map((check) => {
+            return dispatch(makeVisible(area.id, check.id));
+          })
+      );
+    } else {
+      areas.map((area) =>
+        area.checks
+          .filter((check) => check.setting === "shopsanity")
+          .map((check) => {
+            return dispatch(makeInvisible(area.id, check.id));
+          })
+      );
+    }
+  });
+
   useEffect(() => {
     if (skullsanity === "true") {
       areas.map((area) =>
