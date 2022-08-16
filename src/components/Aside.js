@@ -10,7 +10,7 @@ export default function Aside({display}) {
   const dungeonsShuffleSetting = useSettings("dungeons shuffle");
   return (
     <aside className="aside">
-      {display ==="tracker" ? <div><Tracker /><HintsDisplay /></div> : <div><Hints />{dungeonsShuffleSetting==="true" && <DungeonsShuffleFields />}</div>}
+      {display ==="tracker" ? <div><Tracker /><HintsDisplay /></div> : <div className="aside-right"><Hints />{dungeonsShuffleSetting==="true" && <DungeonsShuffleFields />}</div>}
     </aside>
   );
 }

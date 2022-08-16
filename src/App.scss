@@ -3,8 +3,51 @@ $font-color: aliceblue;
 $primary-color: #282c34;
 $nav-background-color: #000000;
 
+@media screen and (max-width: 1660px) {
+  li.check {
+    font-size: 8px;
+    display:grid;
+    grid-template-columns: 0.3fr 0.3fr
+  }
+
+  .area-name {
+    font-size: 10px;
+  }
+
+  .main-display {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .aside>.aside-right {
+    justify-content: end;
+  }
+
+  .keys {
+    flex-direction: column;
+  }
+
+  li.hint-name {
+    font-size: 8px;
+  }
+
+  div.input-item {
+    width: 15px;
+    height: 15px;
+    margin-right:1px;
+  }
+
+  img.image-small {
+    width: 15px;
+    height: 15px;
+  }
+  div.areas {
+    margin-right: 10px;
+  }
+}
+
 input {
-background-color: darkgray;
+  background-color: darkgray;
 }
 
 .App {
@@ -48,13 +91,13 @@ a:hover {
 }
 
 .aside {
-  width: 11%;
+  width: 15%;
   margin-left: 5px;
   margin-top: 10px;
 }
 
 .main {
-  width: 78%;
+  width: 70%;
 }
 
 .items-tracker {
@@ -90,16 +133,18 @@ a:hover {
 }
 
 .dungeon-name {
-  position:relative;
-  width:35px;
-  bottom:10px;
-  z-index:2;
+  position: relative;
+  width: 35px;
+  bottom: 10px;
+  z-index: 2;
   font-size: small;
   font-weight: bold;
 }
+
 .skull-number {
   align-self: center;
 }
+
 .item-image {
   text-align: center;
 }
@@ -125,14 +170,19 @@ a:hover {
   display: flex
 }
 
+.aside>.aside-right {
+  display: flex;
+  justify-content: center;
+}
+
 .check-undone {
   opacity: 1;
-  margin-left:1px;
+  margin-left: 1px;
 }
 
 .check-done {
   opacity: 0.3;
-  margin-left:1px;
+  margin-left: 1px;
 }
 
 .areas {
@@ -152,14 +202,17 @@ a:hover {
   width: 20px;
   height: 20px;
 }
+
 .image-medium {
   width: 25px;
   height: 25px;
 }
+
 .image-song {
   width: 32px;
   height: 32px;
 }
+
 .image-max {
   width: 35px;
   height: 35px;
@@ -176,13 +229,13 @@ a:hover {
 .input-field {
   width: 16px;
   margin-left: 5px;
-  height:15px;
+  height: 15px;
 }
 
 .input-field-sometimes {
   width: 16px;
   margin-right: 5px;
-  height:15px;
+  height: 15px;
 }
 
 .field-list {
@@ -193,7 +246,7 @@ a:hover {
 .hint-name {
   font-size: 12px;
   margin-left: 5px;
-  display:flex;
+  display: flex;
 }
 
 .blue {
@@ -227,33 +280,40 @@ a:hover {
 .transparent {
   background-color: transparent;
 }
+
 .hint-image {
   display: inline-block;
 }
+
 .other-hint-display {
-  display:flex;
-  margin-top:5px;
-  margin-bottom:5px;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+
 .other-hint-name {
   margin-right: 5px;
 }
+
 fieldset {
-  margin-top:3px;
-  margin-bottom:3px;
-  width:40%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 40%;
 }
+
 .settings {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
+
 .number_keys {
   position: relative;
   z-index: 2;
   font-size: 12px;
   font-weight: bold;
 }
+
 .keys {
   display: flex;
   justify-content: space-around;
@@ -261,13 +321,13 @@ fieldset {
 
 .hint-name-display {
   margin-bottom: 5px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .hint-player-name {
   font-size: small;
   text-shadow: 0 0 2px red;
-  margin-top:-4px;
+  margin-top: -4px;
 }
 
 .image-player {
