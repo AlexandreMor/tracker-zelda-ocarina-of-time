@@ -60,9 +60,7 @@ function useWaterTempleLogic() {
   }, [dins, bow, keys, hookshot, zeldasLullaby, waterDive]);
 
   const adultAccessOnly = useCallback(() => {
-    if (
-      (areas[8].entrance === "forest" || areas[8].entrance === "water")
-    ) {
+    if (areas[8].entrance === "forest" || areas[8].entrance === "water") {
       return true;
     } else {
       return false;
@@ -112,7 +110,11 @@ function useWaterTempleLogic() {
       } else {
         dispatch(makeUnreachable(8, 3));
       }
-      if ((bow || dins || (!adultAccessOnly && dungeonsShuffle)) && zeldasLullaby && waterDive()) {
+      if (
+        (bow || dins || (!adultAccessOnly && dungeonsShuffle)) &&
+        zeldasLullaby &&
+        waterDive()
+      ) {
         dispatch(makeReachable(8, 4));
       } else {
         dispatch(makeUnreachable(8, 4));
@@ -137,7 +139,10 @@ function useWaterTempleLogic() {
         strength &&
         zeldasLullaby &&
         ((bow && (hoverBoots || longshot)) ||
-          (slingshot && !adultAccessOnly && dungeonsShuffle && middleWaterLevel()))
+          (slingshot &&
+            !adultAccessOnly &&
+            dungeonsShuffle &&
+            middleWaterLevel()))
       ) {
         dispatch(makeReachable(8, 7));
       } else {

@@ -13,7 +13,7 @@ import {
 import { selectChecks } from "../../utils/selectors";
 import Input from "../Input";
 
-function InputField({ hintField, id, fieldType, hint }) {
+function InputField({ hintField, id, fieldType, hint,htmlClass }) {
   const areas = useSelector(selectChecks);
   const dispatch = useDispatch();
   const handleChange = (e) => {
@@ -70,7 +70,7 @@ function InputField({ hintField, id, fieldType, hint }) {
   return (
     <Input
       type="text"
-      htmlClass="input-field"
+      htmlClass={htmlClass}
       placeholder={fieldType}
       value={hintField}
       handleChange={(e) => handleChange(e)}

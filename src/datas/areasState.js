@@ -355,6 +355,7 @@ export const areasState = [
     id: 3,
     name: "Deku",
     short: "dek",
+    dungeonShuffleInput:"",
     entrance:"deku",
     checks: [
       {
@@ -495,6 +496,7 @@ export const areasState = [
     id: 4,
     name: "Forest",
     short: "for",
+    dungeonShuffleInput:"",
     entrance:"forest",
     keysLeft:5,
     maxKeys:5,
@@ -1081,6 +1083,7 @@ export const areasState = [
     id: 8,
     name: "Water",
     short: "wat",
+    dungeonShuffleInput:"",
     entrance:"water",
     keysLeft:6,
     maxKeys:6,
@@ -1998,6 +2001,7 @@ export const areasState = [
     id: 15,
     name: "Bot. of the Well",
     short: "wel",
+    dungeonShuffleInput:"",
     entrance:"botw",
     keysLeft:3,
     maxKeys:3,
@@ -2212,6 +2216,7 @@ export const areasState = [
     id: 16,
     name: "Shadow",
     short: "sha",
+    dungeonShuffleInput:"",
     entrance:"shadow",
     keysLeft:5,
     maxKeys:5,
@@ -2875,6 +2880,7 @@ export const areasState = [
     id: 20,
     name: "Dodongo's Cav.",
     short: "dc",
+    dungeonShuffleInput:"",
     entrance:"dc",
     checks: [
       {
@@ -3075,6 +3081,7 @@ export const areasState = [
     id: 21,
     name: "Fire",
     short: "fir",
+    dungeonShuffleInput:"",
     entrance:"fire",
     keysLeft:8,
     maxKeys:8,
@@ -3557,6 +3564,7 @@ export const areasState = [
     id: 25,
     name: "Jabu",
     short: "jab",
+    dungeonShuffleInput:"",
     entrance:"jabu",
     checks: [
       {
@@ -3673,6 +3681,7 @@ export const areasState = [
     id: 26,
     name: "Ice Cavern",
     short: "ic",
+    dungeonShuffleInput:"",
     entrance:"ice",
     checks: [
       {
@@ -3997,6 +4006,7 @@ export const areasState = [
     id: 31,
     name: "GTG",
     short: "gtg",
+    dungeonShuffleInput:"",
     entrance:"gtg",
     keysLeft:9,
     maxKeys:9,
@@ -4271,6 +4281,7 @@ export const areasState = [
     id: 32,
     name: "Spirit",
     short: "spi",
+    dungeonShuffleInput:"",
     entrance:"spirit",
     keysLeft:5,
     maxKeys:5,
@@ -4583,6 +4594,7 @@ export const areasState = [
     id: 33,
     name: "Ganon's Castle",
     short: "gan",
+    dungeonShuffleInput:"",
     entrance:"ganon",
     keysLeft:2,
     maxKeys:2,

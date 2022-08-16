@@ -31,6 +31,8 @@ import useWaterTempleLogic from "../logic/areas/useWaterTempleLogic";
 import useFireTempleLogic from "../logic/areas/useFireTempleLogic";
 import useSpiritTempleLogic from "../logic/areas/useSpiritTempleLogic";
 import useGanonsCastleLogic from "../logic/areas/useGanonsCastleLogic";
+import useKeysyLogic from "./useKeysyLogic";
+import useDungeonsShuffleLogic from "./useDungeonsShuffleLogic";
 
 function useLogic() {
   useKokiriForestLogic();
@@ -67,6 +69,8 @@ function useLogic() {
   useSpiritTempleLogic();
   useFireTempleLogic();
   useGanonsCastleLogic();
+  useKeysyLogic();
+  useDungeonsShuffleLogic();
 }
 
 export default useLogic;

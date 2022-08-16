@@ -24,15 +24,16 @@ function OtherHints({ hint }) {
           {hint.box && <ItemsBox idArea={hint.idArea} idCheck={hint.idCheck} />}
         </div>
       )}
-      {hint.name}
       {hint.name.includes("Sometimes") && (
         <InputField
+          htmlClass="input-field-sometimes"
           hintField={hint.checkInput}
           hint={hint.check}
           id={hint.id}
           fieldType="sometimes"
         />
       )}
+      {hint.name}
     </li>
   );
 }

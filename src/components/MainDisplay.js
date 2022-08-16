@@ -18,7 +18,7 @@ function MainDisplay() {
         );
       });
   };
-
+console.log(areas);
   useChecksVisibility();
 
   const kokiriZoneDisplay = selectZone(0, 4);

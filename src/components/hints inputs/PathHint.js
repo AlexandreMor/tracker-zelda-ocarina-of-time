@@ -8,6 +8,7 @@ function PathHint({ hint }) {
     <li key={hint.name} className="hint-name">
       {hint.name}
       <InputField
+        htmlClass="input-field"
         hintField={hint.locationField}
         id={hint.id}
         fieldType="location"
@@ -15,6 +16,7 @@ function PathHint({ hint }) {
       />{" "}
       to
       <InputField
+        htmlClass="input-field"
         hintField={hint.bossField}
         id={hint.id}
         fieldType="boss"
@@ -22,7 +24,12 @@ function PathHint({ hint }) {
       />{" "}
       {multiworld === "true" && "for"}
       {multiworld === "true" && (
-        <InputField hintField={hint.player} id={hint.id} fieldType="player" />
+        <InputField
+          htmlClass="input-field"
+          hintField={hint.player}
+          id={hint.id}
+          fieldType="player"
+        />
       )}
     </li>
   );

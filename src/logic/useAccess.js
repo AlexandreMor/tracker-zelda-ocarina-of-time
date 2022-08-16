@@ -268,6 +268,8 @@ function useAccess(name) {
       } else {
         return false;
       }
+    case "inaccessible":
+      return false;
     default:
       return false;
   }

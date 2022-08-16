@@ -6,10 +6,13 @@ import {
   removeBossKey,
   removeKey,
 } from "../../features/checks";
+import useSettings from "../../logic/useSettings";
 
 function KeysDisplay({ area }) {
   const imageKey = `${process.env.PUBLIC_URL}/assets/small_key.png`;
   const imageBossKey = `${process.env.PUBLIC_URL}/assets/boss_key.png`;
+  const keysy = useSettings("keysy");
+  const bossKeysy = useSettings("boss keysy");
   const dispatch = useDispatch();
   const handleClick = (param) => {
     if (param === "key") {
@@ -43,14 +46,14 @@ function KeysDisplay({ area }) {
   };
   return (
     <div className="keys">
-      <div
+      {keysy==="false" && <div
         onClick={() => handleClick("key")}
         onContextMenu={() => handleOnContextMenu("key")}
       >
         <img className="image-small" src={imageKey} alt="key" />
         <span className="number_keys">{area.keysLeft}</span>
-      </div>
-      {area.hasOwnProperty("bossKeyLeft") && (
+      </div>}
+      {area.hasOwnProperty("bossKeyLeft") && bossKeysy==="false" && (
         <div
           onClick={() => handleClick("boss key")}
           onContextMenu={() => handleOnContextMenu("boss key")}

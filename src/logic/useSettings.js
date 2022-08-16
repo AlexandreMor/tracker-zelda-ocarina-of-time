@@ -23,6 +23,10 @@ function useSettings(name) {
       return settings[7].value;
     case "shuffle carpet salesman & medigoron":
       return settings[10].value;
+    case "keysy":
+      return settings[11].value;
+    case "boss keysy":
+      return settings[12].value;
     default:
       return false;
   }
