@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { makeReachable, makeUnreachable } from "../../features/checks";
 import useAccess from "../useAccess";
 import useItems from "../useItems";
+import useRandomSpawns from "../useRandomSpawns";
 import useSongs from "../useSongs";
 
 function useDMCLogic() {
@@ -14,6 +15,7 @@ function useDMCLogic() {
   const zeldasLullaby = useSongs("zelda");
   const lowerAccess = useAccess("dmc lower");
   const upperAccess = useAccess("dmc upper");
+  const fairySpawn = useRandomSpawns("adult spawn");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,7 +34,10 @@ function useDMCLogic() {
     } else {
       dispatch(makeUnreachable(19, 2));
     }
-    if ((lowerAccess || upperAccess) && hammer && zeldasLullaby) {
+    if (
+      (((lowerAccess || upperAccess) && hammer) || fairySpawn === "cf") &&
+      zeldasLullaby
+    ) {
       dispatch(makeReachable(19, 3));
     } else {
       dispatch(makeUnreachable(19, 3));
@@ -65,6 +70,7 @@ function useDMCLogic() {
     lowerAccess,
     upperAccess,
     dispatch,
+    fairySpawn,
   ]);
 }
 

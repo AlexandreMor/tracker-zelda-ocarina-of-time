@@ -4,7 +4,7 @@ import InputField from "./InputField";
 function FoolishHints({ hint }) {
   return (
     <li key={hint.name} className="hint-name">
-      <InputField htmlClass="input-field" hintField={hint.locationField} id={hint.id} fieldType="location" hint={hint.location} />
+      <InputField htmlClass="input-field-aside " hintField={hint.locationField} id={hint.id} fieldType="location" hint={hint.location} />
     </li>
   );
 }

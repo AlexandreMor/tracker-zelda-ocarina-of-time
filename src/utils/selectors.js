@@ -21,3 +21,7 @@ export const selectHints = (state) => {
 export const selectSettings = (state) => {
   return state.settings;
 };
+
+export const selectRandomSpawns = (state) => {
+  return state.randomSpawns;
+};

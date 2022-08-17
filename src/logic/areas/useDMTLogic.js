@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { makeReachable, makeUnreachable } from "../../features/checks";
 import useAccess from "../useAccess";
 import useItems from "../useItems";
+import useRandomSpawns from "../useRandomSpawns";
 import useSongs from "../useSongs";
 
 function useDMTLogic() {
@@ -13,6 +14,8 @@ function useDMTLogic() {
   const epona = useSongs("epona");
   const zelda = useSongs("zelda");
   const dispatch = useDispatch();
+  const fairySpawnAdult = useRandomSpawns("adult spawn");
+  const fairySpawnChild = useRandomSpawns("child spawn");
 
   useEffect(() => {
     if (explosive || hammer) {
@@ -25,7 +28,7 @@ function useDMTLogic() {
     } else {
       dispatch(makeUnreachable(17, 2));
     }
-    if ((explosive || hammer) && zelda) {
+    if ((explosive || hammer || fairySpawnAdult || fairySpawnChild) && zelda) {
       dispatch(makeReachable(17, 3));
     } else {
       dispatch(makeUnreachable(17, 3));
@@ -40,7 +43,17 @@ function useDMTLogic() {
     } else {
       dispatch(makeUnreachable(17, 5));
     }
-  }, [explosive, hammer, canDeliverPrescription, sos, epona, zelda, dispatch]);
+  }, [
+    explosive,
+    hammer,
+    canDeliverPrescription,
+    sos,
+    epona,
+    zelda,
+    dispatch,
+    fairySpawnAdult,
+    fairySpawnChild,
+  ]);
 }
 
 export default useDMTLogic;

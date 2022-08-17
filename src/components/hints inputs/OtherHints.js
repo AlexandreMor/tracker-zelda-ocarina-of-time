@@ -26,7 +26,7 @@ function OtherHints({ hint }) {
       )}
       {hint.name.includes("Sometimes") && (
         <InputField
-          htmlClass="input-field-sometimes"
+          htmlClass="input-field-aside"
           hintField={hint.checkInput}
           hint={hint.check}
           id={hint.id}

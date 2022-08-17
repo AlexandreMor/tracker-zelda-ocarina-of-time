@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { makeReachable, makeUnreachable } from "../../features/checks";
 import useAccess from "../useAccess";
 import useItems from "../useItems";
+import useRandomSpawns from "../useRandomSpawns";
 import useSongs from "../useSongs";
 
 function useGoronCityLogic() {
@@ -10,6 +11,8 @@ function useGoronCityLogic() {
   const explosive = useItems("explosive");
   const bombs = useItems("bomb bag");
   const hammer = useItems("hammer");
+  const bow = useItems("bow");
+  const dins = useItems("fire child");
   const goronTunic = useItems("goron tunic");
   const strength1 = useItems("strength 1");
   const strength2 = useItems("strength 2");
@@ -19,6 +22,8 @@ function useGoronCityLogic() {
   const saria = useSongs("saria");
   const sot = useSongs("sot");
   const dmcLowerAccess = useAccess("dmc lower");
+  const goronShopChild = useRandomSpawns("child spawn");
+  const goronShopAdult = useRandomSpawns("adult spawn");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,7 +42,7 @@ function useGoronCityLogic() {
     } else {
       dispatch(makeUnreachable(18, 2));
     }
-    if (dmcLowerAccess) {
+    if (explosive || bow || strength1) {
       dispatch(makeReachable(18, 3));
     } else {
       dispatch(makeUnreachable(18, 3));
@@ -59,6 +64,19 @@ function useGoronCityLogic() {
       dispatch(makeReachable(18, 8));
       dispatch(makeReachable(18, 9));
     }
+    if (
+      explosive ||
+      bow ||
+      strength1 ||
+      dins ||
+      goronShopChild === "gsh" ||
+      goronShopAdult === "gsh"
+    ) {
+      dispatch(makeReachable(18, 10));
+      dispatch(makeReachable(18, 11));
+      dispatch(makeReachable(18, 12));
+      dispatch(makeReachable(18, 13));
+    }
     if ((explosive || hammer || strength1) && adultWallet) {
       dispatch(makeReachable(18, 14));
     } else {
@@ -79,6 +97,10 @@ function useGoronCityLogic() {
     bombs,
     goronTunic,
     dispatch,
+    goronShopChild,
+    goronShopAdult,
+    dins,
+    bow,
   ]);
 }
 

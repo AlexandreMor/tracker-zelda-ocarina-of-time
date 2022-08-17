@@ -20,7 +20,7 @@ $nav-background-color: #000000;
   }
 
   .aside>.aside-right {
-    justify-content: end;
+    align-items: end;
   }
 
   .keys {
@@ -172,7 +172,8 @@ a:hover {
 
 .aside>.aside-right {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start; 
 }
 
 .check-undone {
@@ -232,7 +233,7 @@ a:hover {
   height: 15px;
 }
 
-.input-field-sometimes {
+.input-field-aside {
   width: 16px;
   margin-right: 5px;
   height: 15px;

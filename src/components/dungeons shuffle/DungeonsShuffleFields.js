@@ -23,7 +23,7 @@ function DungeonsShuffleFields() {
     return (
       <li className="hint-name" key={dungeon.name}>
         <Input
-          htmlClass="input-field-sometimes"
+          htmlClass="input-field-aside"
           placeholder="dun"
           value={dungeon.dungeonsShuffleInputs}
           handleChange={(e) => handleChange(e, dungeon.id)}
@@ -36,7 +36,7 @@ function DungeonsShuffleFields() {
   return (
     <div>
       <ul className="field-list">
-        <span>Dungeons Shuffle</span>
+        <h5>Dungeons Shuffle</h5>
         {dungeonsShuffleInputs}
       </ul>
     </div>

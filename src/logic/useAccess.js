@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { selectChecks, selectMedallionsStones } from "../utils/selectors";
 import useItems from "./useItems";
+import useRandomSpawns from "./useRandomSpawns";
 import useSettings from "./useSettings";
 import useSongs from "./useSongs";
 
@@ -36,54 +37,70 @@ function useAccess(name) {
   const deku = useSettings("deku");
   const bridge = useSettings("bridge");
   const medallions = useSelector(selectMedallionsStones);
+  const childSpawn = useRandomSpawns("child spawn");
+  const adultSpawn = useRandomSpawns("adult spawn");
+  const dungeonsShuffle = useSettings("dungeons shuffle");
 
   const minuetAccess = useCallback(() => {
-    if (saria || minuet) {
+    if (saria || minuet || adultSpawn === "min") {
       return true;
     } else {
       return false;
     }
-  }, [saria, minuet]);
+  }, [saria, minuet, adultSpawn]);
 
   const dmcLowerDCAccess = useCallback(() => {
-    if (explosive || bow || strength1) {
+    if (explosive || bow || strength1 || adultSpawn === "cl") {
       return true;
     } else {
       return false;
     }
-  }, [explosive, bow, strength1]);
+  }, [explosive, bow, strength1, adultSpawn]);
 
   const zoraRiverAccess = useCallback(() => {
-    if (explosive || scale) {
+    if (explosive || scale || childSpawn === "zr") {
       return true;
     } else {
       return false;
     }
-  }, [explosive, scale]);
+  }, [explosive, scale, childSpawn]);
 
   const zoraDomainAccess = useCallback(() => {
-    if ((explosive && zeldasLullaby) || scale) {
+    if ((explosive && zeldasLullaby) || scale || childSpawn === "zd") {
       return true;
     } else {
       return false;
     }
-  }, [explosive, zeldasLullaby, scale]);
+  }, [explosive, zeldasLullaby, scale, childSpawn]);
 
   const zoraFountainAccess = useCallback(() => {
-    if (zoraDomainAccess() && rutosLetter) {
+    if ((zoraDomainAccess() && rutosLetter) || childSpawn === "zf") {
       return true;
     } else {
       return false;
     }
-  }, [rutosLetter, zoraDomainAccess]);
+  }, [rutosLetter, zoraDomainAccess, childSpawn]);
+
+  const zoraFountainAccessInAdult = useCallback(() => {
+    if (
+      (zoraDomainAccess() &&
+        rutosLetter &&
+        (zeldasLullaby || adultSpawn === "zd")) ||
+      adultSpawn === "zf"
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }, [rutosLetter, zoraDomainAccess, zeldasLullaby, adultSpawn]);
 
   const gerudoValleyBridgeAccess = useCallback(() => {
-    if (epona || longshot) {
+    if (epona || longshot || adultSpawn === "gv" || adultSpawn === "gf") {
       return true;
     } else {
       return false;
     }
-  }, [epona, longshot]);
+  }, [epona, longshot, adultSpawn]);
 
   const wastelandMausoleumAccess = useCallback(() => {
     if (gerudoValleyBridgeAccess() && (longshot || hoverBoots)) {
@@ -94,12 +111,16 @@ function useAccess(name) {
   }, [gerudoValleyBridgeAccess, longshot, hoverBoots]);
 
   const desertColossusAccess = useCallback(() => {
-    if ((wastelandMausoleumAccess() && lens && magic) || requiem) {
+    if (
+      (wastelandMausoleumAccess() && lens && magic) ||
+      requiem ||
+      adultSpawn === "col"
+    ) {
       return true;
     } else {
       return false;
     }
-  }, [lens, magic, requiem, wastelandMausoleumAccess]);
+  }, [lens, magic, requiem, wastelandMausoleumAccess, adultSpawn]);
 
   const morphaDefeated = useCallback(() => {
     if (areas[8].checks[15].reachable) {
@@ -159,7 +180,7 @@ function useAccess(name) {
         return false;
       }
     case "shadow":
-      if (nocturne && dins) {
+      if ((nocturne || adultSpawn==="noc" || (childSpawn==="noc" && dungeonsShuffle==="true")) && dins) {
         return true;
       } else {
         return false;
@@ -179,7 +200,7 @@ function useAccess(name) {
     case "dmc lower":
       return dmcLowerDCAccess();
     case "dmc upper":
-      if (hammer || explosive || dmcLowerDCAccess()) {
+      if (hammer || explosive || dmcLowerDCAccess() || adultSpawn==="cu") {
         return true;
       } else {
         return false;
@@ -232,6 +253,12 @@ function useAccess(name) {
       } else {
         return false;
       }
+    case "zora fountain in adult":
+      if (zoraFountainAccessInAdult()) {
+        return true;
+      } else {
+        return false;
+      }
     case "jabu":
       if (zoraFountainAccess()) {
         return true;
@@ -251,7 +278,7 @@ function useAccess(name) {
         return false;
       }
     case "desert colossus":
-      if (desertColossusAccess()) {
+      if (desertColossusAccess() || adultSpawn === "col") {
         return true;
       } else {
         return false;
