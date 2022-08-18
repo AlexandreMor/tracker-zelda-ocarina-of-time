@@ -56,14 +56,14 @@ function HintsDisplay() {
       );
     });
   return (
-    <div>
-      <h3>Paths</h3>
+    <div className="hints-display">
+      <h4 className="lightblue">Paths</h4>
       {pathsDisplay}
-      <h3>Foolishes</h3>
+      <h4 className="pink">Foolishes</h4>
       {foolishesDisplay}
-      <h3>Always Hints</h3>
+      <h4>Always Hints</h4>
       {alwaysHintsDisplay}
-      <h3>Sometimes Hints</h3>
+      <h4>Sometimes Hints</h4>
       {sometimesHintsDisplay}
     </div>
   );

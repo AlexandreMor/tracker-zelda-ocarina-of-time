@@ -33,7 +33,7 @@ function Check({ check, idArea }) {
       )}
       {shopsanity === "true" && check.setting==="shopsanity" && (
         <Input
-          htmlClass="input-field"
+          htmlClass="input-field-rupee"
           placeholder="rup"
           value={check.rupee}
           handleChange={(e) => {

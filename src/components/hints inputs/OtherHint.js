@@ -5,7 +5,7 @@ import InputField from "./InputField";
 import { hintBox } from "../../features/hints";
 import { selectChecks } from "../../utils/selectors";
 
-function OtherHints({ hint }) {
+function OtherHint({ hint }) {
   const areas = useSelector(selectChecks);
   const dispatch = useDispatch();
 
@@ -38,4 +38,4 @@ function OtherHints({ hint }) {
   );
 }
 
-export default OtherHints;
+export default OtherHint;

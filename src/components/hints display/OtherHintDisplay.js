@@ -7,8 +7,7 @@ function OtherHintDisplay({ hint, areas }) {
         {hint.type === "always" ? hint.name : hint.check}
       </span>
       {areas[hint.idArea].checks[hint.idCheck].item !== "" &&
-        hint.idArea !== 0 &&
-        hint.idCheck !== 0 && (
+        hint.idArea !== 0 && (
           <img
             className="image-small"
             src={areas[hint.idArea].checks[hint.idCheck].item}

@@ -30,8 +30,7 @@ function MainDisplay() {
   const fireTempleDisplay = selectZone(21, 22);
   const zoraZoneDisplay = selectZone(22, 27);
   const gerudoZoneDisplay = selectZone(27, 32);
-  const spiritTempleDisplay = selectZone(32, 33);
-  const ganonCastleDisplay = selectZone(33, 34);
+  const spiritTempleAndGanonDisplay = selectZone(32, 34);
 
   return (
     <div className="main-display">
@@ -45,8 +44,7 @@ function MainDisplay() {
       <AreasList areas={fireTempleDisplay} />
       <AreasList areas={zoraZoneDisplay} />
       <AreasList areas={gerudoZoneDisplay} />
-      <AreasList areas={spiritTempleDisplay} />
-      <AreasList areas={ganonCastleDisplay} />
+      <AreasList areas={spiritTempleAndGanonDisplay} />
     </div>
   );
 }

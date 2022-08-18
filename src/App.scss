@@ -6,7 +6,7 @@ $nav-background-color: #000000;
 @media screen and (max-width: 1660px) {
   li.check {
     font-size: 8px;
-    display:grid;
+    display: grid;
     grid-template-columns: 0.3fr 0.3fr
   }
 
@@ -34,13 +34,14 @@ $nav-background-color: #000000;
   div.input-item {
     width: 15px;
     height: 15px;
-    margin-right:1px;
+    margin-right: 1px;
   }
 
   img.image-small {
     width: 15px;
     height: 15px;
   }
+
   div.areas {
     margin-right: 10px;
   }
@@ -90,10 +91,17 @@ a:hover {
   display: flex;
 }
 
+.tracker-elements {
+  margin-top: 5px;
+}
+
+.hints-display {
+  margin-left: 2px;
+}
+
 .aside {
   width: 15%;
   margin-left: 5px;
-  margin-top: 10px;
 }
 
 .main {
@@ -173,7 +181,7 @@ a:hover {
 .aside>.aside-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .check-undone {
@@ -335,4 +343,10 @@ fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.input-field-rupee {
+  width: 20px;
+  margin-left: 5px;
+  height: 15px;
 }
