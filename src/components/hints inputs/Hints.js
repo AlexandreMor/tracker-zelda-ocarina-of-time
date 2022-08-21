@@ -4,16 +4,39 @@ import FoolishHint from "./FoolishHint";
 import PathHint from "./PathHint";
 import { useSelector } from "react-redux";
 import { selectHints } from "../../utils/selectors";
+import useSettings from "../../logic/useSettings";
 
 export default function Hints() {
   const hintsDisplay = useSelector(selectHints);
+  const multiworld = useSettings("multiworld");
+  const classicNumberOfPathHints = (id) => {
+    if (multiworld === "false") {
+      return id < 5;
+    } else {
+      return id < 8;
+    }
+  };
+  const classicNumberOfFoolishHints = (id) => {
+    if (multiworld === "false") {
+      return id >= 8 && id < 11;
+    } else {
+      return id >= 8 && id < 12;
+    }
+  };
+  const classicNumberOfSometimesHints = (id) => {
+    if (multiworld === "false") {
+      return id >= 19 && id < 24;
+    } else {
+      return id >= 19 && id <= 28;
+    }
+  };
   const paths = hintsDisplay
-    .filter((hint) => hint.name.includes("Path"))
+    .filter((hint) => classicNumberOfPathHints(hint.id))
     .map((hint) => {
       return <PathHint key={hint.name} hint={hint} />;
     });
   const foolishes = hintsDisplay
-    .filter((hint) => hint.name.includes("Foolish"))
+    .filter((hint) => classicNumberOfFoolishHints(hint.id))
     .map((hint) => {
       return <FoolishHint key={hint.name} hint={hint} />;
     });
@@ -25,7 +48,7 @@ export default function Hints() {
       return <OtherHint key={hint.name} hint={hint} />;
     });
   const sometimesHints = hintsDisplay
-    .filter((hint) => hint.name.includes("Sometimes"))
+    .filter((hint) => classicNumberOfSometimesHints(hint.id))
     .map((hint) => {
       return <OtherHint key={hint.name} hint={hint} />;
     });
