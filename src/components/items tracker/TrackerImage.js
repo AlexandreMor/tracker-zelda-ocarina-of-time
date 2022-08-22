@@ -7,7 +7,7 @@ function TrackerImage({ element, stringElement }) {
   const dispatch = useDispatch();
   return (
     <div className="item-image"><img
-    className={stringElement === "songs" ? "image-song" : "image-max"}
+    className={stringElement === "songs" ? "image-song" : "image-medium"}
       key={element.name}
       style={
         element.number === 0

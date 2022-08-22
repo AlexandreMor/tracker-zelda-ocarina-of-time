@@ -13,7 +13,7 @@ function HintsDisplay() {
     .filter((hint) => hint.location !== "" && hint.id < 8)
     .map((hint) => {
       return (
-        <div key={hint.name}>
+        <li key={hint.name}>
           <PathDisplay hint={hint} />
           {hint.location !== "" &&
             areas
@@ -25,46 +25,55 @@ function HintsDisplay() {
                     return <HintImage key={check.name} check={check} />;
                   });
               })}
-        </div>
+        </li>
       );
     });
   const foolishesDisplay = hints
     .filter((hint) => hint.location !== "" && hint.id >= 8 && hint.id < 12)
     .map((hint) => {
       return (
-        <div key={hint.name}>
+        <li key={hint.name}>
           <FoolishDisplay hint={hint} />
-        </div>
+        </li>
       );
     });
   const alwaysHintsDisplay = hints
     .filter((hint) => hint.location !== "" && hint.id >= 12 && hint.id < 19)
     .map((hint) => {
       return (
-        <div key={hint.name}>
+        <li key={hint.name}>
           <OtherHintDisplay hint={hint} areas={areas} />
-        </div>
+        </li>
       );
     });
   const sometimesHintsDisplay = hints
     .filter((hint) => hint.location !== "" && hint.id >= 19 && hint.id < 29)
     .map((hint) => {
       return (
-        <div key={hint.name}>
+        <li key={hint.name}>
           <OtherHintDisplay hint={hint} areas={areas} />
-        </div>
+        </li>
       );
     });
   return (
     <div className="hints-display">
-      <h4 className="lightblue">Paths</h4>
+      <h5 className="lightblue h5-hints">Paths</h5>
+      <ul className="hints-list">
       {pathsDisplay}
-      <h4 className="pink">Foolishes</h4>
+      </ul>
+      <h5 className="pink h5-hints">Foolishes</h5>
+      <ul className="hints-list">
       {foolishesDisplay}
-      <h4>Always Hints</h4>
+      </ul>
+      <h5 className="h5-hints">Other Hints</h5>
+      <div className="other-hints">
+      <ul className="hints-list">
       {alwaysHintsDisplay}
-      <h4>Sometimes Hints</h4>
+      </ul>
+      <ul className="hints-list">
       {sometimesHintsDisplay}
+      </ul>
+      </div>
     </div>
   );
 }

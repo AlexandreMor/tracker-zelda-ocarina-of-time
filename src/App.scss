@@ -45,6 +45,14 @@ $nav-background-color: #000000;
   div.areas {
     margin-right: 10px;
   }
+  .item-image > .image-song {
+    width:20px;
+    height:20px;
+  }
+  .item-image > .image-medium {
+    width:20px;
+    height:20px;
+  }
 }
 
 input {
@@ -100,12 +108,19 @@ a:hover {
 }
 
 .aside {
-  width: 15%;
+  width: 12%;
   margin-left: 5px;
+}
+.aside > .aside-left {
+  position: fixed;
+}
+
+.aside > .aside-right {
+  position: fixed;
 }
 
 .main {
-  width: 70%;
+  width: 76%;
 }
 
 .items-tracker {
@@ -114,21 +129,27 @@ a:hover {
 
 .items {
   display: grid;
-  grid-template-columns: 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
   row-gap: 5px;
+  column-gap:5px;
 }
 
 .stones {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+}
+.medallions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
-.medallions {
+/*.medallions {
   display: grid;
   grid-template-columns: 1.4fr 1.4fr 1.4fr 1.4fr 1.4fr 1.4fr;
   margin-top: 0.9rem;
-}
+}*/
 
 .img-stone,
 .img-medallion {
@@ -138,6 +159,7 @@ a:hover {
 .songs {
   flex-direction: column;
   margin-left: 10px;
+  margin-top:-3.5px;
 }
 
 .dungeon-name {
@@ -218,8 +240,8 @@ a:hover {
 }
 
 .image-song {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .image-max {
@@ -247,7 +269,7 @@ a:hover {
   height: 15px;
 }
 
-.field-list {
+.field-list, .hints-list {
   list-style: none;
   padding: 0;
 }
@@ -256,6 +278,14 @@ a:hover {
   font-size: 12px;
   margin-left: 5px;
   display: flex;
+}
+.h5-hints {
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+
+.other-hints {
+  display:flex;
 }
 
 .blue {
@@ -349,4 +379,8 @@ fieldset {
   width: 20px;
   margin-left: 5px;
   height: 15px;
+}
+
+.to {
+  margin-left: 5px;
 }

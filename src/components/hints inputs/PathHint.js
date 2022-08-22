@@ -14,7 +14,7 @@ function PathHint({ hint }) {
         fieldType="location"
         hint={hint.location}
       />{" "}
-      to
+      <span className="to">to</span>
       <InputField
         htmlClass="input-field"
         hintField={hint.bossField}

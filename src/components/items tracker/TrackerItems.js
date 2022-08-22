@@ -27,7 +27,18 @@ export default function TrackerItems() {
       );
     });
   const medallionsDisplay = dungeons
-    .filter((medallion) => medallion.id > 2)
+    .filter((medallion) => medallion.id > 2 && medallion.id < 6)
+    .map((medallion) => {
+      return (
+        <TrackerImage
+          key={medallion.name}
+          element={medallion}
+          stringElement="dungeons"
+        />
+      );
+    });
+    const threeLastMedallionsDisplay = dungeons
+    .filter((medallion) => medallion.id > 5 && medallion.id < 9)
     .map((medallion) => {
       return (
         <TrackerImage
@@ -43,6 +54,7 @@ export default function TrackerItems() {
       <TrackerElement cssClass={"skull"} display={skullDisplay} />
       <TrackerElement cssClass={"stones"} display={stonesDisplay} />
       <TrackerElement cssClass={"medallions"} display={medallionsDisplay} />
+      <TrackerElement cssClass={"medallions"} display={threeLastMedallionsDisplay} />
     </div>
   );
 }

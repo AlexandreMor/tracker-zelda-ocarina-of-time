@@ -12,7 +12,7 @@ export default function Aside({ display }) {
   return (
     <aside className="aside">
       {display === "tracker" ? (
-        <div>
+        <div className="aside-left">
           <Tracker />
           <HintsDisplay />
         </div>
