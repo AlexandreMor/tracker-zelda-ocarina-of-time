@@ -328,6 +328,13 @@ export const trackerState = [
       },
       {
         id:12,
+        name:"junk",
+        image:[`${process.env.PUBLIC_URL}/assets/sold_out.png`],
+        number:0,
+        limit:0,
+      },
+      {
+        id:13,
         name:"cancel",
         image:[`${process.env.PUBLIC_URL}/assets/cross.png`],
         number:0,

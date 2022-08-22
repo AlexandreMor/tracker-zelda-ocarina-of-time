@@ -6,7 +6,7 @@ import TrackerImage from "./TrackerImage";
 
 function TrackerSongs() {
   const songs = useSelector(selectSongs);
-  const songsDisplay = songs.filter(song => song.name !== "cancel").map((song) => {
+  const songsDisplay = songs.filter(song => song.name !== "cancel" && song.name !== "junk").map((song) => {
     return (
       <TrackerImage key={song.name} element={song} stringElement="songs" />
     );
