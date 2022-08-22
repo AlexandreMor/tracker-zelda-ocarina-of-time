@@ -298,7 +298,7 @@ export const sometimesList = [
     id: 22,
     location: "Graveyard flames",
     short: "fla",
-    idCheck: 0,
+    idCheck: 7,
     idArea: 14,
   },
   { id: 23, location: "Shadow Pot", short: "spo", idCheck: 13, idArea: 16 },

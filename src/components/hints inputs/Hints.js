@@ -59,7 +59,7 @@ export default function Hints() {
         {paths}
       </ul>
       <ul className="field-list">
-        <h5>Foolishes</h5>
+        <h5 className="pink">Foolishes</h5>
         {foolishes}
       </ul>
       <ul className="field-list">

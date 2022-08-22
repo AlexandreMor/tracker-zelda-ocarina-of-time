@@ -1,7 +1,6 @@
 import React from "react";
 import useSettings from "../logic/useSettings";
 import DungeonsShuffleFields from "./dungeons shuffle/DungeonsShuffleFields";
-import HintsDisplay from "./hints display/HintsDisplay";
 import Hints from "./hints inputs/Hints";
 
 import Tracker from "./items tracker/Tracker";
@@ -14,7 +13,6 @@ export default function Aside({ display }) {
       {display === "tracker" ? (
         <div className="aside-left">
           <Tracker />
-          <HintsDisplay />
         </div>
       ) : (
         <div className="aside-right">

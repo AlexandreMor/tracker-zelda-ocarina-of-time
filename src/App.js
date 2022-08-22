@@ -11,7 +11,7 @@ function App() {
   useLogic();
   return (
     <Router>
-      <div className="App" onContextMenu={(e)=> e.preventDefault()}>
+      <div className="App" onContextMenu={(e) => e.preventDefault()}>
         <header className="App-header">
           <Navbar />
         </header>

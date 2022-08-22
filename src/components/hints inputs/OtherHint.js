@@ -33,7 +33,10 @@ function OtherHint({ hint }) {
           fieldType="sometimes"
         />
       )}
-      {hint.name}
+      <span>
+        {hint.idArea !== 0 && hint.name.includes("Sometimes") && hint.check}
+        {hint.type.includes("always") && hint.name}
+      </span>
     </li>
   );
 }

@@ -1,22 +1,24 @@
 import React from "react";
 import InputField from "./InputField";
 import useSettings from "../../logic/useSettings";
+import { useSelector } from "react-redux";
+import { selectChecks } from "../../utils/selectors";
+import HintImage from "./HintImage";
 
 function PathHint({ hint }) {
   const multiworld = useSettings("multiworld");
+  const areas = useSelector(selectChecks);
   return (
-    <li key={hint.name} className="hint-name">
-      {hint.name}
+    <li key={hint.name} className="hint-name path">
       <InputField
-        htmlClass="input-field"
+        htmlClass="input-field-aside"
         hintField={hint.locationField}
         id={hint.id}
         fieldType="location"
         hint={hint.location}
       />{" "}
-      <span className="to">to</span>
       <InputField
-        htmlClass="input-field"
+        htmlClass="input-field-aside"
         hintField={hint.bossField}
         id={hint.id}
         fieldType="boss"
@@ -31,6 +33,23 @@ function PathHint({ hint }) {
           fieldType="player"
         />
       )}
+      <div>
+        <span className="lightblue">
+          {hint.location} {hint.boss && hint.location && "to"} {hint.boss}
+        </span>
+        <ul className="hints-list">
+          {hint.location !== "" &&
+            areas
+              .filter((area) => area.id === hint.idArea)
+              .map((area) => {
+                return area.checks
+                  .filter((check) => check.item !== "" && !check.item.includes("sold_out"))
+                  .map((check) => {
+                    return <HintImage key={check.name} check={check} />;
+                  });
+              })}
+        </ul>
+      </div>
     </li>
   );
 }

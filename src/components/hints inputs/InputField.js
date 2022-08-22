@@ -65,6 +65,19 @@ function InputField({ hintField, id, fieldType, hint,htmlClass }) {
           );
         });
     }
+    if (fieldType === "sometimes" && hintField === "" && hint !=="") {
+      sometimesList
+        .map((sometime) => {
+          return dispatch(
+            sometimesName(
+              id,
+              "",
+              0,
+              0
+            )
+          );
+        });
+    }
   }, [dispatch, id, fieldType, hintField, hint, areas]);
 
   return (
