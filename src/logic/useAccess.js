@@ -173,14 +173,19 @@ function useAccess(name) {
       } else {
         return false;
       }
-    case "botw":
+    case "well":
       if (sos) {
         return true;
       } else {
         return false;
       }
     case "shadow":
-      if ((nocturne || adultSpawn==="noc" || (childSpawn==="noc" && dungeonsShuffle==="true")) && dins) {
+      if (
+        (nocturne ||
+          adultSpawn === "noc" ||
+          (childSpawn === "noc" && dungeonsShuffle === "true")) &&
+        dins
+      ) {
         return true;
       } else {
         return false;
@@ -200,17 +205,13 @@ function useAccess(name) {
     case "dmc lower":
       return dmcLowerDCAccess();
     case "dmc upper":
-      if (hammer || explosive || dmcLowerDCAccess() || adultSpawn==="cu") {
+      if (hammer || explosive || dmcLowerDCAccess() || adultSpawn === "cu") {
         return true;
       } else {
         return false;
       }
-    case "dc":
-      if (dmcLowerDCAccess() || hammer) {
-        return true;
-      } else {
-        return false;
-      }
+    case "dodongo's cav.":
+      return true;
     case "fire":
       if (dmcLowerDCAccess() && (hookshot || hoverBoots || bolero)) {
         return true;
@@ -254,6 +255,12 @@ function useAccess(name) {
         return false;
       }
     case "zora fountain in adult":
+      if (zoraFountainAccessInAdult()) {
+        return true;
+      } else {
+        return false;
+      }
+      case "ice cavern": 
       if (zoraFountainAccessInAdult()) {
         return true;
       } else {

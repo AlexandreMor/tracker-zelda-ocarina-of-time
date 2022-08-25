@@ -7,7 +7,7 @@ import useItems from "../useItems";
 
 function useJabuLogic() {
   const areas = useSelector(selectChecks);
-  const jabuAccess = useAccess("zora fountain");
+  const jabuAccess = useAccess(areas[25].entrance);
   const explosive = useItems("explosive");
   const boomerang = useItems("boomerang");
   const slingshot = useItems("slingshot");
@@ -23,6 +23,9 @@ function useJabuLogic() {
       dispatch(makeUnreachable(25, 1));
       dispatch(makeUnreachable(25, 2));
     }
+  }, [jabuAccess, explosive, boomerang, slingshot, dispatch]);
+
+  useEffect(() => {
     if (jabuAccess && boomerang) {
       for (let i = 3; i < 9; i++) {
         dispatch(makeReachable(25, i));
@@ -32,7 +35,7 @@ function useJabuLogic() {
         dispatch(makeUnreachable(25, i));
       }
     }
-  }, [jabuAccess, explosive, boomerang, slingshot,areas, dispatch]);
+  }, [jabuAccess, boomerang, areas, dispatch]);
 }
 
 export default useJabuLogic;

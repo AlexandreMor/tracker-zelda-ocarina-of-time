@@ -25,12 +25,12 @@ function useDungeonsShuffleLogic() {
       dispatch(setEntrance(3, "deku"));
       dispatch(setEntrance(4, "forest"));
       dispatch(setEntrance(8, "water"));
-      dispatch(setEntrance(15, "botw"));
+      dispatch(setEntrance(15, "well"));
       dispatch(setEntrance(16, "shadow"));
-      dispatch(setEntrance(20, "dc"));
+      dispatch(setEntrance(20, "dodongo's cav."));
       dispatch(setEntrance(21, "fire"));
       dispatch(setEntrance(25, "jabu"));
-      dispatch(setEntrance(26, "ice"));
+      dispatch(setEntrance(26, "ice cavern"));
       dispatch(setEntrance(31, "gtg"));
       dispatch(setEntrance(32, "spirit"));
     }

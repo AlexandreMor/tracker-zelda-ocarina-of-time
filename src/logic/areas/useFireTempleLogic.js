@@ -23,21 +23,21 @@ function useFireTempleLogic() {
   const fireTempleAccess = useAccess(areas[21].entrance);
   const dispatch = useDispatch();
   const lowerMaze = useCallback(() => {
-    if (keys === 3 && goronTunic && strength) {
+    if (keys >= 3 && goronTunic && strength) {
       return true;
     } else {
       return false;
     }
   }, [keys, goronTunic, strength]);
   const upperMaze = useCallback(() => {
-    if (keys === 5 && lowerMaze()) {
+    if (keys >= 5 && lowerMaze()) {
       return true;
     } else {
       return false;
     }
   }, [keys, lowerMaze]);
   const highestFloor = useCallback(() => {
-    if (keys === 7 || (keys === 6 && upperMaze() && hoverBoots && hammer)) {
+    if (keys >= 7 || (keys >= 6 && upperMaze() && hoverBoots && hammer)) {
       return true;
     } else {
       return false;
@@ -56,17 +56,17 @@ function useFireTempleLogic() {
         dispatch(makeUnreachable(21, 2));
         dispatch(makeUnreachable(21, 3));
       }
-      if (keys === 1) {
+      if (keys >= 1) {
         dispatch(makeReachable(21, 4));
       } else {
         dispatch(makeUnreachable(21, 4));
       }
-      if (keys === 1 && sot) {
+      if (keys >= 1 && sot) {
         dispatch(makeReachable(21, 5));
       } else {
         dispatch(makeUnreachable(21, 5));
       }
-      if (keys === 1 && explosive) {
+      if (keys >= 1 && explosive) {
         dispatch(makeReachable(21, 6));
       } else {
         dispatch(makeUnreachable(21, 6));
@@ -83,7 +83,7 @@ function useFireTempleLogic() {
       } else {
         dispatch(makeUnreachable(21, 8));
       }
-      if ((lowerMaze() && keys === 4 && bow) || upperMaze()) {
+      if ((lowerMaze() && keys >= 4 && bow) || upperMaze()) {
         dispatch(makeReachable(21, 10));
       } else {
         dispatch(makeUnreachable(21, 10));
@@ -107,7 +107,7 @@ function useFireTempleLogic() {
         dispatch(makeUnreachable(21, 14));
         dispatch(makeUnreachable(21, 15));
       }
-      if (upperMaze() && keys === 6) {
+      if (upperMaze() && keys >= 6) {
         dispatch(makeReachable(21, 16));
       } else {
         dispatch(makeUnreachable(21, 16));

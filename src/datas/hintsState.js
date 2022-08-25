@@ -99,7 +99,7 @@ export const hintsState = [
     box: false,
     type: "always",
     idArea: 13,
-    idCheck: 12,
+    idCheck: 13,
   },
   {
     id: 14,
@@ -108,7 +108,7 @@ export const hintsState = [
     box: false,
     type: "always",
     idArea: 13,
-    idCheck: 13,
+    idCheck: 14,
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ export const hintsState = [
     box: false,
     type: "always",
     idArea: 13,
-    idCheck: 14,
+    idCheck: 15,
   },
   {
     id: 16,

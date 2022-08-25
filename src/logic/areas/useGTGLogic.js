@@ -36,7 +36,7 @@ function useGTGLogic() {
 
   const wolfosRoom = useCallback(() => {
     if (
-      (dungeonsShuffle==="false" ||
+      (dungeonsShuffle === "false" ||
         (!adultAccessOnly() && kokiriSword && dungeonsShuffle)) &&
       hookshot
     ) {
@@ -49,7 +49,7 @@ function useGTGLogic() {
   const canBeatBeamosDino = useCallback(() => {
     if (
       explosive &&
-      (dungeonsShuffle==="false" ||
+      (dungeonsShuffle === "false" ||
         (!adultAccessOnly() && kokiriSword && dungeonsShuffle))
     ) {
       return true;
@@ -60,7 +60,10 @@ function useGTGLogic() {
 
   useEffect(() => {
     if (gtgAccess) {
-      if (bow || (slingshot && !adultAccessOnly() && dungeonsShuffle==="true")) {
+      if (
+        bow ||
+        (slingshot && !adultAccessOnly() && dungeonsShuffle === "true")
+      ) {
         dispatch(makeReachable(31, 0));
         dispatch(makeReachable(31, 1));
       } else {
@@ -68,8 +71,8 @@ function useGTGLogic() {
         dispatch(makeUnreachable(31, 1));
       }
       if (
-        dungeonsShuffle==="false" ||
-        (!adultAccessOnly() && kokiriSword && dungeonsShuffle==="true")
+        dungeonsShuffle === "false" ||
+        (!adultAccessOnly() && kokiriSword && dungeonsShuffle === "true")
       ) {
         dispatch(makeReachable(31, 2));
       } else {
@@ -134,22 +137,22 @@ function useGTGLogic() {
       } else {
         dispatch(makeUnreachable(31, 16));
       }
-      if (keys === 3) {
+      if (keys >= 3) {
         dispatch(makeReachable(31, 17));
       } else {
         dispatch(makeUnreachable(31, 17));
       }
-      if (keys === 4) {
+      if (keys >= 4) {
         dispatch(makeReachable(31, 18));
       } else {
         dispatch(makeUnreachable(31, 18));
       }
-      if (keys === 6) {
+      if (keys >= 6) {
         dispatch(makeReachable(31, 19));
       } else {
         dispatch(makeUnreachable(31, 19));
       }
-      if (keys === 7) {
+      if (keys >= 7) {
         dispatch(makeReachable(31, 20));
       } else {
         dispatch(makeUnreachable(31, 20));

@@ -18,9 +18,7 @@ function useSpiritTempleLogic() {
   const strength2 = useItems("strength 2");
   const mirrorShield = useItems("mirror shield");
   const explosive = useItems("explosive");
-  const kokiriSword = useItems("kokiri sword");
   const bombchus = useItems("bombchus");
-  const dins = useItems("fire child");
   const fire = useItems("fire");
   const hoverBoots = useItems("hover boots");
   const keys = useKeys("spirit keys");

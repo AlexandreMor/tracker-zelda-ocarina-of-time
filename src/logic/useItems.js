@@ -1,9 +1,10 @@
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
-import { selectItems } from "../utils/selectors";
+import { selectItems, selectSongs } from "../utils/selectors";
 
 function useItems(name) {
   const items = useSelector(selectItems);
+  const songs = useSelector(selectSongs);
   const itemsLogic = useCallback(
     (id, number) => {
       if (items[id].number >= number) {
@@ -58,6 +59,19 @@ function useItems(name) {
       return itemsLogic(13, 1);
     case "ruto's letter":
       return itemsLogic(14, 1);
+    case "empty bottle":
+      if (
+        items[12].number === 1 ||
+        items[13].number === 1 ||
+        ((((items[11].number === 1 || items[16].number === 1) &&
+          songs[0].number === 1) ||
+          items[17].number >= 1) &&
+          items[14].number === 1)
+      ) {
+        return true;
+      } else {
+        return false;
+      }
     case "kokiri sword":
       return itemsLogic(15, 1);
     case "bombchus":

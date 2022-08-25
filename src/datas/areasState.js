@@ -1999,10 +1999,10 @@ export const areasState = [
   },
   {
     id: 15,
-    name: "Bot. of the Well",
+    name: "Well",
     short: "wel",
     dungeonShuffleInput:"",
-    entrance:"botw",
+    entrance:"well",
     keysLeft:3,
     maxKeys:3,
     checks: [
@@ -3682,7 +3682,7 @@ export const areasState = [
     name: "Ice Cavern",
     short: "ic",
     dungeonShuffleInput:"",
-    entrance:"ice",
+    entrance:"ice cavern",
     checks: [
       {
         id: 0,

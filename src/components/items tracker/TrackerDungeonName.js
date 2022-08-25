@@ -14,7 +14,7 @@ function TrackerDungeonName() {
   ];
   const [id, setId] = useState(0);
   const handleClick = () => {
-    if (id < 7) {
+    if (id < 8) {
       return setId(id + 1);
     }
     return setId(0);

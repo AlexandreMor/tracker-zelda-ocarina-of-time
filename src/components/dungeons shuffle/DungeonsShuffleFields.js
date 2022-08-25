@@ -13,7 +13,9 @@ function DungeonsShuffleFields() {
   const handleChange = (e, idDungeon) => {
     dungeons
       .filter(
-        (dungeon) => dungeon.name.toLowerCase().slice(0, 3) === e.target.value
+        (dungeon) =>
+          dungeon.name.toLowerCase().slice(0, 3) === e.target.value ||
+          dungeon.short === e.target.value
       )
       .map((dungeon) => {
         return dispatch(setEntrance(idDungeon, dungeon.name.toLowerCase()));
@@ -28,7 +30,13 @@ function DungeonsShuffleFields() {
           value={dungeon.dungeonsShuffleInputs}
           handleChange={(e) => handleChange(e, dungeon.id)}
         />
-        {dungeon.name}
+        {dungeon.name}{" "}
+        <span className="green dungeon-shuffle-location">
+          {dungeon.entrance !== "inaccessible" &&
+            "in " +
+              dungeon.entrance.charAt(0).toUpperCase() +
+              dungeon.entrance.slice(1).toLowerCase()}
+        </span>
       </li>
     );
   });

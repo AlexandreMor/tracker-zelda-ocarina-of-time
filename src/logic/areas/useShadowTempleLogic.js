@@ -141,7 +141,7 @@ function useShadowTempleLogic() {
       if (
         boatAccess() &&
         bossKey &&
-        keys === 5 &&
+        keys >= 5 &&
         (bow || longshot) &&
         zeldasLullaby
       ) {
