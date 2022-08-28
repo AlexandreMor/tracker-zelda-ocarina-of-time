@@ -44,7 +44,7 @@ function useSpiritTempleLogic() {
   }, [spiritTempleAccess, requiem, dungeonsShuffle, areas, bolero]);
 
   const mainRoomAccess = useCallback(() => {
-    if ((keys === 1 && explosive) || (strength2 && keys === 3)) {
+    if ((keys >= 1 && explosive) || (strength2 && keys >= 3)) {
       return true;
     } else {
       return false;
@@ -69,8 +69,8 @@ function useSpiritTempleLogic() {
 
   const spiritTempleClimb = useCallback(() => {
     if (
-      (projectileChild() && keys === 5 && spiritChildAccess()) ||
-      (projectileAdult() && strength2 && keys === 3 && spiritTempleAccess) ||
+      (projectileChild() && keys >= 5 && spiritChildAccess()) ||
+      (projectileAdult() && strength2 && keys >= 3 && spiritTempleAccess) ||
       (((projectileAdult() && projectileChild()) || explosive) &&
         keys === 1 &&
         spiritChildAccess() &&
@@ -91,7 +91,7 @@ function useSpiritTempleLogic() {
   ]);
 
   const beyondAnubisRoom = useCallback(() => {
-    if (strength2 && spiritTempleAccess && explosive && keys === 4) {
+    if (strength2 && spiritTempleAccess && explosive && keys >= 4) {
       return true;
     } else {
       return false;
@@ -118,9 +118,9 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 5));
     }
     if (
-      (keys === 5 && explosive && spiritChildAccess()) ||
-      (fire && keys === 3 && strength2 && spiritTempleAccess) ||
-      (keys === 1 &&
+      (keys >= 5 && explosive && spiritChildAccess()) ||
+      (fire && keys >= 3 && strength2 && spiritTempleAccess) ||
+      (keys >= 1 &&
         explosive &&
         fire &&
         spiritChildAccess() &&
@@ -134,11 +134,11 @@ function useSpiritTempleLogic() {
     }
     if (
       mainRoomAccess() &&
-      ((hookshot && spiritTempleAccess && keys === 3) ||
-        (boomerang && spiritChildAccess() && keys === 5) ||
+      ((hookshot && spiritTempleAccess && keys >= 3) ||
+        (boomerang && spiritChildAccess() && keys >= 5) ||
         (boomerang &&
           hookshot &&
-          (explosive || (keys === 2 && !dungeonsShuffle)) &&
+          (explosive || (keys >= 2 && !dungeonsShuffle)) &&
           spiritChildAccess() &&
           spiritTempleAccess))
     ) {
@@ -147,10 +147,10 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 8));
     }
     if (
-      (keys === 5 &&
+      (keys >= 5 &&
         ((explosive && spiritChildAccess()) ||
           (strength2 && spiritTempleAccess))) ||
-      (keys === 3 && explosive && longshot && spiritTempleAccess)
+      (keys >= 3 && explosive && longshot && spiritTempleAccess)
     ) {
       dispatch(makeReachable(32, 9));
     } else {
@@ -176,7 +176,7 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 11));
     }
-    if (strength2 && keys === 3 && spiritTempleAccess) {
+    if (strength2 && keys >= 3 && spiritTempleAccess) {
       dispatch(makeReachable(32, 13));
       dispatch(makeReachable(32, 14));
     } else {
@@ -185,7 +185,7 @@ function useSpiritTempleLogic() {
     }
     if (
       strength2 &&
-      keys === 3 &&
+      keys >= 3 &&
       zeldasLullaby &&
       (hookshot || hoverBoots) &&
       spiritTempleAccess
@@ -194,14 +194,14 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 15));
     }
-    if (strength2 && keys === 3 && zeldasLullaby && spiritTempleAccess) {
+    if (strength2 && keys >= 3 && zeldasLullaby && spiritTempleAccess) {
       dispatch(makeReachable(32, 16));
     } else {
       dispatch(makeUnreachable(32, 16));
     }
     if (
       strength2 &&
-      keys === 3 &&
+      keys >= 3 &&
       (hookshot || hoverBoots) &&
       spiritTempleAccess
     ) {
@@ -225,7 +225,7 @@ function useSpiritTempleLogic() {
     }
     if (
       strength2 &&
-      keys === 5 &&
+      keys >= 5 &&
       zeldasLullaby &&
       bow &&
       hookshot &&
@@ -235,14 +235,14 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 22));
     }
-    if (strength2 && keys === 5 && mirrorShield && spiritTempleAccess) {
+    if (strength2 && keys >= 5 && mirrorShield && spiritTempleAccess) {
       dispatch(makeReachable(32, 23));
     } else {
       dispatch(makeUnreachable(32, 23));
     }
     if (
       strength2 &&
-      keys === 5 &&
+      keys >= 5 &&
       bossKey &&
       hookshot &&
       mirrorShield &&

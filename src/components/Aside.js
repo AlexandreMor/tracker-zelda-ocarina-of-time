@@ -13,12 +13,12 @@ export default function Aside({ display }) {
       {display === "tracker" ? (
         <div className="aside-left">
           <Tracker />
+          <RandomSpawns />
+          {dungeonsShuffleSetting === "true" && <DungeonsShuffleFields />}
         </div>
       ) : (
         <div className="aside-right">
           <Hints />
-          <RandomSpawns />
-          {dungeonsShuffleSetting === "true" && <DungeonsShuffleFields />}
         </div>
       )}
     </aside>
