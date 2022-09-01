@@ -18,22 +18,31 @@ function useGraveyardLogic() {
     } else {
       dispatch(makeUnreachable(14, 0));
     }
+  }, [zeldasLullaby, dispatch]);
+
+  useEffect(() => {
     if (zeldasLullaby && fire) {
       dispatch(makeReachable(14, 7));
     } else {
       dispatch(makeUnreachable(14, 7));
     }
+  }, [zeldasLullaby, fire, dispatch]);
+
+  useEffect(() => {
     if (riverAccess) {
       dispatch(makeReachable(14, 3));
     } else {
       dispatch(makeUnreachable(14, 3));
     }
+  }, [riverAccess, dispatch]);
+
+  useEffect(() => {
     if (sunSong) {
       dispatch(makeReachable(14, 6));
     } else {
       dispatch(makeUnreachable(14, 6));
     }
-  }, [fire, riverAccess, sunSong, zeldasLullaby, dispatch]);
+  }, [sunSong, dispatch]);
 }
 
 export default useGraveyardLogic;

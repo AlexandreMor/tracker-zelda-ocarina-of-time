@@ -10,7 +10,6 @@ function useIceCavernLogic() {
   const hookshot = useItems("hookshot");
   const ocarina = useItems("ocarina");
   const iceCavernAccess = useAccess(areas[26].entrance);
-  console.log(areas);
   const emptyBottle = useItems("empty bottle");
   const dispatch = useDispatch();
 

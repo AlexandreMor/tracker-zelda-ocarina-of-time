@@ -24,16 +24,25 @@ function useDMCLogic() {
     } else {
       dispatch(makeUnreachable(19, 0));
     }
+  }, [bolero, lowerAccess, upperAccess, hookshot, hoverBoots, dispatch]);
+
+  useEffect(() => {
     if ((lowerAccess || upperAccess) && hoverBoots) {
       dispatch(makeReachable(19, 1));
     } else {
       dispatch(makeUnreachable(19, 1));
     }
+  }, [lowerAccess, upperAccess, hoverBoots, dispatch]);
+
+  useEffect(() => {
     if (lowerAccess || upperAccess) {
       dispatch(makeReachable(19, 2));
     } else {
       dispatch(makeUnreachable(19, 2));
     }
+  }, [lowerAccess, upperAccess, dispatch]);
+
+  useEffect(() => {
     if (
       (((lowerAccess || upperAccess) && hammer) || fairySpawn === "cf") &&
       zeldasLullaby
@@ -42,6 +51,9 @@ function useDMCLogic() {
     } else {
       dispatch(makeUnreachable(19, 3));
     }
+  }, [lowerAccess, upperAccess, hammer, fairySpawn, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
     if (
       (lowerAccess || upperAccess) &&
       (hammer || explosive) &&
@@ -51,6 +63,9 @@ function useDMCLogic() {
     } else {
       dispatch(makeUnreachable(19, 4));
     }
+  }, [lowerAccess, upperAccess, hammer, explosive, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
     if ((lowerAccess || upperAccess) && hammer) {
       dispatch(makeReachable(19, 5));
       dispatch(makeReachable(19, 6));
@@ -60,18 +75,7 @@ function useDMCLogic() {
       dispatch(makeUnreachable(19, 6));
       dispatch(makeUnreachable(19, 7));
     }
-  }, [
-    bolero,
-    hookshot,
-    explosive,
-    hammer,
-    zeldasLullaby,
-    hoverBoots,
-    lowerAccess,
-    upperAccess,
-    dispatch,
-    fairySpawn,
-  ]);
+  }, [lowerAccess, upperAccess, hammer, dispatch]);
 }
 
 export default useDMCLogic;

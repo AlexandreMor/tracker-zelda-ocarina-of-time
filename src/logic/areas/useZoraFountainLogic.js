@@ -22,11 +22,17 @@ function useZoraFountainLogic() {
     } else {
       dispatch(makeUnreachable(24, 0));
     }
+  }, [zoraFountainAccessInAdult, dispatch]);
+
+  useEffect(() => {
     if (zoraFountainAccessInAdult && ironBoots) {
       dispatch(makeReachable(24, 1));
     } else {
       dispatch(makeUnreachable(24, 1));
     }
+  }, [zoraFountainAccessInAdult, ironBoots, dispatch]);
+
+  useEffect(() => {
     if (
       (((zoraFountainAccessInAdult || zoraFountainAccess) && explosive) ||
         zfFairyChild === "zff" ||
@@ -34,16 +40,17 @@ function useZoraFountainLogic() {
       zeldasLullaby
     ) {
       dispatch(makeReachable(24, 2));
+    } else {
+      dispatch(makeUnreachable(24, 2));
     }
   }, [
+    zoraFountainAccessInAdult,
     zoraFountainAccess,
-    ironBoots,
     explosive,
+    zfFairyAdult,
+    zfFairyChild,
     zeldasLullaby,
     dispatch,
-    zoraFountainAccessInAdult,
-    zfFairyChild,
-    zfFairyAdult,
   ]);
 }
 

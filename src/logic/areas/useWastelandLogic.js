@@ -16,12 +16,15 @@ function useWastelandLogic() {
     } else {
       dispatch(makeUnreachable(29, 0));
     }
+  }, [wastelandAfterMovingSand, adultWallet, dispatch]);
+
+  useEffect(() => {
     if (wastelandAfterMovingSand && fire) {
       dispatch(makeReachable(29, 1));
     } else {
       dispatch(makeUnreachable(29, 1));
     }
-  }, [wastelandAfterMovingSand, adultWallet, fire, dispatch]);
+  }, [wastelandAfterMovingSand, fire, dispatch]);
 }
 
 export default useWastelandLogic;

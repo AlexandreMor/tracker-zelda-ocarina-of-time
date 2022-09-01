@@ -59,129 +59,171 @@ function useGTGLogic() {
   }, [explosive, dungeonsShuffle, adultAccessOnly, kokiriSword]);
 
   useEffect(() => {
-    if (gtgAccess) {
-      if (
-        bow ||
-        (slingshot && !adultAccessOnly() && dungeonsShuffle === "true")
-      ) {
-        dispatch(makeReachable(31, 0));
-        dispatch(makeReachable(31, 1));
-      } else {
-        dispatch(makeUnreachable(31, 0));
-        dispatch(makeUnreachable(31, 1));
-      }
-      if (
-        dungeonsShuffle === "false" ||
-        (!adultAccessOnly() && kokiriSword && dungeonsShuffle === "true")
-      ) {
-        dispatch(makeReachable(31, 2));
-      } else {
-        dispatch(makeUnreachable(31, 2));
-      }
-      if (wolfosRoom()) {
-        dispatch(makeReachable(31, 3));
-      } else {
-        dispatch(makeUnreachable(31, 3));
-      }
-      if (wolfosRoom() && strength2) {
-        dispatch(makeReachable(31, 4));
-        dispatch(makeReachable(31, 5));
-        dispatch(makeReachable(31, 6));
-        dispatch(makeReachable(31, 7));
-      } else {
-        dispatch(makeUnreachable(31, 4));
-        dispatch(makeUnreachable(31, 5));
-        dispatch(makeUnreachable(31, 6));
-        dispatch(makeUnreachable(31, 7));
-      }
-      if (wolfosRoom() && bow) {
-        dispatch(makeReachable(31, 8));
-        dispatch(makeReachable(31, 9));
-      } else {
-        dispatch(makeUnreachable(31, 8));
-        dispatch(makeUnreachable(31, 9));
-      }
-      if (
-        wolfosRoom() ||
-        (canBeatBeamosDino() && (hookshot || (longshot && hoverBoots)))
-      ) {
-        dispatch(makeReachable(31, 10));
-      } else {
-        dispatch(makeUnreachable(31, 10));
-      }
-      if (
-        (wolfosRoom() ||
-          (canBeatBeamosDino() && (hookshot || (longshot && hoverBoots)))) &&
-        hammer
-      ) {
-        dispatch(makeReachable(31, 11));
-      } else {
-        dispatch(makeUnreachable(31, 11));
-      }
-      if (keys === 9 || (canBeatBeamosDino() && sot)) {
-        dispatch(makeReachable(31, 12));
-        dispatch(makeReachable(31, 13));
-        dispatch(makeReachable(31, 14));
-      } else {
-        dispatch(makeUnreachable(31, 12));
-        dispatch(makeUnreachable(31, 13));
-        dispatch(makeUnreachable(31, 14));
-      }
-      if (sot && ironBoots && canBeatBeamosDino()) {
-        dispatch(makeReachable(31, 15));
-      } else {
-        dispatch(makeUnreachable(31, 15));
-      }
-      if (canBeatBeamosDino()) {
-        dispatch(makeReachable(31, 16));
-      } else {
-        dispatch(makeUnreachable(31, 16));
-      }
-      if (keys >= 3) {
-        dispatch(makeReachable(31, 17));
-      } else {
-        dispatch(makeUnreachable(31, 17));
-      }
-      if (keys >= 4) {
-        dispatch(makeReachable(31, 18));
-      } else {
-        dispatch(makeUnreachable(31, 18));
-      }
-      if (keys >= 6) {
-        dispatch(makeReachable(31, 19));
-      } else {
-        dispatch(makeUnreachable(31, 19));
-      }
-      if (keys >= 7) {
-        dispatch(makeReachable(31, 20));
-      } else {
-        dispatch(makeUnreachable(31, 20));
-      }
-      if (keys === 9) {
-        dispatch(makeReachable(31, 21));
-      } else {
-        dispatch(makeUnreachable(31, 21));
-      }
+    if (
+      gtgAccess &&
+      (bow || (slingshot && !adultAccessOnly() && dungeonsShuffle === "true"))
+    ) {
+      dispatch(makeReachable(31, 0));
+      dispatch(makeReachable(31, 1));
+    } else {
+      dispatch(makeUnreachable(31, 0));
+      dispatch(makeUnreachable(31, 1));
+    }
+  }, [gtgAccess, slingshot, adultAccessOnly, dungeonsShuffle, bow, dispatch]);
+
+  useEffect(() => {
+    if (
+      gtgAccess &&
+      (dungeonsShuffle === "false" ||
+        (!adultAccessOnly() && kokiriSword && dungeonsShuffle === "true"))
+    ) {
+      dispatch(makeReachable(31, 2));
+    } else {
+      dispatch(makeUnreachable(31, 2));
+    }
+  }, [gtgAccess, kokiriSword, adultAccessOnly, dungeonsShuffle, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && wolfosRoom()) {
+      dispatch(makeReachable(31, 3));
+    } else {
+      dispatch(makeUnreachable(31, 3));
+    }
+  }, [gtgAccess, wolfosRoom, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && wolfosRoom() && strength2) {
+      dispatch(makeReachable(31, 4));
+      dispatch(makeReachable(31, 5));
+      dispatch(makeReachable(31, 6));
+      dispatch(makeReachable(31, 7));
+    } else {
+      dispatch(makeUnreachable(31, 4));
+      dispatch(makeUnreachable(31, 5));
+      dispatch(makeUnreachable(31, 6));
+      dispatch(makeUnreachable(31, 7));
+    }
+  }, [gtgAccess, wolfosRoom, strength2, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && wolfosRoom() && bow) {
+      dispatch(makeReachable(31, 8));
+      dispatch(makeReachable(31, 9));
+    } else {
+      dispatch(makeUnreachable(31, 8));
+      dispatch(makeUnreachable(31, 9));
+    }
+  }, [gtgAccess, wolfosRoom, bow, dispatch]);
+
+  useEffect(() => {
+    if (
+      gtgAccess &&
+      (wolfosRoom() ||
+        (canBeatBeamosDino() && (hookshot || (longshot && hoverBoots))))
+    ) {
+      dispatch(makeReachable(31, 10));
+    } else {
+      dispatch(makeUnreachable(31, 10));
     }
   }, [
-    bow,
-    slingshot,
-    adultAccessOnly,
     gtgAccess,
-    dispatch,
-    dungeonsShuffle,
-    kokiriSword,
-    strength2,
     wolfosRoom,
     canBeatBeamosDino,
-    sot,
-    ironBoots,
     hookshot,
     longshot,
     hoverBoots,
-    keys,
-    hammer,
+    dispatch,
   ]);
+
+  useEffect(() => {
+    if (
+      gtgAccess &&
+      (wolfosRoom() ||
+        (canBeatBeamosDino() && (hookshot || (longshot && hoverBoots)))) &&
+      hammer
+    ) {
+      dispatch(makeReachable(31, 11));
+    } else {
+      dispatch(makeUnreachable(31, 11));
+    }
+  }, [
+    gtgAccess,
+    wolfosRoom,
+    canBeatBeamosDino,
+    hookshot,
+    longshot,
+    hoverBoots,
+    hammer,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (gtgAccess && (keys >= 9 || (canBeatBeamosDino() && sot))) {
+      dispatch(makeReachable(31, 12));
+      dispatch(makeReachable(31, 13));
+      dispatch(makeReachable(31, 14));
+    } else {
+      dispatch(makeUnreachable(31, 12));
+      dispatch(makeUnreachable(31, 13));
+      dispatch(makeUnreachable(31, 14));
+    }
+  }, [gtgAccess, canBeatBeamosDino, keys, sot, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && sot && ironBoots && canBeatBeamosDino()) {
+      dispatch(makeReachable(31, 15));
+    } else {
+      dispatch(makeUnreachable(31, 15));
+    }
+  }, [gtgAccess, canBeatBeamosDino, ironBoots, sot, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && canBeatBeamosDino()) {
+      dispatch(makeReachable(31, 16));
+    } else {
+      dispatch(makeUnreachable(31, 16));
+    }
+  }, [gtgAccess, canBeatBeamosDino, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && keys >= 3) {
+      dispatch(makeReachable(31, 17));
+    } else {
+      dispatch(makeUnreachable(31, 17));
+    }
+  }, [gtgAccess, keys, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && keys >= 4) {
+      dispatch(makeReachable(31, 18));
+    } else {
+      dispatch(makeUnreachable(31, 18));
+    }
+  }, [gtgAccess, keys, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && keys >= 6) {
+      dispatch(makeReachable(31, 19));
+    } else {
+      dispatch(makeUnreachable(31, 19));
+    }
+  }, [gtgAccess, keys, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && keys >= 7) {
+      dispatch(makeReachable(31, 20));
+    } else {
+      dispatch(makeUnreachable(31, 20));
+    }
+  }, [gtgAccess, keys, dispatch]);
+
+  useEffect(() => {
+    if (gtgAccess && keys >= 9) {
+      dispatch(makeReachable(31, 21));
+    } else {
+      dispatch(makeUnreachable(31, 21));
+    }
+  }, [gtgAccess, keys, dispatch]);
 }
 
 export default useGTGLogic;

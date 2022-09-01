@@ -18,11 +18,17 @@ function useGerudosValleyLogic() {
     } else {
       dispatch(makeUnreachable(27, 2));
     }
+  }, [epona, dispatch]);
+
+  useEffect(() => {
     if (carpentersAccess && hammer) {
       dispatch(makeReachable(27, 3));
     } else {
       dispatch(makeUnreachable(27, 3));
     }
+  }, [carpentersAccess, hammer, dispatch]);
+
+  useEffect(() => {
     if (carpentersAccess && sos) {
       dispatch(makeReachable(27, 4));
       dispatch(makeReachable(27, 5));
@@ -30,7 +36,7 @@ function useGerudosValleyLogic() {
       dispatch(makeUnreachable(27, 4));
       dispatch(makeUnreachable(27, 5));
     }
-  }, [carpentersAccess, hammer, sos, epona, dispatch]);
+  }, [carpentersAccess, sos, dispatch]);
 }
 
 export default useGerudosValleyLogic;

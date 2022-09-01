@@ -27,10 +27,7 @@ function useForestTempleLogic() {
   const strength = useItems("strength 1");
   const dungeonsShuffle = useSettings("dungeons shuffle");
   const adultAccessOnly = useCallback(() => {
-    if (
-      (areas[4].entrance === "forest" ||
-      areas[4].entrance === "water")
-    ) {
+    if (areas[4].entrance === "forest" || areas[4].entrance === "water") {
       return true;
     } else {
       return false;
@@ -38,7 +35,10 @@ function useForestTempleLogic() {
   }, [areas]);
 
   const projectile = useCallback(() => {
-    if (bow || (slingshot && !adultAccessOnly() && dungeonsShuffle==="true")) {
+    if (
+      bow ||
+      (slingshot && !adultAccessOnly() && dungeonsShuffle === "true")
+    ) {
       return true;
     } else {
       return false;
@@ -75,112 +75,162 @@ function useForestTempleLogic() {
     if (forestTempleAccess) {
       dispatch(makeReachable(4, 1));
       dispatch(makeReachable(4, 3));
-      if (hookshot || projectile() || boomerang || explosive || magicChild) {
-        dispatch(makeReachable(4, 0));
-      } else {
-        dispatch(makeUnreachable(4, 0));
-      }
-      if (hookshot) {
-        dispatch(makeReachable(4, 2));
-      } else {
-        dispatch(makeUnreachable(4, 2));
-      }
-      if (NEOutdoors() && hookshot) {
-        dispatch(makeReachable(4, 4));
-        dispatch(makeReachable(4, 5));
-      } else {
-        dispatch(makeUnreachable(4, 4));
-        dispatch(makeUnreachable(4, 5));
-      }
-      if ((NEOutdoors() && hookshot) || NWOutdoors()) {
-        dispatch(makeReachable(4, 6));
-        dispatch(makeReachable(4, 7));
-      } else {
-        dispatch(makeUnreachable(4, 6));
-        dispatch(makeUnreachable(4, 7));
-      }
-      if (keys >= 1 && projectile() && strength) {
-        dispatch(makeReachable(4, 8));
-      } else {
-        dispatch(makeUnreachable(4, 8));
-      }
-      if (
-        (keys >= 1 && hoverBoots) ||
-        (keys >= 2 && strength && projectile())
-      ) {
-        dispatch(makeReachable(4, 9));
-      } else {
-        dispatch(makeUnreachable(4, 9));
-      }
-      if (
-        ((keys >= 1 && hoverBoots) ||
-          (keys >= 2 && strength && projectile())) &&
-        hookshot
-      ) {
-        dispatch(makeReachable(4, 10));
-      } else {
-        dispatch(makeUnreachable(4, 10));
-      }
-      if (keys >= 2 && strength && projectile()) {
-        dispatch(makeReachable(4, 11));
-      } else {
-        dispatch(makeUnreachable(4, 11));
-      }
-      if (AfterBlockRoom() && bow) {
-        dispatch(makeReachable(4, 12));
-        dispatch(makeReachable(4, 14));
-      } else {
-        dispatch(makeUnreachable(4, 12));
-        dispatch(makeUnreachable(4, 14));
-      }
-      if (AfterBlockRoom()) {
-        dispatch(makeReachable(4, 13));
-      } else {
-        dispatch(makeUnreachable(4, 13));
-      }
-      if (keys >= 5 && AfterBlockRoom()) {
-        dispatch(makeReachable(4, 15));
-        dispatch(makeReachable(4, 16));
-      } else {
-        dispatch(makeUnreachable(4, 15));
-        dispatch(makeUnreachable(4, 16));
-      }
-      if (keys === 5 && AfterBlockRoom() && hookshot) {
-        dispatch(makeReachable(4, 17));
-      } else {
-        dispatch(makeUnreachable(4, 17));
-      }
-      if (keys === 5 && AfterBlockRoom() && bossKey === 1 && (hookshot || bow)) {
-        dispatch(makeReachable(4, 18));
-      } else {
-        dispatch(makeUnreachable(4, 18));
-      }
     } else {
-      for (let i = 0; i < areas[4].checks.length; i++) {
-        dispatch(makeUnreachable(4, i));
-      }
+      dispatch(makeUnreachable(4, 1));
+      dispatch(makeUnreachable(4, 3));
+    }
+  }, [forestTempleAccess, dispatch]);
+
+  useEffect(() => {
+    if (
+      forestTempleAccess &&
+      (hookshot || projectile() || boomerang || explosive || magicChild)
+    ) {
+      dispatch(makeReachable(4, 0));
+    } else {
+      dispatch(makeUnreachable(4, 0));
     }
   }, [
     forestTempleAccess,
     hookshot,
-    bow,
-    slingshot,
+    projectile,
     boomerang,
     explosive,
     magicChild,
-    hoverBoots,
-    ironBoots,
-    goldenScale,
-    sot,
-    keys,
-    bossKey,
-    strength,
-    areas,
     dispatch,
-    NEOutdoors,
-    NWOutdoors,
-    AfterBlockRoom,
+  ]);
+
+  useEffect(() => {
+    if (forestTempleAccess && hookshot) {
+      dispatch(makeReachable(4, 2));
+    } else {
+      dispatch(makeUnreachable(4, 2));
+    }
+  }, [forestTempleAccess, hookshot, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && NEOutdoors() && hookshot) {
+      dispatch(makeReachable(4, 4));
+      dispatch(makeReachable(4, 5));
+    } else {
+      dispatch(makeUnreachable(4, 4));
+      dispatch(makeUnreachable(4, 5));
+    }
+  }, [forestTempleAccess, hookshot, NEOutdoors, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && ((NEOutdoors() && hookshot) || NWOutdoors())) {
+      dispatch(makeReachable(4, 6));
+      dispatch(makeReachable(4, 7));
+    } else {
+      dispatch(makeUnreachable(4, 6));
+      dispatch(makeUnreachable(4, 7));
+    }
+  }, [forestTempleAccess, hookshot, NEOutdoors, NWOutdoors, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && keys >= 1 && projectile() && strength) {
+      dispatch(makeReachable(4, 8));
+    } else {
+      dispatch(makeUnreachable(4, 8));
+    }
+  }, [forestTempleAccess, keys, projectile, strength, dispatch]);
+
+  useEffect(() => {
+    if (
+      forestTempleAccess &&
+      ((keys >= 1 && hoverBoots) || (keys >= 2 && strength && projectile()))
+    ) {
+      dispatch(makeReachable(4, 9));
+    } else {
+      dispatch(makeUnreachable(4, 9));
+    }
+  }, [forestTempleAccess, keys, projectile, strength, hoverBoots, dispatch]);
+
+  useEffect(() => {
+    if (
+      forestTempleAccess &&
+      ((keys >= 1 && hoverBoots) || (keys >= 2 && strength && projectile())) &&
+      hookshot
+    ) {
+      dispatch(makeReachable(4, 10));
+    } else {
+      dispatch(makeUnreachable(4, 10));
+    }
+  }, [
+    forestTempleAccess,
+    keys,
     projectile,
+    strength,
+    hoverBoots,
+    hookshot,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (forestTempleAccess && keys >= 2 && strength && projectile()) {
+      dispatch(makeReachable(4, 11));
+    } else {
+      dispatch(makeUnreachable(4, 11));
+    }
+  }, [forestTempleAccess, keys, projectile, strength, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && AfterBlockRoom() && bow) {
+      dispatch(makeReachable(4, 12));
+      dispatch(makeReachable(4, 14));
+    } else {
+      dispatch(makeUnreachable(4, 12));
+      dispatch(makeUnreachable(4, 14));
+    }
+  }, [forestTempleAccess, AfterBlockRoom, bow, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && AfterBlockRoom()) {
+      dispatch(makeReachable(4, 13));
+    } else {
+      dispatch(makeUnreachable(4, 13));
+    }
+  }, [forestTempleAccess, AfterBlockRoom, bow, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && keys >= 5 && AfterBlockRoom()) {
+      dispatch(makeReachable(4, 15));
+      dispatch(makeReachable(4, 16));
+    } else {
+      dispatch(makeUnreachable(4, 15));
+      dispatch(makeUnreachable(4, 16));
+    }
+  }, [forestTempleAccess, AfterBlockRoom, keys, dispatch]);
+
+  useEffect(() => {
+    if (forestTempleAccess && keys >= 5 && AfterBlockRoom() && hookshot) {
+      dispatch(makeReachable(4, 17));
+    } else {
+      dispatch(makeUnreachable(4, 17));
+    }
+  }, [forestTempleAccess, AfterBlockRoom, keys, hookshot, dispatch]);
+
+  useEffect(() => {
+    if (
+      forestTempleAccess &&
+      keys >= 5 &&
+      AfterBlockRoom() &&
+      bossKey === 1 &&
+      (hookshot || bow)
+    ) {
+      dispatch(makeReachable(4, 18));
+    } else {
+      dispatch(makeUnreachable(4, 18));
+    }
+  }, [
+    forestTempleAccess,
+    AfterBlockRoom,
+    keys,
+    hookshot,
+    bossKey,
+    bow,
+    dispatch,
   ]);
 }
 

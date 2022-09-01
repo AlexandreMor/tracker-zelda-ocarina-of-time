@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { makeReachable, makeUnreachable } from "../../features/checks";
-import useAccess from "../useAccess";
 import useItems from "../useItems";
 import useRandomSpawns from "../useRandomSpawns";
 import useSongs from "../useSongs";
@@ -21,7 +20,6 @@ function useGoronCityLogic() {
   const zeldasLullaby = useSongs("zelda");
   const saria = useSongs("saria");
   const sot = useSongs("sot");
-  const dmcLowerAccess = useAccess("dmc lower");
   const goronShopChild = useRandomSpawns("child spawn");
   const goronShopAdult = useRandomSpawns("adult spawn");
   const dispatch = useDispatch();
@@ -32,21 +30,33 @@ function useGoronCityLogic() {
     } else {
       dispatch(makeUnreachable(18, 0));
     }
+  }, [explosive, dispatch]);
+
+  useEffect(() => {
     if (zeldasLullaby && saria) {
       dispatch(makeReachable(18, 1));
     } else {
       dispatch(makeUnreachable(18, 1));
     }
+  }, [zeldasLullaby, saria, dispatch]);
+
+  useEffect(() => {
     if ((zeldasLullaby || fireChild) && bombs) {
       dispatch(makeReachable(18, 2));
     } else {
       dispatch(makeUnreachable(18, 2));
     }
+  }, [zeldasLullaby, fireChild, bombs, dispatch]);
+
+  useEffect(() => {
     if (explosive || bow || strength1) {
       dispatch(makeReachable(18, 3));
     } else {
       dispatch(makeUnreachable(18, 3));
     }
+  }, [explosive, bow, strength1, dispatch]);
+
+  useEffect(() => {
     if (explosive || hammer || strength2) {
       dispatch(makeReachable(18, 4));
       dispatch(makeReachable(18, 5));
@@ -54,16 +64,29 @@ function useGoronCityLogic() {
       dispatch(makeUnreachable(18, 4));
       dispatch(makeUnreachable(18, 5));
     }
+  }, [explosive, hammer, strength2, dispatch]);
+
+  useEffect(() => {
     if (hammer || strength2) {
       dispatch(makeReachable(18, 6));
     } else {
       dispatch(makeUnreachable(18, 6));
     }
+  }, [hammer, strength2, dispatch]);
+
+  useEffect(() => {
     if ((goronTunic && hookshot) || sot) {
       dispatch(makeReachable(18, 7));
       dispatch(makeReachable(18, 8));
       dispatch(makeReachable(18, 9));
+    } else {
+      dispatch(makeUnreachable(18, 7));
+      dispatch(makeUnreachable(18, 8));
+      dispatch(makeUnreachable(18, 9));
     }
+  }, [goronTunic, hookshot, sot, dispatch]);
+
+  useEffect(() => {
     if (
       explosive ||
       bow ||
@@ -76,32 +99,29 @@ function useGoronCityLogic() {
       dispatch(makeReachable(18, 11));
       dispatch(makeReachable(18, 12));
       dispatch(makeReachable(18, 13));
+    } else {
+      dispatch(makeUnreachable(18, 10));
+      dispatch(makeUnreachable(18, 11));
+      dispatch(makeUnreachable(18, 12));
+      dispatch(makeUnreachable(18, 13));
     }
+  }, [
+    goronShopAdult,
+    goronShopChild,
+    dins,
+    strength1,
+    bow,
+    explosive,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if ((explosive || hammer || strength1) && adultWallet) {
       dispatch(makeReachable(18, 14));
     } else {
       dispatch(makeUnreachable(18, 14));
     }
-  }, [
-    explosive,
-    hookshot,
-    hammer,
-    strength1,
-    strength2,
-    adultWallet,
-    fireChild,
-    zeldasLullaby,
-    saria,
-    sot,
-    dmcLowerAccess,
-    bombs,
-    goronTunic,
-    dispatch,
-    goronShopChild,
-    goronShopAdult,
-    dins,
-    bow,
-  ]);
+  }, [explosive, hammer, strength1, adultWallet, dispatch]);
 }
 
 export default useGoronCityLogic;

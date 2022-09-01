@@ -27,15 +27,21 @@ function useJabuLogic() {
 
   useEffect(() => {
     if (jabuAccess && boomerang) {
-      for (let i = 3; i < 9; i++) {
-        dispatch(makeReachable(25, i));
-      }
+      dispatch(makeReachable(25, 3));
+      dispatch(makeReachable(25, 4));
+      dispatch(makeReachable(25, 5));
+      dispatch(makeReachable(25, 6));
+      dispatch(makeReachable(25, 7));
+      dispatch(makeReachable(25, 8));
     } else {
-      for (let i = 3; i < areas[25].checks.length; i++) {
-        dispatch(makeUnreachable(25, i));
-      }
+      dispatch(makeUnreachable(25, 3));
+      dispatch(makeUnreachable(25, 4));
+      dispatch(makeUnreachable(25, 5));
+      dispatch(makeUnreachable(25, 6));
+      dispatch(makeUnreachable(25, 7));
+      dispatch(makeUnreachable(25, 8));
     }
-  }, [jabuAccess, boomerang, areas, dispatch]);
+  }, [jabuAccess, boomerang, dispatch]);
 }
 
 export default useJabuLogic;

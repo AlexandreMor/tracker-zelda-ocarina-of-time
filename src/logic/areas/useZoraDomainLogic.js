@@ -28,18 +28,15 @@ function useZoraDomainLogic() {
       dispatch(makeUnreachable(23, 5));
       dispatch(makeUnreachable(23, 6));
     }
+  }, [zoraDomainAccess, dispatch]);
+
+  useEffect(() => {
     if (rutosLetterDelivered && (zeldasLullaby || adultSpawn === "zd")) {
       dispatch(makeReachable(23, 2));
     } else {
       dispatch(makeUnreachable(23, 2));
     }
-  }, [
-    dispatch,
-    zoraDomainAccess,
-    rutosLetterDelivered,
-    zeldasLullaby,
-    adultSpawn,
-  ]);
+  }, [rutosLetterDelivered, zeldasLullaby, adultSpawn, dispatch]);
 }
 
 export default useZoraDomainLogic;

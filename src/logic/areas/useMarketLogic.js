@@ -24,27 +24,23 @@ function useMarketLogic() {
       dispatch(makeUnreachable(9, 2));
       dispatch(makeUnreachable(9, 3));
     }
+  }, [bombs, dispatch]);
+
+  useEffect(() => {
     if (magic && lens) {
       dispatch(makeReachable(9, 4));
     } else {
       dispatch(makeUnreachable(9, 4));
     }
+  }, [magic, lens, dispatch]);
+
+  useEffect(() => {
     if ((bow && epona && (bottle || rutosLetterDelivered)) || bigPoe) {
       dispatch(makeReachable(9, 5));
     } else {
       dispatch(makeUnreachable(9, 5));
     }
-  }, [
-    dispatch,
-    bombs,
-    magic,
-    lens,
-    bow,
-    epona,
-    bottle,
-    rutosLetterDelivered,
-    bigPoe,
-  ]);
+  }, [bow, epona, bottle, rutosLetterDelivered, bigPoe, dispatch]);
 }
 
 export default useMarketLogic;

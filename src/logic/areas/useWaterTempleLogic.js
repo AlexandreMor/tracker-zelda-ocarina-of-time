@@ -49,7 +49,7 @@ function useWaterTempleLogic() {
 
   const middleWaterLevel = useCallback(() => {
     if (
-      (dins || bow || (keys === 5 && hookshot)) &&
+      (dins || bow || (keys >= 5 && hookshot)) &&
       zeldasLullaby &&
       waterDive()
     ) {
@@ -68,7 +68,7 @@ function useWaterTempleLogic() {
   }, [areas]);
 
   const northBasement = useCallback(() => {
-    if (keys === 4 && longshot && (ironBoots || zeldasLullaby)) {
+    if (keys >= 4 && longshot && (ironBoots || zeldasLullaby)) {
       return true;
     } else {
       return false;
@@ -76,7 +76,7 @@ function useWaterTempleLogic() {
   }, [keys, longshot, ironBoots, zeldasLullaby]);
 
   const darklinkRoom = useCallback(() => {
-    if (raiseWaterLevel() && keys === 5 && hookshot) {
+    if (raiseWaterLevel() && keys >= 5 && hookshot) {
       return true;
     } else {
       return false;
@@ -84,126 +84,16 @@ function useWaterTempleLogic() {
   }, [raiseWaterLevel, keys, hookshot]);
 
   useEffect(() => {
-    if (enterWaterTemple) {
-      if (
-        (hookshot || hoverBoots) &&
-        explosive &&
-        zeldasLullaby &&
-        (ironBoots || goldenScale)
-      ) {
-        dispatch(makeReachable(8, 0));
-      } else {
-        dispatch(makeUnreachable(8, 0));
-      }
-      if ((zeldasLullaby || ironBoots) && hookshot) {
-        dispatch(makeReachable(8, 1));
-      } else {
-        dispatch(makeUnreachable(8, 1));
-      }
-      if (raiseWaterLevel() && waterDive()) {
-        dispatch(makeReachable(8, 2));
-      } else {
-        dispatch(makeUnreachable(8, 2));
-      }
-      if (middleWaterLevel() && explosive && waterDive()) {
-        dispatch(makeReachable(8, 3));
-      } else {
-        dispatch(makeUnreachable(8, 3));
-      }
-      if (
-        (bow || dins || (!adultAccessOnly && dungeonsShuffle)) &&
-        zeldasLullaby &&
-        waterDive()
-      ) {
-        dispatch(makeReachable(8, 4));
-      } else {
-        dispatch(makeUnreachable(8, 4));
-      }
-      if (northBasement()) {
-        dispatch(makeReachable(8, 5));
-      } else {
-        dispatch(makeUnreachable(8, 5));
-      }
-      if (
-        keys === 5 &&
-        northBasement() &&
-        ironBoots &&
-        ((explosive && strength) || hoverBoots)
-      ) {
-        dispatch(makeReachable(8, 6));
-      } else {
-        dispatch(makeUnreachable(8, 6));
-      }
-      if (
-        waterDive() &&
-        strength &&
-        zeldasLullaby &&
-        ((bow && (hoverBoots || longshot)) ||
-          (slingshot &&
-            !adultAccessOnly &&
-            dungeonsShuffle &&
-            middleWaterLevel()))
-      ) {
-        dispatch(makeReachable(8, 7));
-      } else {
-        dispatch(makeUnreachable(8, 7));
-      }
-      if (
-        waterDive() &&
-        zeldasLullaby &&
-        (((longshot || (hookshot && faroresWind)) &&
-          (keys === 5 || bow || dins)) ||
-          (hookshot && ironBoots && (bow || dins)) ||
-          (!adultAccessOnly() && boomerang && faroresWind && dungeonsShuffle))
-      ) {
-        dispatch(makeReachable(8, 8));
-      } else {
-        dispatch(makeUnreachable(8, 8));
-      }
-      if (
-        middleWaterLevel() &&
-        ironBoots &&
-        zoraTunic &&
-        hookshot &&
-        (keys === 5 || bow || dins)
-      ) {
-        dispatch(makeReachable(8, 9));
-      } else {
-        dispatch(makeUnreachable(8, 9));
-      }
-      if (raiseWaterLevel() && keys === 4 && longshot) {
-        dispatch(makeReachable(8, 10));
-      } else {
-        dispatch(makeUnreachable(8, 10));
-      }
-      if (darklinkRoom()) {
-        dispatch(makeReachable(8, 11));
-      } else {
-        dispatch(makeUnreachable(8, 11));
-      }
-      if (darklinkRoom() && sot && bow) {
-        dispatch(makeReachable(8, 13));
-      } else {
-        dispatch(makeUnreachable(8, 13));
-      }
-      if (darklinkRoom() && sot && ironBoots) {
-        dispatch(makeReachable(8, 12));
-      } else {
-        dispatch(makeUnreachable(8, 12));
-      }
-      if (
-        (waterDive() && zeldasLullaby && strength && ironBoots && hookshot) ||
-        (darklinkRoom() && sot && ironBoots && bow)
-      ) {
-        dispatch(makeReachable(8, 14));
-      } else {
-        dispatch(makeUnreachable(8, 14));
-      }
-      if (raiseWaterLevel() && bossKey && longshot) {
-        dispatch(makeReachable(8, 15));
-      } else {
-        dispatch(makeUnreachable(8, 15));
-      }
+    if (
+      enterWaterTemple &&
+      (hookshot || hoverBoots) &&
+      explosive &&
+      zeldasLullaby &&
+      (ironBoots || goldenScale)
+    ) {
+      dispatch(makeReachable(8, 0));
+    } else {
+      dispatch(makeUnreachable(8, 0));
     }
   }, [
     enterWaterTemple,
@@ -213,26 +103,235 @@ function useWaterTempleLogic() {
     zeldasLullaby,
     ironBoots,
     goldenScale,
-    waterDive,
-    middleWaterLevel,
-    raiseWaterLevel,
     dispatch,
+  ]);
+
+  useEffect(() => {
+    if (enterWaterTemple && (zeldasLullaby || ironBoots) && hookshot) {
+      dispatch(makeReachable(8, 1));
+    } else {
+      dispatch(makeUnreachable(8, 1));
+    }
+  }, [enterWaterTemple, hookshot, zeldasLullaby, ironBoots, dispatch]);
+
+  useEffect(() => {
+    if (enterWaterTemple && raiseWaterLevel() && waterDive()) {
+      dispatch(makeReachable(8, 2));
+    } else {
+      dispatch(makeUnreachable(8, 2));
+    }
+  }, [enterWaterTemple, raiseWaterLevel, waterDive, dispatch]);
+
+  useEffect(() => {
+    if (enterWaterTemple && middleWaterLevel() && explosive && waterDive()) {
+      dispatch(makeReachable(8, 3));
+    } else {
+      dispatch(makeUnreachable(8, 3));
+    }
+  }, [enterWaterTemple, middleWaterLevel, waterDive, explosive, dispatch]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      (bow || dins || (!adultAccessOnly && dungeonsShuffle)) &&
+      zeldasLullaby &&
+      waterDive()
+    ) {
+      dispatch(makeReachable(8, 4));
+    } else {
+      dispatch(makeUnreachable(8, 4));
+    }
+  }, [
+    enterWaterTemple,
+    bow,
+    dins,
     adultAccessOnly,
+    dungeonsShuffle,
+    zeldasLullaby,
+    waterDive,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (enterWaterTemple && northBasement()) {
+      dispatch(makeReachable(8, 5));
+    } else {
+      dispatch(makeUnreachable(8, 5));
+    }
+  }, [enterWaterTemple, northBasement, dispatch]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      keys >= 5 &&
+      northBasement() &&
+      ironBoots &&
+      ((explosive && strength) || hoverBoots)
+    ) {
+      dispatch(makeReachable(8, 6));
+    } else {
+      dispatch(makeUnreachable(8, 6));
+    }
+  }, [
+    enterWaterTemple,
     northBasement,
+    ironBoots,
+    explosive,
+    strength,
+    hoverBoots,
+    keys,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      waterDive() &&
+      strength &&
+      zeldasLullaby &&
+      ((bow && (hoverBoots || longshot)) ||
+        (slingshot &&
+          !adultAccessOnly &&
+          dungeonsShuffle &&
+          middleWaterLevel()))
+    ) {
+      dispatch(makeReachable(8, 7));
+    } else {
+      dispatch(makeUnreachable(8, 7));
+    }
+  }, [
+    enterWaterTemple,
+    waterDive,
+    bow,
+    longshot,
+    slingshot,
+    adultAccessOnly,
+    dungeonsShuffle,
+    middleWaterLevel,
+    strength,
+    hoverBoots,
+    zeldasLullaby,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      waterDive() &&
+      zeldasLullaby &&
+      (((longshot || (hookshot && faroresWind)) &&
+        (keys >= 5 || bow || dins)) ||
+        (hookshot && ironBoots && (bow || dins)) ||
+        (!adultAccessOnly() && boomerang && faroresWind && dungeonsShuffle))
+    ) {
+      dispatch(makeReachable(8, 8));
+    } else {
+      dispatch(makeUnreachable(8, 8));
+    }
+  }, [
+    enterWaterTemple,
+    waterDive,
+    zeldasLullaby,
+    longshot,
+    hookshot,
+    faroresWind,
+    keys,
+    bow,
+    dins,
+    ironBoots,
+    adultAccessOnly,
+    boomerang,
+    dungeonsShuffle,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      middleWaterLevel() &&
+      ironBoots &&
+      zoraTunic &&
+      hookshot &&
+      (keys >= 5 || bow || dins)
+    ) {
+      dispatch(makeReachable(8, 9));
+    } else {
+      dispatch(makeUnreachable(8, 9));
+    }
+  }, [
+    enterWaterTemple,
+    middleWaterLevel,
+    ironBoots,
+    zoraTunic,
+    hookshot,
+    bow,
+    dins,
+    keys,
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    if (enterWaterTemple && raiseWaterLevel() && keys >= 4 && longshot) {
+      dispatch(makeReachable(8, 10));
+    } else {
+      dispatch(makeUnreachable(8, 10));
+    }
+  }, [enterWaterTemple, raiseWaterLevel, longshot, keys, dispatch]);
+
+  useEffect(() => {
+    if (enterWaterTemple && darklinkRoom()) {
+      dispatch(makeReachable(8, 11));
+    } else {
+      dispatch(makeUnreachable(8, 11));
+    }
+  }, [enterWaterTemple, darklinkRoom, dispatch]);
+
+  useEffect(() => {
+    if (enterWaterTemple && darklinkRoom() && sot && ironBoots) {
+      dispatch(makeReachable(8, 12));
+    } else {
+      dispatch(makeUnreachable(8, 12));
+    }
+  }, [enterWaterTemple, darklinkRoom, sot, ironBoots, dispatch]);
+
+  useEffect(() => {
+    if (enterWaterTemple && darklinkRoom() && sot && bow) {
+      dispatch(makeReachable(8, 13));
+    } else {
+      dispatch(makeUnreachable(8, 13));
+    }
+  }, [enterWaterTemple, darklinkRoom, sot, bow, dispatch]);
+
+  useEffect(() => {
+    if (
+      enterWaterTemple &&
+      ((waterDive() && zeldasLullaby && strength && ironBoots && hookshot) ||
+        (darklinkRoom() && sot && ironBoots && bow))
+    ) {
+      dispatch(makeReachable(8, 14));
+    } else {
+      dispatch(makeUnreachable(8, 14));
+    }
+  }, [
+    enterWaterTemple,
+    waterDive,
+    zeldasLullaby,
+    strength,
+    ironBoots,
+    hookshot,
     darklinkRoom,
     sot,
     bow,
-    dins,
-    longshot,
-    strength,
-    boomerang,
-    slingshot,
-    faroresWind,
-    keys,
-    bossKey,
-    zoraTunic,
-    dungeonsShuffle,
+    dispatch,
   ]);
+
+  useEffect(() => {
+    if (enterWaterTemple && raiseWaterLevel() && bossKey === 1 && longshot) {
+      dispatch(makeReachable(8, 15));
+    } else {
+      dispatch(makeUnreachable(8, 15));
+    }
+  }, [enterWaterTemple, raiseWaterLevel, bossKey, longshot, dispatch]);
 }
 
 export default useWaterTempleLogic;

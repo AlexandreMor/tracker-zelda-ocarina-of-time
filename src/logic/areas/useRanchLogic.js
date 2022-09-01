@@ -8,12 +8,16 @@ function useRanchLogic() {
   const epona = useSongs("epona");
   const ocarina = useItems("ocarina");
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (ocarina) {
       dispatch(makeReachable(6, 0));
     } else {
       dispatch(makeUnreachable(6, 0));
     }
+  }, [ocarina, dispatch]);
+
+  useEffect(() => {
     if (epona) {
       dispatch(makeReachable(6, 1));
       dispatch(makeReachable(6, 2));
@@ -25,7 +29,7 @@ function useRanchLogic() {
       dispatch(makeUnreachable(6, 5));
       dispatch(makeUnreachable(6, 6));
     }
-  }, [epona, ocarina, dispatch]);
+  }, [epona, dispatch]);
 }
 
 export default useRanchLogic;

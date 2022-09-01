@@ -21,6 +21,9 @@ function useGerudosFortressLogic() {
     } else {
       dispatch(makeUnreachable(28, 0));
     }
+  }, [hookshot, ocarina, hoverBoots, fortressAccess, dispatch]);
+
+  useEffect(() => {
     if (bow && epona && fortressAccess && gerudoCard) {
       dispatch(makeReachable(28, 1));
       dispatch(makeReachable(28, 2));
@@ -28,7 +31,7 @@ function useGerudosFortressLogic() {
       dispatch(makeUnreachable(28, 1));
       dispatch(makeUnreachable(28, 2));
     }
-  });
+  }, [bow, epona, fortressAccess, gerudoCard, dispatch]);
 }
 
 export default useGerudosFortressLogic;

@@ -24,61 +24,68 @@ function useBotwLogic() {
       dispatch(makeReachable(15, 3));
       dispatch(makeReachable(15, 8));
       dispatch(makeReachable(15, 9));
-      if (explosive) {
-        dispatch(makeReachable(15, 0));
-        dispatch(makeReachable(15, 6));
-      } else {
-        dispatch(makeUnreachable(15, 0));
-        dispatch(makeUnreachable(15, 6));
-      }
-      if (boomerang && keys === 3) {
-        dispatch(makeReachable(15, 4));
-        dispatch(makeReachable(15, 5));
-        dispatch(makeReachable(15, 15));
-      } else {
-        dispatch(makeUnreachable(15, 4));
-        dispatch(makeUnreachable(15, 5));
-        dispatch(makeUnreachable(15, 15));
-      }
-      if (zeldasLullaby) {
-        dispatch(makeReachable(15, 7));
-        dispatch(makeReachable(15, 10));
-        dispatch(makeReachable(15, 11));
-        dispatch(makeReachable(15, 12));
-      } else {
-        dispatch(makeUnreachable(15, 7));
-        dispatch(makeUnreachable(15, 10));
-        dispatch(makeUnreachable(15, 11));
-        dispatch(makeUnreachable(15, 12));
-      }
-      if (keys === 3) {
-        dispatch(makeReachable(15, 13));
-        dispatch(makeReachable(15, 14));
-      } else {
-        dispatch(makeUnreachable(15, 13));
-        dispatch(makeUnreachable(15, 14));
-      }
-      if (((fireChild || keys === 3) && strength) || explosive) {
-        dispatch(makeReachable(15, 16));
-      } else {
-        dispatch(makeUnreachable(15, 16));
-      }
     } else {
-      for (let i = 0; i < areas[15].checks.length; i++) {
-        dispatch(makeUnreachable(15, i));
-      }
+      dispatch(makeUnreachable(15, 1));
+      dispatch(makeUnreachable(15, 2));
+      dispatch(makeUnreachable(15, 3));
+      dispatch(makeUnreachable(15, 8));
+      dispatch(makeUnreachable(15, 9));
     }
-  }, [
-    botwAccess,
-    explosive,
-    boomerang,
-    fireChild,
-    strength,
-    keys,
-    zeldasLullaby,
-    areas,
-    dispatch,
-  ]);
+  }, [botwAccess, dispatch]);
+
+  useEffect(() => {
+    if (botwAccess && explosive) {
+      dispatch(makeReachable(15, 0));
+      dispatch(makeReachable(15, 6));
+    } else {
+      dispatch(makeUnreachable(15, 0));
+      dispatch(makeUnreachable(15, 6));
+    }
+  }, [botwAccess, explosive, dispatch]);
+
+  useEffect(() => {
+    if (botwAccess && boomerang && keys >= 3) {
+      dispatch(makeReachable(15, 4));
+      dispatch(makeReachable(15, 5));
+      dispatch(makeReachable(15, 15));
+    } else {
+      dispatch(makeUnreachable(15, 4));
+      dispatch(makeUnreachable(15, 5));
+      dispatch(makeUnreachable(15, 15));
+    }
+  }, [botwAccess, boomerang, keys, dispatch]);
+
+  useEffect(() => {
+    if (botwAccess && zeldasLullaby) {
+      dispatch(makeReachable(15, 7));
+      dispatch(makeReachable(15, 10));
+      dispatch(makeReachable(15, 11));
+      dispatch(makeReachable(15, 12));
+    } else {
+      dispatch(makeUnreachable(15, 7));
+      dispatch(makeUnreachable(15, 10));
+      dispatch(makeUnreachable(15, 11));
+      dispatch(makeUnreachable(15, 12));
+    }
+  }, [botwAccess, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
+    if (botwAccess && keys >= 3) {
+      dispatch(makeReachable(15, 13));
+      dispatch(makeReachable(15, 14));
+    } else {
+      dispatch(makeUnreachable(15, 13));
+      dispatch(makeUnreachable(15, 14));
+    }
+  }, [botwAccess, keys, dispatch]);
+
+  useEffect(() => {
+    if (botwAccess && (((fireChild || keys >= 3) && strength) || explosive)) {
+      dispatch(makeReachable(15, 16));
+    } else {
+      dispatch(makeUnreachable(15, 16));
+    }
+  }, [botwAccess, fireChild, keys, strength, explosive, dispatch]);
 }
 
 export default useBotwLogic;

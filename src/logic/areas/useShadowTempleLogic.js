@@ -54,123 +54,148 @@ function useShadowTempleLogic() {
   }, [keys, windTunnelAccess]);
 
   useEffect(() => {
-    if (shadowAccess) {
-      if (hookshot || hoverBoots) {
-        dispatch(makeReachable(16, 0));
-        dispatch(makeReachable(16, 1));
-      } else {
-        dispatch(makeUnreachable(16, 0));
-        dispatch(makeUnreachable(16, 1));
-      }
-      if (hoverBoots) {
-        dispatch(makeReachable(16, 2));
-        dispatch(makeReachable(16, 3));
-      } else {
-        dispatch(makeUnreachable(16, 2));
-        dispatch(makeUnreachable(16, 3));
-      }
-      if (bigRoomAccess()) {
-        dispatch(makeReachable(16, 4));
-        dispatch(makeReachable(16, 5));
-        dispatch(makeReachable(16, 6));
-        dispatch(makeReachable(16, 9));
-      } else {
-        dispatch(makeUnreachable(16, 4));
-        dispatch(makeUnreachable(16, 5));
-        dispatch(makeUnreachable(16, 6));
-        dispatch(makeUnreachable(16, 9));
-      }
-      if (bigRoomAccess() && strength) {
-        dispatch(makeReachable(16, 7));
-        dispatch(makeReachable(16, 8));
-      } else {
-        dispatch(makeUnreachable(16, 7));
-        dispatch(makeUnreachable(16, 8));
-      }
-      if (bigRoomAccess() && hookshot) {
-        dispatch(makeReachable(16, 10));
-      } else {
-        dispatch(makeUnreachable(16, 10));
-      }
-      if (invisibleSpikesAccess()) {
-        dispatch(makeReachable(16, 11));
-      } else {
-        dispatch(makeUnreachable(16, 11));
-      }
-      if (invisibleSpikesAccess() && hookshot && (explosive || strength)) {
-        dispatch(makeReachable(16, 13));
-      } else {
-        dispatch(makeUnreachable(16, 13));
-      }
-      if (invisibleSpikesAccess() && hookshot) {
-        dispatch(makeReachable(16, 12));
-      } else {
-        dispatch(makeUnreachable(16, 12));
-      }
-      if (windTunnelAccess()) {
-        dispatch(makeReachable(16, 14));
-        dispatch(makeReachable(16, 15));
-      } else {
-        dispatch(makeUnreachable(16, 14));
-        dispatch(makeUnreachable(16, 15));
-      }
-      if (windTunnelAccess() && explosive) {
-        dispatch(makeReachable(16, 16));
-      } else {
-        dispatch(makeUnreachable(16, 16));
-      }
-      if (boatAccess() && longshot) {
-        dispatch(makeReachable(16, 17));
-      } else {
-        dispatch(makeUnreachable(16, 17));
-      }
-      if (boatAccess() && dins && zeldasLullaby) {
-        dispatch(makeReachable(16, 18));
-        dispatch(makeReachable(16, 19));
-      } else {
-        dispatch(makeUnreachable(16, 18));
-        dispatch(makeUnreachable(16, 19));
-      }
-      if (boatAccess() && zeldasLullaby) {
-        dispatch(makeReachable(16, 20));
-        dispatch(makeReachable(16, 21));
-      } else {
-        dispatch(makeUnreachable(16, 20));
-        dispatch(makeUnreachable(16, 21));
-      }
-      if (
-        boatAccess() &&
-        bossKey &&
-        keys >= 5 &&
-        (bow || longshot) &&
-        zeldasLullaby
-      ) {
-        dispatch(makeReachable(16, 22));
-      } else {
-        dispatch(makeUnreachable(16, 22));
-      }
+    if (shadowAccess && (hookshot || hoverBoots)) {
+      dispatch(makeReachable(16, 0));
+      dispatch(makeReachable(16, 1));
     } else {
-      for (let i = 0; i < areas[16].checks.length; i++) {
-        dispatch(makeUnreachable(16, i));
-      }
+      dispatch(makeUnreachable(16, 0));
+      dispatch(makeUnreachable(16, 1));
+    }
+  }, [shadowAccess, hookshot, hoverBoots, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && hoverBoots) {
+      dispatch(makeReachable(16, 2));
+      dispatch(makeReachable(16, 3));
+    } else {
+      dispatch(makeUnreachable(16, 2));
+      dispatch(makeUnreachable(16, 3));
+    }
+  }, [shadowAccess, hoverBoots, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && bigRoomAccess()) {
+      dispatch(makeReachable(16, 4));
+      dispatch(makeReachable(16, 5));
+      dispatch(makeReachable(16, 6));
+      dispatch(makeReachable(16, 9));
+    } else {
+      dispatch(makeUnreachable(16, 4));
+      dispatch(makeUnreachable(16, 5));
+      dispatch(makeUnreachable(16, 6));
+      dispatch(makeUnreachable(16, 9));
+    }
+  }, [shadowAccess, bigRoomAccess, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && bigRoomAccess() && strength) {
+      dispatch(makeReachable(16, 7));
+      dispatch(makeReachable(16, 8));
+    } else {
+      dispatch(makeUnreachable(16, 7));
+      dispatch(makeUnreachable(16, 8));
+    }
+  }, [shadowAccess, bigRoomAccess, strength, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && bigRoomAccess() && hookshot) {
+      dispatch(makeReachable(16, 10));
+    } else {
+      dispatch(makeUnreachable(16, 10));
+    }
+  }, [shadowAccess, bigRoomAccess, hookshot, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && invisibleSpikesAccess()) {
+      dispatch(makeReachable(16, 11));
+    } else {
+      dispatch(makeUnreachable(16, 11));
+    }
+  }, [shadowAccess, invisibleSpikesAccess, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && hookshot && (explosive || strength)) {
+      dispatch(makeReachable(16, 13));
+    } else {
+      dispatch(makeUnreachable(16, 13));
+    }
+  }, [shadowAccess, hookshot, explosive, strength, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && invisibleSpikesAccess() && hookshot) {
+      dispatch(makeReachable(16, 12));
+    } else {
+      dispatch(makeUnreachable(16, 12));
+    }
+  }, [shadowAccess, hookshot, invisibleSpikesAccess, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && windTunnelAccess()) {
+      dispatch(makeReachable(16, 14));
+      dispatch(makeReachable(16, 15));
+    } else {
+      dispatch(makeUnreachable(16, 14));
+      dispatch(makeUnreachable(16, 15));
+    }
+  }, [shadowAccess, windTunnelAccess, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && windTunnelAccess() && explosive) {
+      dispatch(makeReachable(16, 16));
+    } else {
+      dispatch(makeUnreachable(16, 16));
+    }
+  }, [shadowAccess, windTunnelAccess, explosive, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && boatAccess() && longshot) {
+      dispatch(makeReachable(16, 17));
+    } else {
+      dispatch(makeUnreachable(16, 17));
+    }
+  }, [shadowAccess, boatAccess, longshot, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && boatAccess() && dins && zeldasLullaby) {
+      dispatch(makeReachable(16, 18));
+      dispatch(makeReachable(16, 19));
+    } else {
+      dispatch(makeUnreachable(16, 18));
+      dispatch(makeUnreachable(16, 19));
+    }
+  }, [shadowAccess, boatAccess, dins, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
+    if (shadowAccess && boatAccess() && zeldasLullaby) {
+      dispatch(makeReachable(16, 20));
+      dispatch(makeReachable(16, 21));
+    } else {
+      dispatch(makeUnreachable(16, 20));
+      dispatch(makeUnreachable(16, 21));
+    }
+  }, [shadowAccess, boatAccess, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
+    if (
+      shadowAccess &&
+      boatAccess() &&
+      bossKey === 1 &&
+      keys >= 5 &&
+      (bow || longshot) &&
+      zeldasLullaby
+    ) {
+      dispatch(makeReachable(16, 22));
+    } else {
+      dispatch(makeUnreachable(16, 22));
     }
   }, [
     shadowAccess,
+    boatAccess,
+    zeldasLullaby,
     bossKey,
     keys,
-    hookshot,
-    longshot,
-    dins,
-    explosive,
     bow,
-    hoverBoots,
-    strength,
-    zeldasLullaby,
-    areas,
-    bigRoomAccess,
-    windTunnelAccess,
-    invisibleSpikesAccess,
-    boatAccess,
+    longshot,
     dispatch,
   ]);
 }

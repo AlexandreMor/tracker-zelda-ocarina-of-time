@@ -26,6 +26,9 @@ function useZoraRiverLogic() {
       dispatch(makeUnreachable(22, 0));
       dispatch(makeUnreachable(22, 6));
     }
+  }, [riverAccess, hoverBoots, dispatch]);
+
+  useEffect(() => {
     if (sos) {
       dispatch(makeReachable(22, 1));
       dispatch(makeReachable(22, 2));
@@ -33,17 +36,23 @@ function useZoraRiverLogic() {
       dispatch(makeUnreachable(22, 1));
       dispatch(makeUnreachable(22, 2));
     }
+  }, [sos, dispatch]);
+
+  useEffect(() => {
     if (sos && riverAccess) {
       dispatch(makeReachable(22, 3));
     } else {
       dispatch(makeUnreachable(22, 3));
     }
+  }, [sos, riverAccess, dispatch]);
+
+  useEffect(() => {
     if (riverAccess && allChildSongs) {
       dispatch(makeReachable(22, 4));
     } else {
       dispatch(makeUnreachable(22, 4));
     }
-  }, [dispatch, riverAccess, allChildSongs, sos, hoverBoots]);
+  }, [riverAccess, allChildSongs, dispatch]);
 }
 
 export default useZoraRiverLogic;

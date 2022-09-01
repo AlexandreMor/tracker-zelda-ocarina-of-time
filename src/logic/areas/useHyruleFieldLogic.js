@@ -25,6 +25,9 @@ function useHyruleFieldLogic() {
       dispatch(makeUnreachable(5, 0));
       dispatch(makeUnreachable(5, 7));
     }
+  }, [threeStones, ocarina, dispatch]);
+
+  useEffect(() => {
     if (explosive || hammer) {
       dispatch(makeReachable(5, 2));
       dispatch(makeReachable(5, 3));
@@ -34,28 +37,23 @@ function useHyruleFieldLogic() {
       dispatch(makeUnreachable(5, 3));
       dispatch(makeUnreachable(5, 4));
     }
+  }, [explosive, hammer, dispatch]);
+
+  useEffect(() => {
     if ((explosive || hammer) && (goldenScale || ironBoots)) {
       dispatch(makeReachable(5, 5));
     } else {
       dispatch(makeUnreachable(5, 5));
     }
+  }, [explosive, hammer, goldenScale, ironBoots, dispatch]);
+
+  useEffect(() => {
     if (((explosive && fireChild) || (hammer && fire)) && epona) {
       dispatch(makeReachable(5, 6));
     } else {
       dispatch(makeUnreachable(5, 6));
     }
-  }, [
-    threeStones,
-    dispatch,
-    explosive,
-    hammer,
-    goldenScale,
-    ironBoots,
-    fireChild,
-    fire,
-    epona,
-    ocarina,
-  ]);
+  }, [explosive, hammer, fireChild, fire, epona, dispatch]);
 }
 
 export default useHyruleFieldLogic;

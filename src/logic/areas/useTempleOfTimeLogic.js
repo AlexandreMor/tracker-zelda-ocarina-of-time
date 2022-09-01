@@ -14,12 +14,15 @@ function useTempleOfTimeLogic() {
     } else {
       dispatch(makeUnreachable(10, 0));
     }
+  }, [prelude, dispatch]);
+
+  useEffect(() => {
     if (lightArrowsCutscene) {
       dispatch(makeReachable(10, 1));
     } else {
       dispatch(makeUnreachable(10, 1));
     }
-  }, [prelude, lightArrowsCutscene, dispatch]);
+  }, [lightArrowsCutscene, dispatch]);
 }
 
 export default useTempleOfTimeLogic;

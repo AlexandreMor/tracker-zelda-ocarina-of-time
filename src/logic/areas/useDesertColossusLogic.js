@@ -20,16 +20,25 @@ function useDesertColossusLogic() {
     } else {
       dispatch(makeUnreachable(30, 0));
     }
+  }, [ocarina, desertColossusAccess, dispatch]);
+
+  useEffect(() => {
     if (desertColossusAccess && explosive && zeldasLullaby) {
       dispatch(makeReachable(30, 1));
     } else {
       dispatch(makeUnreachable(30, 1));
     }
+  }, [explosive, desertColossusAccess, zeldasLullaby, dispatch]);
+
+  useEffect(() => {
     if (desertColossusAccess && riverAccess) {
       dispatch(makeReachable(30, 2));
     } else {
       dispatch(makeUnreachable(30, 2));
     }
+  }, [riverAccess, desertColossusAccess, dispatch]);
+
+  useEffect(() => {
     if (desertColossusAccess && strength2) {
       dispatch(makeReachable(30, 3));
       dispatch(makeReachable(30, 4));
@@ -37,15 +46,7 @@ function useDesertColossusLogic() {
       dispatch(makeUnreachable(30, 3));
       dispatch(makeUnreachable(30, 4));
     }
-  }, [
-    desertColossusAccess,
-    explosive,
-    ocarina,
-    riverAccess,
-    strength2,
-    zeldasLullaby,
-    dispatch,
-  ]);
+  }, [strength2, desertColossusAccess, dispatch]);
 }
 
 export default useDesertColossusLogic;

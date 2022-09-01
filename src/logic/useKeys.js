@@ -1,14 +1,24 @@
+import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { selectChecks } from "../utils/selectors";
 
 function useKeys(name) {
   const areas = useSelector(selectChecks);
-  const keys = (id) => {
-    return areas[id].maxKeys - areas[id].keysLeft;
-  };
-  const bossKey = (id) => {
-    return areas[id].maxBossKey - areas[id].bossKeyLeft;
-  };
+
+  const keys = useCallback(
+    (id) => {
+      return areas[id].maxKeys - areas[id].keysLeft;
+    },
+    [areas]
+  );
+
+  const bossKey = useCallback(
+    (id) => {
+      return areas[id].maxBossKey - areas[id].bossKeyLeft;
+    },
+    [areas]
+  );
+
   switch (name) {
     case "forest keys":
       return keys(4);

@@ -18,7 +18,6 @@ function useSpiritTempleLogic() {
   const strength2 = useItems("strength 2");
   const mirrorShield = useItems("mirror shield");
   const explosive = useItems("explosive");
-  const bombchus = useItems("bombchus");
   const fire = useItems("fire");
   const hoverBoots = useItems("hover boots");
   const keys = useKeys("spirit keys");
@@ -99,7 +98,7 @@ function useSpiritTempleLogic() {
   }, [spiritTempleAccess, strength2, explosive, keys]);
 
   useEffect(() => {
-    if ((boomerang || slingshot || bombchus) && spiritChildAccess()) {
+    if ((boomerang || slingshot || explosive) && spiritChildAccess()) {
       dispatch(makeReachable(32, 0));
       dispatch(makeReachable(32, 1));
       dispatch(makeReachable(32, 2));
@@ -108,6 +107,9 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 1));
       dispatch(makeUnreachable(32, 2));
     }
+  }, [boomerang, slingshot, explosive, spiritChildAccess, dispatch]);
+
+  useEffect(() => {
     if (spiritTempleClimb()) {
       dispatch(makeReachable(32, 3));
       dispatch(makeReachable(32, 4));
@@ -117,6 +119,9 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 4));
       dispatch(makeUnreachable(32, 5));
     }
+  }, [spiritTempleClimb, dispatch]);
+
+  useEffect(() => {
     if (
       (keys >= 5 && explosive && spiritChildAccess()) ||
       (fire && keys >= 3 && strength2 && spiritTempleAccess) ||
@@ -132,6 +137,17 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 6));
       dispatch(makeUnreachable(32, 7));
     }
+  }, [
+    spiritChildAccess,
+    keys,
+    explosive,
+    fire,
+    strength2,
+    spiritTempleAccess,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if (
       mainRoomAccess() &&
       ((hookshot && spiritTempleAccess && keys >= 3) ||
@@ -146,6 +162,19 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 8));
     }
+  }, [
+    mainRoomAccess,
+    hookshot,
+    spiritTempleAccess,
+    keys,
+    boomerang,
+    spiritChildAccess,
+    explosive,
+    dungeonsShuffle,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if (
       (keys >= 5 &&
         ((explosive && spiritChildAccess()) ||
@@ -156,16 +185,33 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 9));
     }
+  }, [
+    keys,
+    explosive,
+    spiritChildAccess,
+    strength2,
+    spiritTempleAccess,
+    longshot,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if (hookshot && zeldasLullaby && strength2 && spiritTempleAccess) {
       dispatch(makeReachable(32, 10));
     } else {
       dispatch(makeUnreachable(32, 10));
     }
+  }, [hookshot, zeldasLullaby, strength2, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (strength2 && (bow || hookshot || explosive) && spiritTempleAccess) {
       dispatch(makeReachable(32, 12));
     } else {
       dispatch(makeUnreachable(32, 12));
     }
+  }, [hookshot, explosive, strength2, bow, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (
       strength2 &&
       (bow || hookshot || explosive) &&
@@ -176,6 +222,9 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 11));
     }
+  }, [strength2, bow, hookshot, explosive, sot, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (strength2 && keys >= 3 && spiritTempleAccess) {
       dispatch(makeReachable(32, 13));
       dispatch(makeReachable(32, 14));
@@ -183,6 +232,9 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 13));
       dispatch(makeUnreachable(32, 14));
     }
+  }, [strength2, keys, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (
       strength2 &&
       keys >= 3 &&
@@ -194,11 +246,25 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 15));
     }
+  }, [
+    strength2,
+    keys,
+    zeldasLullaby,
+    hookshot,
+    hoverBoots,
+    spiritTempleAccess,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if (strength2 && keys >= 3 && zeldasLullaby && spiritTempleAccess) {
       dispatch(makeReachable(32, 16));
     } else {
       dispatch(makeUnreachable(32, 16));
     }
+  }, [strength2, keys, zeldasLullaby, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (
       strength2 &&
       keys >= 3 &&
@@ -209,11 +275,17 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 17));
     }
-    if (beyondAnubisRoom() && mirrorShield && spiritTempleAccess) {
+  }, [strength2, keys, hookshot, hoverBoots, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
+    if (beyondAnubisRoom() && mirrorShield) {
       dispatch(makeReachable(32, 18));
     } else {
       dispatch(makeUnreachable(32, 18));
     }
+  }, [beyondAnubisRoom, mirrorShield, spiritTempleAccess, dispatch]);
+
+  useEffect(() => {
     if (beyondAnubisRoom()) {
       dispatch(makeReachable(32, 19));
       dispatch(makeReachable(32, 20));
@@ -223,6 +295,9 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 20));
       dispatch(makeUnreachable(32, 21));
     }
+  }, [beyondAnubisRoom, dispatch]);
+
+  useEffect(() => {
     if (
       strength2 &&
       keys >= 5 &&
@@ -235,11 +310,25 @@ function useSpiritTempleLogic() {
     } else {
       dispatch(makeUnreachable(32, 22));
     }
+  }, [
+    strength2,
+    keys,
+    zeldasLullaby,
+    bow,
+    hookshot,
+    spiritTempleAccess,
+    dispatch,
+  ]);
+
+  useEffect(() => {
     if (strength2 && keys >= 5 && mirrorShield && spiritTempleAccess) {
       dispatch(makeReachable(32, 23));
     } else {
       dispatch(makeUnreachable(32, 23));
     }
+  }, [strength2, keys, spiritTempleAccess, mirrorShield, dispatch]);
+
+  useEffect(() => {
     if (
       strength2 &&
       keys >= 5 &&
@@ -254,28 +343,14 @@ function useSpiritTempleLogic() {
       dispatch(makeUnreachable(32, 24));
     }
   }, [
-    spiritTempleAccess,
-    spiritTempleClimb,
-    keys,
-    explosive,
-    longshot,
     strength2,
-    fire,
-    bombchus,
-    boomerang,
-    slingshot,
-    hookshot,
-    zeldasLullaby,
-    bow,
-    sot,
-    hoverBoots,
-    mainRoomAccess,
-    dispatch,
-    mirrorShield,
+    keys,
     bossKey,
-    beyondAnubisRoom,
-    dungeonsShuffle,
-    spiritChildAccess,
+    hookshot,
+    explosive,
+    spiritTempleAccess,
+    mirrorShield,
+    dispatch,
   ]);
 }
 

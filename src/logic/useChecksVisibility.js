@@ -10,7 +10,9 @@ function useChecksVisibility() {
   const skullsanity = useSettings("skullsanity");
   const scrubsanity = useSettings("scrubsanity");
   const cowsanity = useSettings("cowsanity");
-  const shuffleCarpetSalesman = useSettings("shuffle carpet salesman & medigoron");
+  const shuffleCarpetSalesman = useSettings(
+    "shuffle carpet salesman & medigoron"
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,7 +33,7 @@ function useChecksVisibility() {
           })
       );
     }
-  });
+  }, [areas, shopsanity, dispatch]);
 
   useEffect(() => {
     if (skullsanity === "true") {
@@ -51,7 +53,7 @@ function useChecksVisibility() {
           })
       );
     }
-  });
+  }, [areas, skullsanity, dispatch]);
 
   useEffect(() => {
     if (scrubsanity === "true") {
@@ -71,7 +73,8 @@ function useChecksVisibility() {
           })
       );
     }
-  });
+  }, [areas, scrubsanity, dispatch]);
+
   useEffect(() => {
     if (cowsanity === "true") {
       areas.map((area) =>
@@ -90,7 +93,7 @@ function useChecksVisibility() {
           })
       );
     }
-  });
+  }, [areas, cowsanity, dispatch]);
 
   useEffect(() => {
     if (shuffleCarpetSalesman === "true") {
@@ -110,7 +113,7 @@ function useChecksVisibility() {
           })
       );
     }
-  });
+  }, [areas, shuffleCarpetSalesman, dispatch]);
 }
 
 export default useChecksVisibility;

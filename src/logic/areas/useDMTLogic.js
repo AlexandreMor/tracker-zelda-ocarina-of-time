@@ -23,37 +23,39 @@ function useDMTLogic() {
     } else {
       dispatch(makeUnreachable(17, 1));
     }
+  }, [explosive, hammer, dispatch]);
+
+  useEffect(() => {
     if (sos) {
       dispatch(makeReachable(17, 2));
     } else {
       dispatch(makeUnreachable(17, 2));
     }
+  }, [sos, dispatch]);
+
+  useEffect(() => {
     if ((explosive || hammer || fairySpawnAdult || fairySpawnChild) && zelda) {
       dispatch(makeReachable(17, 3));
     } else {
       dispatch(makeUnreachable(17, 3));
     }
+  }, [explosive, hammer, fairySpawnAdult, fairySpawnChild, zelda, dispatch]);
+
+  useEffect(() => {
     if (canDeliverPrescription) {
       dispatch(makeReachable(17, 4));
     } else {
       dispatch(makeUnreachable(17, 4));
     }
+  }, [canDeliverPrescription, dispatch]);
+
+  useEffect(() => {
     if ((explosive || hammer) && epona) {
       dispatch(makeReachable(17, 5));
     } else {
       dispatch(makeUnreachable(17, 5));
     }
-  }, [
-    explosive,
-    hammer,
-    canDeliverPrescription,
-    sos,
-    epona,
-    zelda,
-    dispatch,
-    fairySpawnAdult,
-    fairySpawnChild,
-  ]);
+  }, [explosive, hammer, epona, dispatch]);
 }
 
 export default useDMTLogic;
