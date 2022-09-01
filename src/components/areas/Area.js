@@ -32,7 +32,7 @@ function Area({ area }) {
       dispatch(setVisible(area.id))
     }
   };
-console.log(area.visibility)
+  
   return (
     <div className={backgroundColor}>
       <h5 className="area-name" onClick={()=>handleClick()}>{area.name}</h5>
