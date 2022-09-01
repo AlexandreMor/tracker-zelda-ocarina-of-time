@@ -43,7 +43,7 @@ function Check({ check, idArea }) {
       )}
       <span
         style={check.reachable ? { color: "#51aa3a" } : { color: "#c3423d" }}
-        className={check.checked ? "check-done" : "check-undone bold"}
+        className={check.checked ? "check-done bold" : "check-undone bold"}
         onClick={() => dispatch(done(idArea, check.id))}
       >
         {check.name}

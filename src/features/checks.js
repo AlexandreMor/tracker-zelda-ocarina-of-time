@@ -83,6 +83,20 @@ export const setRupee = createAction(
   })
 );
 
+export const setVisible = createAction(
+  "area/visibility",
+  (idArea) => ({
+    payload: { idArea },
+  })
+);
+
+export const setInvisible = createAction(
+  "area/invisibility",
+  (idArea) => ({
+    payload: { idArea },
+  })
+);
+
 export default createReducer(areasState, (builder) => {
   builder.addCase(makeReachable, (draft, action) => {
     draft[action.payload.idArea].checks[
@@ -169,5 +183,11 @@ export default createReducer(areasState, (builder) => {
   });
   builder.addCase(setEntrance, (draft, action) => {
     draft[action.payload.idArea].entrance = action.payload.value;
+  });
+  builder.addCase(setVisible, (draft, action) => {
+    draft[action.payload.idArea].visibility = true;
+  });
+  builder.addCase(setInvisible, (draft, action) => {
+    draft[action.payload.idArea].visibility = false;
   });
 });

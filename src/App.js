@@ -9,9 +9,22 @@ import useLogic from "./logic/useLogic";
 
 function App() {
   useLogic();
+  const bodyEl = (el) => {
+    el &&
+      el.addEventListener("selectstart", (e) => {
+        e.preventDefault()
+      });
+  };
   return (
     <Router>
-      <div className="App" onContextMenu={(e) => e.preventDefault()}>
+      <div
+        className="App"
+        onContextMenu={(e) => e.preventDefault()}
+        onMouseDown={() => {
+          return false;
+        }}
+        ref={bodyEl}
+      >
         <header className="App-header">
           <Navbar />
         </header>

@@ -3,6 +3,7 @@ export const areasState = [
     id: 0,
     name: "Kokiri Forest",
     short: "kf",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -146,6 +147,7 @@ export const areasState = [
     id: 1,
     name: "Lost Woods",
     short: "lw",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -185,7 +187,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Ocarina game",
+        name: "Oca. game",
         reachable: false,
         checked: false,
         player: "",
@@ -288,6 +290,7 @@ export const areasState = [
     id: 2,
     name: "SFM",
     short: "sfm",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -355,6 +358,7 @@ export const areasState = [
     id: 3,
     name: "Deku",
     short: "dek",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"deku",
     checks: [
@@ -496,6 +500,7 @@ export const areasState = [
     id: 4,
     name: "Forest",
     short: "for",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"forest",
     keysLeft:5,
@@ -737,6 +742,7 @@ export const areasState = [
     id: 5,
     name: "Hyrule Field",
     short: "hf",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -841,6 +847,7 @@ export const areasState = [
     id: 6,
     name: "Ranch",
     short: "ran",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -968,6 +975,7 @@ export const areasState = [
     id: 7,
     name: "Lake Hylia",
     short: "lh",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1083,6 +1091,7 @@ export const areasState = [
     id: 8,
     name: "Water",
     short: "wat",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"water",
     keysLeft:6,
@@ -1288,6 +1297,7 @@ export const areasState = [
     id: 9,
     name: "Market",
     short: "mar",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1523,6 +1533,7 @@ export const areasState = [
     id: 10,
     name: "Temple of Time",
     short: "tot",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1554,6 +1565,7 @@ export const areasState = [
     id: 11,
     name: "Hyrule Castle",
     short: "hc",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1573,6 +1585,7 @@ export const areasState = [
     id: 12,
     name: "Outside G's C",
     short: "out",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1592,6 +1605,7 @@ export const areasState = [
     id: 13,
     name: "Kakariko",
     short: "kak",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -1898,6 +1912,7 @@ export const areasState = [
     id: 14,
     name: "Graveyard",
     short: "gy",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -2001,6 +2016,7 @@ export const areasState = [
     id: 15,
     name: "Well",
     short: "wel",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"well",
     keysLeft:3,
@@ -2216,6 +2232,7 @@ export const areasState = [
     id: 16,
     name: "Shadow",
     short: "sha",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"shadow",
     keysLeft:5,
@@ -2505,6 +2522,7 @@ export const areasState = [
     id: 17,
     name: "DMT",
     short: "dmt",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -2586,6 +2604,7 @@ export const areasState = [
     id: 18,
     name: "Goron city",
     short: "gc",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -2777,6 +2796,7 @@ export const areasState = [
     id: 19,
     name: "DMC",
     short: "dmc",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -2880,6 +2900,7 @@ export const areasState = [
     id: 20,
     name: "Dodongo's Cav.",
     short: "dc",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"dc",
     checks: [
@@ -3081,6 +3102,7 @@ export const areasState = [
     id: 21,
     name: "Fire",
     short: "fir",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"fire",
     keysLeft:8,
@@ -3334,6 +3356,7 @@ export const areasState = [
     id: 22,
     name: "Zora's river",
     short: "zr",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3426,6 +3449,7 @@ export const areasState = [
     id: 23,
     name: "Zora's domain",
     short: "zd",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3521,6 +3545,7 @@ export const areasState = [
     id: 24,
     name: "Zora's fountain",
     short: "zf",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3564,6 +3589,7 @@ export const areasState = [
     id: 25,
     name: "Jabu",
     short: "jab",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"jabu",
     checks: [
@@ -3681,6 +3707,7 @@ export const areasState = [
     id: 26,
     name: "Ice Cavern",
     short: "ic",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"ice cavern",
     checks: [
@@ -3786,6 +3813,7 @@ export const areasState = [
     id: 27,
     name: "Gerudo's Valley",
     short: "gv",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3865,6 +3893,7 @@ export const areasState = [
     id: 28,
     name: "Gerudo's Fortress",
     short: "gf",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3908,6 +3937,7 @@ export const areasState = [
     id: 29,
     name: "Wasteland",
     short: "was",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -3939,6 +3969,7 @@ export const areasState = [
     id: 30,
     name: "Desert Colossus",
     short: "col",
+    visibility:true,
     checks: [
       {
         id: 0,
@@ -4006,6 +4037,7 @@ export const areasState = [
     id: 31,
     name: "GTG",
     short: "gtg",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"gtg",
     keysLeft:9,
@@ -4281,6 +4313,7 @@ export const areasState = [
     id: 32,
     name: "Spirit",
     short: "spi",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"spirit",
     keysLeft:5,
@@ -4594,6 +4627,7 @@ export const areasState = [
     id: 33,
     name: "Ganon's Castle",
     short: "gan",
+    visibility:true,
     dungeonShuffleInput:"",
     entrance:"ganon",
     keysLeft:2,
