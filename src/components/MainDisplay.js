@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import useChecksVisibility from "../logic/useChecksVisibility";
 import { selectChecks } from "../utils/selectors";
 import Area from "./areas/Area";
 import AreasList from "./areas/AreasList";
@@ -18,7 +17,6 @@ function MainDisplay() {
         );
       });
   };
-  useChecksVisibility();
 
   const kokiriZoneDisplay = selectZone(0, 4);
   const forestTempleDisplay = selectZone(4, 5);

@@ -12,7 +12,7 @@ function App() {
   const bodyEl = (el) => {
     el &&
       el.addEventListener("selectstart", (e) => {
-        e.preventDefault()
+        e.preventDefault();
       });
   };
   return (

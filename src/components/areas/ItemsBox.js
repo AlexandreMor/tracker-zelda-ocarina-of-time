@@ -21,7 +21,7 @@ function ItemsBox({ idCheck, idArea }) {
   const songs = useSelector(selectSongs);
   const songsDisplay = songs.map((song) => {
     return (
-      <span key={song.name} className="image-medium">
+      <span key={song.name}>
         {song.name !== "cancel" ? (
           <img
             className="image-medium"

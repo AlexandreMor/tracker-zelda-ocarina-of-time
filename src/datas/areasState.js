@@ -400,7 +400,7 @@ export const areasState = [
       },
       {
         id: 3,
-        name: "Compass",
+        name: "Compass 1",
         reachable: false,
         checked: false,
         player: "",
@@ -412,7 +412,7 @@ export const areasState = [
       },
       {
         id: 4,
-        name: "N. compass",
+        name: "Compass 2",
         reachable: false,
         checked: false,
         player: "",
@@ -702,7 +702,7 @@ export const areasState = [
       },
       {
         id: 16,
-        name: "French room",
+        name: "Spin room",
         reachable: false,
         checked: false,
         player: "",
@@ -714,7 +714,7 @@ export const areasState = [
       },
       {
         id: 17,
-        name: "French Skll",
+        name: "Spin Skll",
         reachable: false,
         checked: false,
         player: "",
@@ -3184,7 +3184,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Lava room bb",
+        name: "Lava bomb",
         reachable: false,
         checked: false,
         player: "",
@@ -3244,7 +3244,7 @@ export const areasState = [
       },
       {
         id: 11,
-        name: "Upper Goron",
+        name: "Up. Goron",
         reachable: false,
         checked: false,
         player: "",
@@ -3433,7 +3433,7 @@ export const areasState = [
       },
       {
         id: 6,
-        name: "Waterfall HP",
+        name: "Waterfall",
         reachable: false,
         checked: false,
         player: "",
@@ -3829,7 +3829,7 @@ export const areasState = [
       },
       {
         id: 1,
-        name: "Waterfall HP",
+        name: "Waterfall",
         reachable: true,
         checked: false,
         player: "",
@@ -4165,7 +4165,7 @@ export const areasState = [
       },
       {
         id: 10,
-        name: "Keeses&Slugs",
+        name: "Ennemies",
         reachable: false,
         checked: false,
         player: "",
@@ -4237,7 +4237,7 @@ export const areasState = [
       },
       {
         id: 16,
-        name: "Beamos&Dino",
+        name: "Beamos",
         reachable: false,
         checked: false,
         player: "",
