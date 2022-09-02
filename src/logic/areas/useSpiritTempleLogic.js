@@ -34,7 +34,7 @@ function useSpiritTempleLogic() {
     if (
       (areas[32].entrance === "spirit" && requiem) ||
       (areas[32].entrance === "fire" && bolero) ||
-      (spiritTempleAccess && dungeonsShuffle)
+      (spiritTempleAccess && dungeonsShuffle==="true")
     ) {
       return true;
     } else {

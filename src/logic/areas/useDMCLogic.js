@@ -56,14 +56,13 @@ function useDMCLogic() {
   useEffect(() => {
     if (
       (lowerAccess || upperAccess) &&
-      (hammer || explosive) &&
-      zeldasLullaby
+      (hammer || explosive)
     ) {
       dispatch(makeReachable(19, 4));
     } else {
       dispatch(makeUnreachable(19, 4));
     }
-  }, [lowerAccess, upperAccess, hammer, explosive, zeldasLullaby, dispatch]);
+  }, [lowerAccess, upperAccess, hammer, explosive, dispatch]);
 
   useEffect(() => {
     if ((lowerAccess || upperAccess) && hammer) {
