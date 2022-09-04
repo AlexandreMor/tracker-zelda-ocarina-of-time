@@ -72,7 +72,7 @@ $nav-background-color: #000000;
   li.check {
     font-size: 10px;
     display: grid;
-    grid-template-columns: 0.3fr 0.3fr
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr
   }
 
   .area-name {
@@ -126,12 +126,10 @@ $nav-background-color: #000000;
     width:18px;
     height:18px;
   }
-  li > input.input-field {
+  
+  /*li > input.input-field-rupee {
     display:none;
-  }
-  li > input.input-field-rupee {
-    display:none;
-  }
+  }*/
   h5 {
     font-size: 0.70em;
   }

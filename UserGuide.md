@@ -118,3 +118,34 @@
     • The final treasure of Ice Cavern is = ib
       
     • A like-like in Ganon's Shadow Trial guards = gol
+
+## What about random spawns ?
+ Only some spawns really matter for the logic. Here is a list of the abbreviations you can use :
+ 
+ Adult Spawns :
+   
+    • Minuet = min
+    • DMC lower = cl
+    • DMC upper = cu
+    • Zora’s Domain = zd
+    • Zoras’ Fountain = zf
+    • Gerudo’s Valley after bridge = gv
+    • Gerudo’s Fortress = gf
+    • Desert Colossus = col
+    • Nocturne = noc
+
+Child Spawns :
+
+    • Zora’s River = zr
+    • Zora’s Domain =zd
+    • Zora’s Fountain = zf
+    • Nocturne = noc
+
+## What do the black boxes do ?
+ You can display the item you found for the corresponding location. If the area is PATH, all the items you input in it will be display below the area name in the PATH list.
+
+## What does multiworld setting do ?
+ It allows you to input more hints than usual and what item belongs to which player thanks to the fields next to the item boxes.
+   
+## Can i hide an area when I full cleared it ?
+ Just click on the name of the area. Don't worry, you don't lose any information and you can click again to display the area.

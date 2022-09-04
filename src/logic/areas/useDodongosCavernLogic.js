@@ -128,10 +128,12 @@ function useDodongosCavernLogic() {
       dispatch(makeReachable(20, 12));
       dispatch(makeReachable(20, 13));
       dispatch(makeReachable(20, 14));
+      dispatch(makeReachable(20, 15));
     } else {
       dispatch(makeUnreachable(20, 12));
       dispatch(makeUnreachable(20, 13));
       dispatch(makeUnreachable(20, 14));
+      dispatch(makeUnreachable(20, 15));
     }
   }, [dodongosCavernLogic, afterStares, dispatch, explosive]);
 }

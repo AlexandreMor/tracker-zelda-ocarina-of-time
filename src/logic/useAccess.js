@@ -213,7 +213,7 @@ function useAccess(name) {
     case "dodongo's cav.":
       return true;
     case "fire":
-      if (dmcLowerDCAccess() && (hookshot || hoverBoots || bolero)) {
+      if ((dmcLowerDCAccess() && (hookshot || hoverBoots)) || bolero) {
         return true;
       } else {
         return false;

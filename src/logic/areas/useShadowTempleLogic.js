@@ -5,6 +5,7 @@ import { selectChecks } from "../../utils/selectors";
 import useAccess from "../useAccess";
 import useItems from "../useItems";
 import useKeys from "../useKeys";
+import useSongs from "../useSongs";
 
 function useShadowTempleLogic() {
   const keys = useKeys("shadow keys");
@@ -16,18 +17,18 @@ function useShadowTempleLogic() {
   const bow = useItems("bow");
   const hoverBoots = useItems("hover boots");
   const strength = useItems("strength 1");
-  const zeldasLullaby = useItems("zelda");
+  const zeldasLullaby = useSongs("zelda");
   const areas = useSelector(selectChecks);
   const shadowAccess = useAccess(areas[16].entrance);
   const dispatch = useDispatch();
 
   const bigRoomAccess = useCallback(() => {
-    if (explosive && keys >= 1) {
+    if (explosive && keys >= 1 && hoverBoots) {
       return true;
     } else {
       return false;
     }
-  }, [explosive, keys]);
+  }, [explosive, keys, hoverBoots]);
 
   const invisibleSpikesAccess = useCallback(() => {
     if (bigRoomAccess() && keys >= 2) {
@@ -114,12 +115,12 @@ function useShadowTempleLogic() {
   }, [shadowAccess, invisibleSpikesAccess, dispatch]);
 
   useEffect(() => {
-    if (shadowAccess && hookshot && (explosive || strength)) {
+    if (shadowAccess && invisibleSpikesAccess() && hookshot && (explosive || strength)) {
       dispatch(makeReachable(16, 13));
     } else {
       dispatch(makeUnreachable(16, 13));
     }
-  }, [shadowAccess, hookshot, explosive, strength, dispatch]);
+  }, [shadowAccess, hookshot, explosive, strength,invisibleSpikesAccess, dispatch]);
 
   useEffect(() => {
     if (shadowAccess && invisibleSpikesAccess() && hookshot) {
