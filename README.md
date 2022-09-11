@@ -6,6 +6,7 @@
 > This is a tracker for Zelda ocarina of time randomizer. It allows the user to take notes of hints given by the game. Also It supports some settings like cowsanity, skullsanity, scrubsanity, multiworld...
 
 ### 🏠 [Homepage](https://github.com/AlexandreMor/tracker-zelda-ocarina-of-time)
+### 🏠 [Demo](https://amazing-tanuki-99f105.netlify.app/)
 
 ## Install
 
