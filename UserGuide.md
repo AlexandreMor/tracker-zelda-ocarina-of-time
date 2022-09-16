@@ -140,6 +140,9 @@ Child Spawns :
     • Zora’s Domain =zd
     • Zora’s Fountain = zf
     • Nocturne = noc
+    • Crater lower = cl
+    • Crater fairy = cf
+    • Darunia = dar
 
 ## What do the black boxes do ?
  You can display the item you found for the corresponding location. If the area is PATH, all the items you input in it will be display below the area name in the PATH list.

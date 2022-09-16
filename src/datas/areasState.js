@@ -92,7 +92,7 @@ export const areasState = [
       {
         id: 7,
         name: "Shop 1",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -105,7 +105,7 @@ export const areasState = [
       {
         id: 8,
         name: "Shop 2",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -118,7 +118,7 @@ export const areasState = [
       {
         id: 9,
         name: "Shop 3",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -131,7 +131,7 @@ export const areasState = [
       {
         id: 10,
         name: "Shop 4",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1374,7 +1374,7 @@ export const areasState = [
       {
         id: 6,
         name: "Bazaar 1",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1387,7 +1387,7 @@ export const areasState = [
       {
         id: 7,
         name: "Bazaar 2",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1400,7 +1400,7 @@ export const areasState = [
       {
         id: 8,
         name: "Bazaar 3",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1413,7 +1413,7 @@ export const areasState = [
       {
         id: 9,
         name: "Bazaar 4",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1426,7 +1426,7 @@ export const areasState = [
       {
         id: 10,
         name: "Potion 1",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1439,7 +1439,7 @@ export const areasState = [
       {
         id: 11,
         name: "Potion 2",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1452,7 +1452,7 @@ export const areasState = [
       {
         id: 12,
         name: "Potion 3",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1465,7 +1465,7 @@ export const areasState = [
       {
         id: 13,
         name: "Potion 4",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1478,7 +1478,7 @@ export const areasState = [
       {
         id: 14,
         name: "Chu shop 1",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1491,7 +1491,7 @@ export const areasState = [
       {
         id: 15,
         name: "Chu shop 2",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1504,7 +1504,7 @@ export const areasState = [
       {
         id: 16,
         name: "Chu shop 3",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1517,7 +1517,7 @@ export const areasState = [
       {
         id: 17,
         name: "Chu shop 4",
-        reachable: false,
+        reachable: true,
         checked: false,
         player: "",
         rupee:"",
@@ -1805,7 +1805,7 @@ export const areasState = [
       {
         id: 16,
         name: "Bazaar 1",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1818,7 +1818,7 @@ export const areasState = [
       {
         id: 17,
         name: "Bazaar 2",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1831,7 +1831,7 @@ export const areasState = [
       {
         id: 18,
         name: "Bazaar 3",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1844,7 +1844,7 @@ export const areasState = [
       {
         id: 19,
         name: "Bazaar 4",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1857,7 +1857,7 @@ export const areasState = [
       {
         id: 20,
         name: "Potion 1",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1870,7 +1870,7 @@ export const areasState = [
       {
         id: 21,
         name: "Potion 2",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1883,7 +1883,7 @@ export const areasState = [
       {
         id: 22,
         name: "Potion 3",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -1896,7 +1896,7 @@ export const areasState = [
       {
         id: 23,
         name: "Potion 4",
-        reachable: false,
+        reachable: true,
         song: false,
         checked: false,
         player: "",
@@ -4351,7 +4351,7 @@ export const areasState = [
         reachable: false,
         checked: false,
         player: "",
-        setting: "scrubsanity",
+        setting: "skullsanity",
         visibility: false,
         song: false,
         box: false,
@@ -4363,7 +4363,7 @@ export const areasState = [
         reachable: false,
         checked: false,
         player: "",
-        setting: "scrubsanity",
+        setting: "skullsanity",
         visibility: false,
         song: false,
         box: false,
@@ -4423,7 +4423,7 @@ export const areasState = [
         reachable: false,
         checked: false,
         player: "",
-        setting: "scrubsanity",
+        setting: "skullsanity",
         visibility: false,
         song: false,
         box: false,
@@ -4459,7 +4459,7 @@ export const areasState = [
         reachable: false,
         checked: false,
         player: "",
-        setting: "scrubsanity",
+        setting: "skullsanity",
         visibility: false,
         song: false,
         box: false,
@@ -4531,7 +4531,7 @@ export const areasState = [
         reachable: false,
         checked: false,
         player: "",
-        setting: "scrubsanity",
+        setting: "skullsanity",
         visibility: false,
         song: false,
         box: false,

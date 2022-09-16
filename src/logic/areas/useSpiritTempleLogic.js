@@ -71,7 +71,7 @@ function useSpiritTempleLogic() {
       (projectileChild() && keys >= 5 && spiritChildAccess()) ||
       (projectileAdult() && strength2 && keys >= 3 && spiritTempleAccess) ||
       (((projectileAdult() && projectileChild()) || explosive) &&
-        keys === 1 &&
+        keys >= 1 &&
         spiritChildAccess() &&
         spiritTempleAccess)
     ) {

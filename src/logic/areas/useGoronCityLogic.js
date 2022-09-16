@@ -22,6 +22,7 @@ function useGoronCityLogic() {
   const sot = useSongs("sot");
   const goronShopChild = useRandomSpawns("child spawn");
   const goronShopAdult = useRandomSpawns("adult spawn");
+  const daruniaDMCSpawn = useRandomSpawns("child spawn");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,20 +34,20 @@ function useGoronCityLogic() {
   }, [explosive, dispatch]);
 
   useEffect(() => {
-    if (zeldasLullaby && saria) {
+    if ((daruniaDMCSpawn==="dar" || daruniaDMCSpawn==="cf" || daruniaDMCSpawn==="cl" || zeldasLullaby) && saria) {
       dispatch(makeReachable(18, 1));
     } else {
       dispatch(makeUnreachable(18, 1));
     }
-  }, [zeldasLullaby, saria, dispatch]);
+  }, [zeldasLullaby, saria, daruniaDMCSpawn, dispatch]);
 
   useEffect(() => {
-    if ((zeldasLullaby || fireChild) && bombs) {
+    if ((zeldasLullaby || fireChild || daruniaDMCSpawn==="dar" || daruniaDMCSpawn==="cf" || daruniaDMCSpawn==="cl") && bombs) {
       dispatch(makeReachable(18, 2));
     } else {
       dispatch(makeUnreachable(18, 2));
     }
-  }, [zeldasLullaby, fireChild, bombs, dispatch]);
+  }, [zeldasLullaby, fireChild, bombs,daruniaDMCSpawn, dispatch]);
 
   useEffect(() => {
     if (explosive || bow || strength1) {

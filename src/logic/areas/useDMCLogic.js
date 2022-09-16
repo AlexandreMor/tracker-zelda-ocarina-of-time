@@ -16,6 +16,7 @@ function useDMCLogic() {
   const lowerAccess = useAccess("dmc lower");
   const upperAccess = useAccess("dmc upper");
   const fairySpawn = useRandomSpawns("adult spawn");
+  const childSpawn = useRandomSpawns("child spawn");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -44,14 +45,14 @@ function useDMCLogic() {
 
   useEffect(() => {
     if (
-      (((lowerAccess || upperAccess) && hammer) || fairySpawn === "cf") &&
+      (((lowerAccess || upperAccess) && hammer) || fairySpawn === "cf" || childSpawn==="cf") &&
       zeldasLullaby
     ) {
       dispatch(makeReachable(19, 3));
     } else {
       dispatch(makeUnreachable(19, 3));
     }
-  }, [lowerAccess, upperAccess, hammer, fairySpawn, zeldasLullaby, dispatch]);
+  }, [lowerAccess, upperAccess, hammer, fairySpawn, childSpawn, zeldasLullaby, dispatch]);
 
   useEffect(() => {
     if (
