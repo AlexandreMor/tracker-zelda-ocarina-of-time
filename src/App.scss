@@ -2,69 +2,87 @@ $font-stack: Helvetica, sans-serif;
 $font-color: aliceblue;
 $primary-color: #282c34;
 $nav-background-color: #000000;
+
 @media screen and (max-width: 1250px) {
   li.check {
     font-size: 8px;
     display: grid;
     grid-template-columns: 0.3fr 0.3fr
   }
+
   .area-name {
     font-size: 8px;
   }
+
   div.main-display {
     margin-left: 2rem;
   }
+
   .aside>.aside-right {
     align-items: end;
   }
-  .item-image > .image-song {
-    width:18px;
-    height:18px;
+
+  .item-image>.image-song {
+    width: 18px;
+    height: 18px;
   }
-  .item-image > .image-medium {
-    width:18px;
-    height:18px;
+
+  .item-image>.image-medium {
+    width: 18px;
+    height: 18px;
   }
-  span > img.image-medium {
-    width:18px;
-    height:18px;
+
+  span>img.image-medium {
+    width: 18px;
+    height: 18px;
   }
+
   img.image-medium {
-    width:18px;
-    height:18px;
+    width: 18px;
+    height: 18px;
   }
+
   li.hint-name {
     font-size: 8px;
   }
+
   div.input-item {
     width: 13px;
     height: 13px;
     margin-right: 1px;
   }
+
   img.image-small {
     width: 13px;
     height: 13px;
   }
+
   .keys {
     flex-direction: column;
   }
+
   div.areas {
     margin-right: 10px;
   }
-  li > input.input-field {
-    display:none;
+
+  li>input.input-field {
+    display: none;
   }
-  li > input.input-field-rupee {
-    display:none;
+
+  li>input.input-field-rupee {
+    display: none;
   }
+
   h5 {
     font-size: 0.60em;
   }
+
   main.main {
     width: 85%;
   }
+
   aside.aside {
-    width:12%;
+    width: 12%;
   }
 }
 
@@ -84,7 +102,7 @@ $nav-background-color: #000000;
     margin-right: 2rem;
   }
 
-  .aside > div.aside-right {
+  .aside>div.aside-right {
     align-items: end;
   }
 
@@ -110,34 +128,40 @@ $nav-background-color: #000000;
   div.areas {
     margin-right: 10px;
   }
-  .item-image > .image-song {
-    width:20px;
-    height:20px;
+
+  .item-image>.image-song {
+    width: 20px;
+    height: 20px;
   }
-  .item-image > .image-medium {
-    width:20px;
-    height:20px;
+
+  .item-image>.image-medium {
+    width: 20px;
+    height: 20px;
   }
-  span > img.image-medium {
-    width:18px;
-    height:18px;
+
+  span>img.image-medium {
+    width: 18px;
+    height: 18px;
   }
+
   img.image-medium {
-    width:18px;
-    height:18px;
+    width: 18px;
+    height: 18px;
   }
-  
+
   /*li > input.input-field-rupee {
     display:none;
   }*/
   h5 {
     font-size: 0.70em;
   }
+
   main.main {
     width: 85%;
   }
+
   aside.aside {
-    width:12%;
+    width: 12%;
   }
 }
 
@@ -197,11 +221,12 @@ a:hover {
   width: 15%;
   margin-left: 5px;
 }
-.aside > .aside-left {
+
+.aside>.aside-left {
   position: fixed;
 }
 
-.aside > .aside-right {
+.aside>.aside-right {
   position: fixed;
 }
 
@@ -217,7 +242,7 @@ a:hover {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
   row-gap: 5px;
-  column-gap:5px;
+  column-gap: 5px;
 }
 
 .stones {
@@ -225,6 +250,7 @@ a:hover {
   justify-content: center;
   margin-top: 0.5rem;
 }
+
 .medallions {
   display: flex;
   justify-content: center;
@@ -239,7 +265,7 @@ a:hover {
 .songs {
   flex-direction: column;
   margin-left: 10px;
-  margin-top:-3.5px;
+  margin-top: -3.5px;
 }
 
 .dungeon-name {
@@ -349,7 +375,8 @@ a:hover {
   height: 15px;
 }
 
-.field-list, .hints-list {
+.field-list,
+.hints-list {
   list-style: none;
   padding: 0;
 }
@@ -359,17 +386,18 @@ a:hover {
   margin-left: 5px;
   display: flex;
 }
+
 .h5-hints {
   margin-top: 5px;
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
 .path {
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
 .other-hints {
-  display:flex;
+  display: flex;
 }
 
 .blue {
@@ -435,7 +463,7 @@ fieldset {
   z-index: 2;
   font-size: 12px;
   font-weight: bold;
-  margin-right:3px;
+  margin-right: 3px;
 }
 
 .keys {
@@ -469,6 +497,7 @@ fieldset {
 .to {
   margin-left: 5px;
 }
+
 .dungeon-shuffle-location {
   margin-left: 5px;
   font-weight: bolder;
@@ -476,4 +505,8 @@ fieldset {
 
 .bold {
   font-weight: 900;
+}
+
+.margin1 {
+  margin-left: 3px;
 }

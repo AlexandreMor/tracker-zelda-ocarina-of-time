@@ -18,8 +18,7 @@ function MainDisplay() {
       });
   };
 
-  const kokiriZoneDisplay = selectZone(0, 4);
-  const forestTempleDisplay = selectZone(4, 5);
+  const kokiriZoneDisplay = selectZone(0, 5);
   const hyruleDisplay = selectZone(5, 9);
   const marketDisplay = selectZone(9, 13);
   const kakarikoDisplay = selectZone(13, 16);
@@ -33,7 +32,6 @@ function MainDisplay() {
   return (
     <div className="main-display">
       <AreasList areas={kokiriZoneDisplay} />
-      <AreasList areas={forestTempleDisplay} />
       <AreasList areas={hyruleDisplay} />
       <AreasList areas={marketDisplay} />
       <AreasList areas={kakarikoDisplay} />

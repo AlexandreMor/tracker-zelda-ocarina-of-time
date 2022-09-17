@@ -19,8 +19,19 @@ function TrackerDungeonName() {
     }
     return setId(0);
   };
+  const handleRightClick = () => {
+    if (id > 0) {
+      return setId(id - 1);
+    }
+    return setId(8);
+  };
+
   return (
-    <div className="dungeon-name" onClick={() => handleClick()}>
+    <div
+      className="dungeon-name"
+      onClick={() => handleClick()}
+      onContextMenu={() => handleRightClick()}
+    >
       {dungeonsName[id]}
     </div>
   );

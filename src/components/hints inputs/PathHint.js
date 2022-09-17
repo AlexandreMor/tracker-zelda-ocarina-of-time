@@ -23,8 +23,7 @@ function PathHint({ hint }) {
         id={hint.id}
         fieldType="boss"
         hint={hint.boss}
-      />{" "}
-      {multiworld === "true" && "for"}
+      />
       {multiworld === "true" && (
         <InputField
           htmlClass="input-field"
@@ -34,8 +33,9 @@ function PathHint({ hint }) {
         />
       )}
       <div>
-        <span className="lightblue">
-          {hint.location} {hint.boss && hint.location && "to"} {hint.boss}
+        <span className="lightblue margin1">{hint.location}</span>
+        <span className="red margin1">
+          {hint.boss} {" " && hint.player}
         </span>
         <ul className="hints-list">
           {hint.location !== "" &&
@@ -43,7 +43,10 @@ function PathHint({ hint }) {
               .filter((area) => area.id === hint.idArea)
               .map((area) => {
                 return area.checks
-                  .filter((check) => check.item !== "" && !check.item.includes("sold_out"))
+                  .filter(
+                    (check) =>
+                      check.item !== "" && !check.item.includes("sold_out")
+                  )
                   .map((check) => {
                     return <HintImage key={check.name} check={check} />;
                   });
