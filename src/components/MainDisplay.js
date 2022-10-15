@@ -20,11 +20,9 @@ function MainDisplay() {
 
   const kokiriZoneDisplay = selectZone(0, 5);
   const hyruleDisplay = selectZone(5, 9);
-  const marketDisplay = selectZone(9, 13);
-  const kakarikoDisplay = selectZone(13, 16);
-  const shadowTempleDisplay = selectZone(16, 17);
-  const mountainZoneDisplay = selectZone(17, 21);
-  const fireTempleDisplay = selectZone(21, 22);
+  const marketDisplay = selectZone(9, 15);
+  const shadowTempleDisplay = selectZone(15, 17);
+  const mountainZoneDisplay = selectZone(17, 22);
   const zoraZoneDisplay = selectZone(22, 27);
   const gerudoZoneDisplay = selectZone(27, 32);
   const spiritTempleAndGanonDisplay = selectZone(32, 34);
@@ -34,10 +32,8 @@ function MainDisplay() {
       <AreasList areas={kokiriZoneDisplay} />
       <AreasList areas={hyruleDisplay} />
       <AreasList areas={marketDisplay} />
-      <AreasList areas={kakarikoDisplay} />
       <AreasList areas={shadowTempleDisplay} />
       <AreasList areas={mountainZoneDisplay} />
-      <AreasList areas={fireTempleDisplay} />
       <AreasList areas={zoraZoneDisplay} />
       <AreasList areas={gerudoZoneDisplay} />
       <AreasList areas={spiritTempleAndGanonDisplay} />

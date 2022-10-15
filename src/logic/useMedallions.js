@@ -6,14 +6,20 @@ function useMedallions(name) {
   const dungeons = useSelector(selectMedallionsStones);
   const medallionsLogic = useCallback(
     (id1, id2, id3) => {
-      if (typeof id2 !== "undefined") {
+      if (typeof id2 !== "undefined" && id1 === 6 && id2 === 7) {
         if (dungeons[id1].number === 1 && dungeons[id2].number === 1) {
           return true;
         } else {
           return false;
         }
       }
-      if (typeof id2 !== "undefined" && typeof id3 !== "undefined") {
+      if (
+        typeof id2 !== "undefined" &&
+        typeof id3 !== "undefined" &&
+        id1 === 3 &&
+        id2 === 4 &&
+        id3 === 5
+      ) {
         if (
           dungeons[id1].number === 1 &&
           dungeons[id2].number === 1 &&
@@ -23,7 +29,7 @@ function useMedallions(name) {
         } else {
           return false;
         }
-      } else if (dungeons[id1].number === 1) {
+      } else if (dungeons[id1].number === 1 && id1 === 3) {
         return true;
       } else {
         return false;
@@ -32,16 +38,16 @@ function useMedallions(name) {
     [dungeons]
   );
 
-    switch (name) {
-      case "forest":
-        return medallionsLogic(3);
-      case "nocturne":
-        return medallionsLogic(3, 4, 5);
-      case "light arrows cutscene":
-        return medallionsLogic(6, 7);
-      default:
-        return false;
-    }
+  switch (name) {
+    case "forest":
+      return medallionsLogic(3);
+    case "nocturne":
+      return medallionsLogic(3, 4, 5);
+    case "light arrows cutscene":
+      return medallionsLogic(6, 7);
+    default:
+      return false;
+  }
 }
 
 export default useMedallions;

@@ -141,6 +141,7 @@ Adult Spawns :
     • Minuet = min
     • DMC lower = cl
     • DMC upper = cu
+    • Crater fairy = cf
     • Zora’s Domain = zd
     • Zoras’ Fountain = zf
     • Gerudo’s Valley after bridge = gv
@@ -157,6 +158,7 @@ Child Spawns :
     • Crater lower = cl
     • Crater fairy = cf
     • Darunia = dar
+    • Desert Colossus = col
 
 ## What do the black boxes do ?
 

@@ -3,170 +3,16 @@ $font-color: aliceblue;
 $primary-color: #282c34;
 $nav-background-color: #000000;
 
-@media screen and (max-width: 1250px) {
-  li.check {
-    font-size: 8px;
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr
-  }
-
-  .area-name {
-    font-size: 8px;
-  }
-
-  div.main-display {
-    margin-left: 2rem;
-  }
-
-  .aside>.aside-right {
-    align-items: end;
-  }
-
-  .item-image>.image-song {
-    width: 18px;
-    height: 18px;
-  }
-
-  .item-image>.image-medium {
-    width: 18px;
-    height: 18px;
-  }
-
-  span>img.image-medium {
-    width: 18px;
-    height: 18px;
-  }
-
-  img.image-medium {
-    width: 18px;
-    height: 18px;
-  }
-
-  li.hint-name {
-    font-size: 8px;
-  }
-
-  div.input-item {
-    width: 13px;
-    height: 13px;
-    margin-right: 1px;
-  }
-
-  img.image-small {
-    width: 13px;
-    height: 13px;
-  }
-
-  .keys {
-    flex-direction: column;
-  }
-
-  div.areas {
-    margin-right: 10px;
-  }
-
-  li>input.input-field {
-    display: none;
-  }
-
-  li>input.input-field-rupee {
-    display: none;
-  }
-
-  h5 {
-    font-size: 0.60em;
-  }
-
-  main.main {
-    width: 85%;
-  }
-
-  aside.aside {
-    width: 12%;
-  }
-}
-
-@media screen and (min-width: 1250px) and (max-width: 1972px) {
-  li.check {
-    font-size: 10px;
-    display: grid;
-    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr
-  }
-
-  .area-name {
-    font-size: 10px;
-  }
-
-  div.main-display {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  .aside>div.aside-right {
-    align-items: end;
-  }
-
-  .keys {
-    flex-direction: column;
-  }
-
-  li.hint-name {
-    font-size: 10px;
-  }
-
-  div.input-item {
-    width: 15px;
-    height: 15px;
-    margin-right: 1px;
-  }
-
-  img.image-small {
-    width: 15px;
-    height: 15px;
-  }
-
-  div.areas {
-    margin-right: 10px;
-  }
-
-  .item-image>.image-song {
-    width: 20px;
-    height: 20px;
-  }
-
-  .item-image>.image-medium {
-    width: 20px;
-    height: 20px;
-  }
-
-  span>img.image-medium {
-    width: 18px;
-    height: 18px;
-  }
-
-  img.image-medium {
-    width: 18px;
-    height: 18px;
-  }
-
-  /*li > input.input-field-rupee {
-    display:none;
-  }*/
-  h5 {
-    font-size: 0.70em;
-  }
-
-  main.main {
-    width: 85%;
-  }
-
-  aside.aside {
-    width: 12%;
-  }
-}
-
 input {
   background-color: darkgray;
+  padding-left:0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .App {
@@ -364,15 +210,15 @@ a:hover {
 }
 
 .input-field {
-  width: 16px;
+  width: 18px;
   margin-left: 5px;
-  height: 15px;
+  height: 14px;
 }
 
 .input-field-aside {
-  width: 16px;
+  width: 18px;
   margin-right: 5px;
-  height: 15px;
+  height: 14px;
 }
 
 .field-list,

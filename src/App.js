@@ -1,4 +1,7 @@
 import "./App.scss";
+import "./Apps-w1500.scss";
+import "./Apps-w1700.scss";
+import "./Apps-w1382.scss";
 import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Settings from "./components/settings/Settings";

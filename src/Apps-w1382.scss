@@ -1,0 +1,89 @@
+@media screen and (max-width: 1382px) {
+    li.check {
+      font-size: 8px;
+      display: grid;
+      white-space: nowrap;
+      grid-template-columns: 0.3fr 0.3fr
+    }
+  
+    .area-name {
+      font-size: 8px;
+    }
+  
+    div.main-display {
+      margin-left: 1.5rem;
+    }
+  
+    .aside>.aside-right {
+      align-items: end;
+    }
+  
+    .item-image>.image-song {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .item-image>.image-medium {
+      width: 18px;
+      height: 18px;
+    }
+  
+    span>img.image-medium {
+      width: 18px;
+      height: 18px;
+    }
+  
+    img.image-medium {
+      width: 18px;
+      height: 18px;
+    }
+  
+    li.hint-name {
+      font-size: 8px;
+    }
+  
+    div.input-item {
+      width: 13px;
+      height: 11px;
+      margin-right: 1px;
+    }
+  
+    img.image-small {
+      width: 13px;
+      height: 13px;
+    }
+  
+    .keys {
+      flex-direction: column;
+    }
+  
+    div.areas {
+      margin-right: 10px;
+    }
+  
+    li>input.input-field {
+      display: none;
+    }
+  
+    li>input.input-field-rupee {
+      display: none;
+    }
+  
+    h5 {
+      font-size: 0.60em;
+    }
+  
+    main.main {
+      width: 70%;
+    }
+  
+    aside.aside {
+      width: 15%;
+    }
+
+    li>.input-field-aside {
+      width: 13px;
+      margin-right: 3px;
+      height: 12px;
+    }
+  }

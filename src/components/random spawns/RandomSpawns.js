@@ -16,7 +16,7 @@ function RandomSpawns() {
         <Input
           htmlClass="input-field-aside"
           placeholder="spa"
-          value={field.value}
+          value={field.location}
           handleChange={(e) => handleChange(e, field.id)}
         />
         {field.name}
@@ -27,8 +27,9 @@ function RandomSpawns() {
   return (
     <div>
       <ul className="field-list">
-      <h5>Random Spawns</h5>
-        {randomFields}</ul>
+        <h5>Random Spawns</h5>
+        {randomFields}
+      </ul>
     </div>
   );
 }
