@@ -67,10 +67,12 @@ export default function Hints() {
         <h5>Paths/WoTH</h5>
         {paths}
       </ul>
-      <ul className="field-list">
-        <h5 className="pink">Foolishes</h5>
-        {foolishes}
-      </ul>
+      {presetHints !== "s6" && (
+        <ul className="field-list">
+          <h5 className="pink">Foolishes</h5>
+          {foolishes}
+        </ul>
+      )}
       <ul className="field-list">
         <h5>Always hints</h5>
         {alwaysHints}
