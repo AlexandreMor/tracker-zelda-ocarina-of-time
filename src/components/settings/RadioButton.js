@@ -1,6 +1,6 @@
 import React from "react";
 
-function RadioButton({ settingId, data, name }) {
+function RadioButton({ data, name }) {
   return (
     <input
       type="radio"

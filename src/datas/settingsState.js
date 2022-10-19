@@ -1,11 +1,18 @@
 export const settingsState = [
   {
     id: 0,
-    name: "Multiworld",
-    value: "false",
+    name: "Preset hints",
+    value: "classic",
     datasComponent: [
-      { id: 0, name: "Yes", html: "mw-on", inputValue: "true", checked: false },
-      { id: 1, name: "No", html: "mw-off", inputValue: "false", checked: true },
+      { id: 0, name: "MW", html: "mw-on", inputValue: "mw", checked: false },
+      {
+        id: 1,
+        name: "Classic",
+        html: "mw-off",
+        inputValue: "classic",
+        checked: true,
+      },
+      { id: 2, name: "Season 6", html: "s6", inputValue: "s6", checked: false },
     ],
   },
   {

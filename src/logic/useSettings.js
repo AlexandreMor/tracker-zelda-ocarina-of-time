@@ -11,7 +11,7 @@ function useSettings(name) {
       return settings[1].value;
     case "bridge":
       return settings[9].value;
-    case "multiworld":
+    case "preset hints":
       return settings[0].value;
     case "shopsanity":
       return settings[4].value;

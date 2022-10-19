@@ -6,7 +6,7 @@ import { selectChecks } from "../../utils/selectors";
 import HintImage from "./HintImage";
 
 function PathHint({ hint }) {
-  const multiworld = useSettings("multiworld");
+  const presetHints = useSettings("preset hints");
   const areas = useSelector(selectChecks);
   return (
     <li key={hint.name} className="hint-name path">
@@ -24,7 +24,7 @@ function PathHint({ hint }) {
         fieldType="boss"
         hint={hint.boss}
       />
-      {multiworld === "true" && (
+      {presetHints === "mw" && (
         <InputField
           htmlClass="input-field"
           hintField={hint.player}
@@ -45,7 +45,7 @@ function PathHint({ hint }) {
                 return area.checks
                   .filter(
                     (check) =>
-                      check.item !== "" && !check.item.includes("sold_out")
+                      check.item !== "" && !check.item.includes("sold_out") && !check.item.includes("prelude") && !check.item.includes("serenade")
                   )
                   .map((check) => {
                     return <HintImage key={check.name} check={check} />;

@@ -148,6 +148,15 @@ export const hintsState = [
   },
   {
     id: 19,
+    name: "Nocturne",
+    item: "",
+    type: "always",
+    box: false,
+    idArea: 13,
+    idCheck: 1,
+  },
+  {
+    id: 20,
     name: "Sometimes 1",
     type: "sometimes",
     checkInput: "",
@@ -157,7 +166,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 20,
+    id: 21,
     name: "Sometimes 2",
     type: "sometimes",
     checkInput: "",
@@ -167,7 +176,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 21,
+    id: 22,
     name: "Sometimes 3",
     type: "sometimes",
     checkInput: "",
@@ -177,7 +186,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 22,
+    id: 23,
     name: "Sometimes 4",
     type: "sometimes",
     checkInput: "",
@@ -187,7 +196,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 23,
+    id: 24,
     name: "Sometimes 5",
     type: "sometimes",
     checkInput: "",
@@ -197,7 +206,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 24,
+    id: 25,
     name: "Sometimes 6",
     type: "sometimes",
     checkInput: "",
@@ -207,7 +216,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 25,
+    id: 26,
     name: "Sometimes 7",
     type: "sometimes",
     checkInput: "",
@@ -217,7 +226,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 26,
+    id: 27,
     name: "Sometimes 8",
     type: "sometimes",
     checkInput: "",
@@ -227,7 +236,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 27,
+    id: 28,
     name: "Sometimes 9",
     type: "sometimes",
     checkInput: "",
@@ -237,7 +246,7 @@ export const hintsState = [
     box: false,
   },
   {
-    id: 28,
+    id: 29,
     name: "Sometimes 10",
     type: "sometimes",
     checkInput: "",

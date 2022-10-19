@@ -8,26 +8,35 @@ import useSettings from "../../logic/useSettings";
 
 export default function Hints() {
   const hintsDisplay = useSelector(selectHints);
-  const multiworld = useSettings("multiworld");
+  const presetHints = useSettings("preset hints");
   const classicNumberOfPathHints = (id) => {
-    if (multiworld === "false") {
+    if (presetHints === "classic" || presetHints === "s6") {
       return id < 5;
-    } else {
+    }
+    if (presetHints === "mw") {
       return id < 8;
     }
   };
   const classicNumberOfFoolishHints = (id) => {
-    if (multiworld === "false") {
+    if (presetHints === "classic") {
       return id >= 8 && id < 11;
-    } else {
+    }
+    if (presetHints === "mw") {
       return id >= 8 && id < 12;
+    }
+    if (presetHints === "s6") {
+      return null;
     }
   };
   const classicNumberOfSometimesHints = (id) => {
-    if (multiworld === "false") {
-      return id >= 19 && id < 24;
-    } else {
-      return id >= 19 && id <= 28;
+    if (presetHints === "classic") {
+      return id >= 20 && id < 25;
+    }
+    if (presetHints === "mw") {
+      return id >= 20 && id <= 29;
+    }
+    if (presetHints === "s6") {
+      return id >= 20 && id < 27;
     }
   };
   const paths = hintsDisplay
