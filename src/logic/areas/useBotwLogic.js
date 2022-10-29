@@ -5,6 +5,7 @@ import { selectChecks } from "../../utils/selectors";
 import useAccess from "../useAccess";
 import useItems from "../useItems";
 import useKeys from "../useKeys";
+import useSongs from "../useSongs";
 
 function useBotwLogic() {
   const areas = useSelector(selectChecks);
@@ -14,7 +15,7 @@ function useBotwLogic() {
   const strength = useItems("strength 1");
   const botwAccess = useAccess(areas[15].entrance);
   const keys = useKeys("botw");
-  const zeldasLullaby = useItems("zeldas lullaby");
+  const zeldasLullaby = useSongs("zelda");
   const dispatch = useDispatch();
 
   useEffect(() => {
