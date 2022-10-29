@@ -6,7 +6,7 @@ import Input from "../Input";
 import ItemsBox from "./ItemsBox";
 
 function Check({ check, idArea }) {
-  const multiworld = useSettings("multiworld");
+  const multiworld = useSettings("preset hints");
   const shopsanity = useSettings("shopsanity");
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ function Check({ check, idArea }) {
         )}
         {check.box && <ItemsBox idCheck={check.id} idArea={idArea} />}
       </div>
-      {multiworld === "true" && (
+      {multiworld === "mw" && (
         <Input
           htmlClass="input-field"
           placeholder="pla"
