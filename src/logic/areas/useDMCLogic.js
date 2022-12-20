@@ -11,6 +11,7 @@ function useDMCLogic() {
   const hammer = useItems("hammer");
   const explosive = useItems("explosive");
   const hoverBoots = useItems("hover boots");
+  const longshot = useItems("longshot");
   const bolero = useSongs("bolero");
   const zeldasLullaby = useSongs("zelda");
   const lowerAccess = useAccess("dmc lower");
@@ -20,12 +21,24 @@ function useDMCLogic() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (bolero || ((lowerAccess || upperAccess) && (hookshot || hoverBoots))) {
+    if (
+      bolero ||
+      (lowerAccess && (hookshot || hoverBoots)) ||
+      (upperAccess && (longshot || hoverBoots))
+    ) {
       dispatch(makeReachable(19, 0));
     } else {
       dispatch(makeUnreachable(19, 0));
     }
-  }, [bolero, lowerAccess, upperAccess, hookshot, hoverBoots, dispatch]);
+  }, [
+    bolero,
+    lowerAccess,
+    upperAccess,
+    hookshot,
+    hoverBoots,
+    longshot,
+    dispatch,
+  ]);
 
   useEffect(() => {
     if ((lowerAccess || upperAccess) && hoverBoots) {
@@ -45,20 +58,29 @@ function useDMCLogic() {
 
   useEffect(() => {
     if (
-      (((lowerAccess || upperAccess) && hammer) || fairySpawn === "cf" || childSpawn==="cf") &&
+      (((lowerAccess || (upperAccess && (longshot || hoverBoots))) && hammer) ||
+        fairySpawn === "cf" ||
+        childSpawn === "cf") &&
       zeldasLullaby
     ) {
       dispatch(makeReachable(19, 3));
     } else {
       dispatch(makeUnreachable(19, 3));
     }
-  }, [lowerAccess, upperAccess, hammer, fairySpawn, childSpawn, zeldasLullaby, dispatch]);
+  }, [
+    lowerAccess,
+    upperAccess,
+    hammer,
+    fairySpawn,
+    childSpawn,
+    zeldasLullaby,
+    longshot,
+    hoverBoots,
+    dispatch,
+  ]);
 
   useEffect(() => {
-    if (
-      (lowerAccess || upperAccess) &&
-      (hammer || explosive)
-    ) {
+    if ((lowerAccess || upperAccess) && (hammer || explosive)) {
       dispatch(makeReachable(19, 4));
     } else {
       dispatch(makeUnreachable(19, 4));
@@ -66,7 +88,7 @@ function useDMCLogic() {
   }, [lowerAccess, upperAccess, hammer, explosive, dispatch]);
 
   useEffect(() => {
-    if ((lowerAccess || upperAccess) && hammer) {
+    if ((lowerAccess || (upperAccess && (longshot || hoverBoots))) && hammer) {
       dispatch(makeReachable(19, 5));
       dispatch(makeReachable(19, 6));
       dispatch(makeReachable(19, 7));
@@ -75,7 +97,7 @@ function useDMCLogic() {
       dispatch(makeUnreachable(19, 6));
       dispatch(makeUnreachable(19, 7));
     }
-  }, [lowerAccess, upperAccess, hammer, dispatch]);
+  }, [lowerAccess, upperAccess, hammer, longshot, hoverBoots, dispatch]);
 }
 
 export default useDMCLogic;

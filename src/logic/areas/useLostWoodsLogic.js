@@ -10,6 +10,7 @@ function useLostWoodsLogic() {
   const saria = useSongs("saria");
   const slingshot = useItems("slingshot");
   const explosive = useItems("explosive");
+  const hammer = useItems("hammer");
   const ocarina = useItems("ocarina");
   const scrubsGrottoAccess = useAccess("lw grotto & sfm grotto");
 
@@ -38,12 +39,12 @@ function useLostWoodsLogic() {
   }, [ocarina, dispatch]);
 
   useEffect(() => {
-    if (explosive) {
+    if (explosive || hammer) {
       dispatch(makeReachable(1, 4));
     } else {
       dispatch(makeUnreachable(1, 4));
     }
-  }, [explosive, dispatch]);
+  }, [explosive,hammer, dispatch]);
 
   useEffect(() => {
     if (scrubsGrottoAccess) {
