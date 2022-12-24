@@ -170,12 +170,12 @@ function useGTGLogic() {
   }, [gtgAccess, canBeatBeamosDino, keys, sot, dispatch]);
 
   useEffect(() => {
-    if (gtgAccess && sot && ironBoots && canBeatBeamosDino()) {
+    if (gtgAccess && sot && ironBoots && hookshot) {
       dispatch(makeReachable(31, 15));
     } else {
       dispatch(makeUnreachable(31, 15));
     }
-  }, [gtgAccess, canBeatBeamosDino, ironBoots, sot, dispatch]);
+  }, [gtgAccess, hookshot, ironBoots, sot, dispatch]);
 
   useEffect(() => {
     if (gtgAccess && canBeatBeamosDino()) {

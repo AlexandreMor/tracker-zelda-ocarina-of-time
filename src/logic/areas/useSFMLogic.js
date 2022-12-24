@@ -37,14 +37,14 @@ function useSFMLogic() {
   }, [wolfosGrottoAccess, dispatch]);
 
   useEffect(() => {
-    if (minuetAccess && sos) {
+    if (sos) {
       dispatch(makeReachable(2, 3));
       dispatch(makeReachable(2, 4));
     } else {
       dispatch(makeUnreachable(2, 3));
       dispatch(makeUnreachable(2, 4));
     }
-  }, [minuetAccess, sos, dispatch]);
+  }, [sos, dispatch]);
 }
 
 export default useSFMLogic;
