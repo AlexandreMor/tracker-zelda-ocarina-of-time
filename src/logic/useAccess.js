@@ -17,6 +17,7 @@ function useAccess(name) {
   const bow = useItems("bow");
   const strength1 = useItems("strength 1");
   const prescription = useItems("prescription");
+  const claimCheck = useItems("claim check");
   const hammer = useItems("hammer");
   const hoverBoots = useItems("hover boots");
   const ironBoots = useItems("iron boots");
@@ -232,11 +233,13 @@ function useAccess(name) {
       }
     case "can finish Biggoron quest":
       if (
-        (explosive || scale) &&
+        ((explosive || scale) &&
         zeldasLullaby &&
         rutosLetter &&
         prescription &&
-        (dmcLowerDCAccess() || explosive || hammer)
+        (dmcLowerDCAccess() || explosive || hammer)) || (
+          (explosive || hammer || dmcLowerDCAccess()) && claimCheck
+        )
       ) {
         return true;
       } else {
