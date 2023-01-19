@@ -59,7 +59,7 @@ function useAccess(name) {
   }, [explosive, bow, strength1, adultSpawn]);
 
   const zoraRiverAccess = useCallback(() => {
-    if (explosive || scale || childSpawn === "zr") {
+    if (explosive || scale || childSpawn === "zr" || childSpawn === "zd") {
       return true;
     } else {
       return false;
@@ -67,7 +67,7 @@ function useAccess(name) {
   }, [explosive, scale, childSpawn]);
 
   const zoraDomainAccess = useCallback(() => {
-    if ((explosive && zeldasLullaby) || scale || childSpawn === "zd") {
+    if (((explosive || childSpawn==="zr") && zeldasLullaby) || scale || childSpawn === "zd") {
       return true;
     } else {
       return false;
