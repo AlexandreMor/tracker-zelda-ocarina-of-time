@@ -335,6 +335,20 @@ export const trackerState = [
       },
       {
         id:13,
+        name:"small key",
+        image:[`${process.env.PUBLIC_URL}/assets/small_key.png`],
+        number:0,
+        limit:0,
+      },
+      {
+        id:14,
+        name:"boss key",
+        image:[`${process.env.PUBLIC_URL}/assets/boss_key.png`],
+        number:0,
+        limit:0,
+      },
+      {
+        id:15,
         name:"cancel",
         image:[`${process.env.PUBLIC_URL}/assets/cross.png`],
         number:0,
