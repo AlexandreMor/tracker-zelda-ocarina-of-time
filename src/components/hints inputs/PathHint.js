@@ -45,7 +45,11 @@ function PathHint({ hint }) {
                 return area.checks
                   .filter(
                     (check) =>
-                      check.item !== "" && !check.item.includes("sold_out") && !check.item.includes("prelude") && !check.item.includes("serenade")
+                      check.item !== "" &&
+                      !check.item.includes("sold_out") &&
+                      !check.item.includes("prelude") &&
+                      !check.item.includes("serenade") &&
+                      !check.item.includes("key")
                   )
                   .map((check) => {
                     return <HintImage key={check.name} check={check} />;
