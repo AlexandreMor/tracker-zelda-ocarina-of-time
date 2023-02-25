@@ -19,7 +19,6 @@ function useGTGLogic() {
   const bow = useItems("bow");
   const strength2 = useItems("strength 2");
   const ironBoots = useItems("iron boots");
-  const kokiriSword = useItems("kokiri sword");
   const sot = useSongs("sot");
   const keys = useKeys("gtg");
   const gtgAccess = useAccess(areas[31].entrance);
@@ -35,28 +34,20 @@ function useGTGLogic() {
   }, [areas]);
 
   const wolfosRoom = useCallback(() => {
-    if (
-      (dungeonsShuffle === "false" ||
-        (!adultAccessOnly() && kokiriSword && dungeonsShuffle)) &&
-      hookshot
-    ) {
+    if (hookshot) {
       return true;
     } else {
       return false;
     }
-  }, [hookshot, dungeonsShuffle, adultAccessOnly, kokiriSword]);
+  }, [hookshot]);
 
   const canBeatBeamosDino = useCallback(() => {
-    if (
-      explosive &&
-      (dungeonsShuffle === "false" ||
-        (!adultAccessOnly() && kokiriSword && dungeonsShuffle))
-    ) {
+    if (explosive) {
       return true;
     } else {
       return false;
     }
-  }, [explosive, dungeonsShuffle, adultAccessOnly, kokiriSword]);
+  }, [explosive]);
 
   useEffect(() => {
     if (
@@ -72,16 +63,12 @@ function useGTGLogic() {
   }, [gtgAccess, slingshot, adultAccessOnly, dungeonsShuffle, bow, dispatch]);
 
   useEffect(() => {
-    if (
-      gtgAccess &&
-      (dungeonsShuffle === "false" ||
-        (!adultAccessOnly() && kokiriSword && dungeonsShuffle === "true"))
-    ) {
+    if (gtgAccess) {
       dispatch(makeReachable(31, 2));
     } else {
       dispatch(makeUnreachable(31, 2));
     }
-  }, [gtgAccess, kokiriSword, adultAccessOnly, dungeonsShuffle, dispatch]);
+  }, [gtgAccess, dispatch]);
 
   useEffect(() => {
     if (gtgAccess && wolfosRoom()) {

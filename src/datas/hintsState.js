@@ -319,7 +319,7 @@ export const sometimesList = [
   { id: 29, location: "ZR Frogs 1", short: "fro", idCheck: 3, idArea: 22 },
   { id: 30, location: "ZD King Zora", short: "kz", idCheck: 2, idArea: 23 },
   { id: 31, location: "ZF Icy Waters", short: "icy", idCheck: 1, idArea: 24 },
-  { id: 32, location: "Jabu Boomerang", short: "boo", idCheck: 0, idArea: 25 },
+  { id: 32, location: "Jabu Boomerang", short: "boo", idCheck: 2, idArea: 25 },
   {
     id: 33,
     location: "Ice Cavern Iron Boots",
