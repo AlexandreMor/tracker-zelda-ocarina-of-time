@@ -41,6 +41,7 @@ function useAccess(name) {
   const childSpawn = useRandomSpawns("child spawn");
   const adultSpawn = useRandomSpawns("adult spawn");
   const dungeonsShuffle = useSettings("dungeons shuffle");
+  const openFortress = useSettings("open fortress");
 
   const minuetAccess = useCallback(() => {
     if (saria || minuet || adultSpawn === "min") {
@@ -67,7 +68,11 @@ function useAccess(name) {
   }, [explosive, scale, childSpawn]);
 
   const zoraDomainAccess = useCallback(() => {
-    if (((explosive || childSpawn==="zr") && zeldasLullaby) || scale || childSpawn === "zd") {
+    if (
+      ((explosive || childSpawn === "zr") && zeldasLullaby) ||
+      scale ||
+      childSpawn === "zd"
+    ) {
       return true;
     } else {
       return false;
@@ -96,12 +101,18 @@ function useAccess(name) {
   }, [rutosLetter, zoraDomainAccess, zeldasLullaby, adultSpawn]);
 
   const gerudoValleyBridgeAccess = useCallback(() => {
-    if (epona || longshot || adultSpawn === "gv" || adultSpawn === "gf") {
+    if (
+      epona ||
+      longshot ||
+      adultSpawn === "gv" ||
+      adultSpawn === "gf" ||
+      openFortress === "opened"
+    ) {
       return true;
     } else {
       return false;
     }
-  }, [epona, longshot, adultSpawn]);
+  }, [epona, longshot, adultSpawn, openFortress]);
 
   const wastelandMausoleumAccess = useCallback(() => {
     if (gerudoValleyBridgeAccess() && (longshot || hoverBoots)) {
@@ -234,12 +245,11 @@ function useAccess(name) {
     case "can finish Biggoron quest":
       if (
         ((explosive || scale) &&
-        zeldasLullaby &&
-        rutosLetter &&
-        prescription &&
-        (dmcLowerDCAccess() || explosive || hammer)) || (
-          (explosive || hammer || dmcLowerDCAccess()) && claimCheck
-        )
+          zeldasLullaby &&
+          rutosLetter &&
+          prescription &&
+          (dmcLowerDCAccess() || explosive || hammer)) ||
+        ((explosive || hammer || dmcLowerDCAccess()) && claimCheck)
       ) {
         return true;
       } else {
@@ -263,7 +273,7 @@ function useAccess(name) {
       } else {
         return false;
       }
-      case "ice cavern": 
+    case "ice cavern":
       if (zoraFountainAccessInAdult()) {
         return true;
       } else {

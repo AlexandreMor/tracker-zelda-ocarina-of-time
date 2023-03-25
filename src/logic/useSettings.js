@@ -27,6 +27,8 @@ function useSettings(name) {
       return settings[11].value;
     case "boss keysy":
       return settings[12].value;
+    case "open fortress":
+      return settings[3].value;
     default:
       return false;
   }
