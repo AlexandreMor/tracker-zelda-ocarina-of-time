@@ -42,6 +42,7 @@ function useAccess(name) {
   const adultSpawn = useRandomSpawns("adult spawn");
   const dungeonsShuffle = useSettings("dungeons shuffle");
   const openFortress = useSettings("open fortress");
+  const openFountain = useSettings("open fountain");
 
   const minuetAccess = useCallback(() => {
     if (saria || minuet || adultSpawn === "min") {
@@ -90,7 +91,7 @@ function useAccess(name) {
   const zoraFountainAccessInAdult = useCallback(() => {
     if (
       (zoraDomainAccess() &&
-        rutosLetter &&
+        (rutosLetter || openFountain === "opened") &&
         (zeldasLullaby || adultSpawn === "zd")) ||
       adultSpawn === "zf"
     ) {
@@ -98,7 +99,7 @@ function useAccess(name) {
     } else {
       return false;
     }
-  }, [rutosLetter, zoraDomainAccess, zeldasLullaby, adultSpawn]);
+  }, [rutosLetter, zoraDomainAccess, zeldasLullaby, adultSpawn, openFountain]);
 
   const gerudoValleyBridgeAccess = useCallback(() => {
     if (

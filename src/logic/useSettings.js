@@ -29,6 +29,8 @@ function useSettings(name) {
       return settings[12].value;
     case "open fortress":
       return settings[3].value;
+    case "open fountain":
+      return settings[2].value;
     default:
       return false;
   }
