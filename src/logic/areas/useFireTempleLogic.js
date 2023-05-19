@@ -64,7 +64,7 @@ function useFireTempleLogic() {
       dispatch(makeUnreachable(21, 2));
       dispatch(makeUnreachable(21, 3));
     }
-  }, [fireTempleAccess,hammer, dispatch]);
+  }, [fireTempleAccess, hammer, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && keys >= 1) {
@@ -72,7 +72,7 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 4));
     }
-  }, [fireTempleAccess,keys, dispatch]);
+  }, [fireTempleAccess, keys, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && keys >= 1 && sot) {
@@ -80,7 +80,7 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 5));
     }
-  }, [fireTempleAccess,keys,sot, dispatch]);
+  }, [fireTempleAccess, keys, sot, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && keys >= 1 && explosive) {
@@ -88,7 +88,7 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 6));
     }
-  }, [fireTempleAccess,keys,explosive, dispatch]);
+  }, [fireTempleAccess, keys, explosive, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && lowerMaze()) {
@@ -98,7 +98,7 @@ function useFireTempleLogic() {
       dispatch(makeUnreachable(21, 7));
       dispatch(makeUnreachable(21, 9));
     }
-  }, [fireTempleAccess,lowerMaze, dispatch]);
+  }, [fireTempleAccess, lowerMaze, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && lowerMaze() && explosive) {
@@ -106,15 +106,18 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 8));
     }
-  }, [fireTempleAccess,lowerMaze,explosive, dispatch]);
+  }, [fireTempleAccess, lowerMaze, explosive, dispatch]);
 
   useEffect(() => {
-    if (fireTempleAccess && ((lowerMaze() && keys >= 4 && bow) || upperMaze())) {
+    if (
+      fireTempleAccess &&
+      ((lowerMaze() && keys >= 4 && bow) || upperMaze())
+    ) {
       dispatch(makeReachable(21, 10));
     } else {
       dispatch(makeUnreachable(21, 10));
     }
-  }, [fireTempleAccess,lowerMaze,keys,bow,upperMaze, dispatch]);
+  }, [fireTempleAccess, lowerMaze, keys, bow, upperMaze, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && upperMaze()) {
@@ -122,7 +125,7 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 11));
     }
-  }, [fireTempleAccess,upperMaze, dispatch]);
+  }, [fireTempleAccess, upperMaze, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && upperMaze() && explosive) {
@@ -130,7 +133,7 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 12));
     }
-  }, [fireTempleAccess,upperMaze, explosive, dispatch]);
+  }, [fireTempleAccess, upperMaze, explosive, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && upperMaze() && hookshot && ocarina) {
@@ -142,7 +145,7 @@ function useFireTempleLogic() {
       dispatch(makeUnreachable(21, 14));
       dispatch(makeUnreachable(21, 15));
     }
-  }, [fireTempleAccess,upperMaze, hookshot,ocarina, dispatch]);
+  }, [fireTempleAccess, upperMaze, hookshot, ocarina, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && upperMaze() && keys >= 6) {
@@ -150,15 +153,20 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 16));
     }
-  }, [fireTempleAccess,upperMaze, keys, dispatch]);
+  }, [fireTempleAccess, upperMaze, keys, dispatch]);
 
   useEffect(() => {
-    if (fireTempleAccess && highestFloor() && hammer && (hoverBoots || explosive)) {
+    if (
+      fireTempleAccess &&
+      highestFloor() &&
+      hammer &&
+      (hoverBoots || explosive)
+    ) {
       dispatch(makeReachable(21, 17));
     } else {
       dispatch(makeUnreachable(21, 17));
     }
-  }, [fireTempleAccess,highestFloor, hammer,hoverBoots,explosive, dispatch]);
+  }, [fireTempleAccess, highestFloor, hammer, hoverBoots, explosive, dispatch]);
 
   useEffect(() => {
     if (fireTempleAccess && highestFloor() && explosive) {
@@ -166,15 +174,15 @@ function useFireTempleLogic() {
     } else {
       dispatch(makeUnreachable(21, 18));
     }
-  }, [fireTempleAccess,highestFloor, explosive, dispatch]);
+  }, [fireTempleAccess, highestFloor, explosive, dispatch]);
 
   useEffect(() => {
-    if (fireTempleAccess && bossKey === 1) {
+    if (fireTempleAccess && bossKey === 1 && hammer) {
       dispatch(makeReachable(21, 19));
     } else {
       dispatch(makeUnreachable(21, 19));
     }
-  }, [fireTempleAccess,bossKey, dispatch]);
+  }, [fireTempleAccess, bossKey, hammer, dispatch]);
 }
 
 export default useFireTempleLogic;
