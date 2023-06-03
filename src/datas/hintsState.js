@@ -315,7 +315,7 @@ export const sometimesList = [
   { id: 25, location: "GC Darunia", short: "dar", idCheck: 1, idArea: 18 },
   { id: 26, location: "GC Maze Left", short: "gch", idCheck: 6, idArea: 18 },
   { id: 27, location: "Fire Pierre", short: "pie", idCheck: 16, idArea: 21 },
-  { id: 28, location: "Fire Hammer", short: "ham", idCheck: 19, idArea: 21 },
+  { id: 28, location: "Fire Hammer", short: "ham", idCheck: 18, idArea: 21 },
   { id: 29, location: "ZR Frogs 1", short: "fro", idCheck: 3, idArea: 22 },
   { id: 30, location: "ZD King Zora", short: "kz", idCheck: 2, idArea: 23 },
   { id: 31, location: "ZF Icy Waters", short: "icy", idCheck: 1, idArea: 24 },
