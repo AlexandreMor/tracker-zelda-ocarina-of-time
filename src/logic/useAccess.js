@@ -311,7 +311,7 @@ function useAccess(name) {
         return false;
       }
     case "ganon":
-      if (bridge >= medallionsObtained().toString()) {
+      if (medallionsObtained().toString() >= bridge) {
         return true;
       } else {
         return false;
