@@ -34,7 +34,7 @@ function useDMTLogic() {
   }, [sos, dispatch]);
 
   useEffect(() => {
-    if ((explosive || hammer || fairySpawnAdult || fairySpawnChild) && zelda) {
+    if ((explosive || hammer || fairySpawnAdult === "tf" || fairySpawnChild === "tf") && zelda) {
       dispatch(makeReachable(17, 3));
     } else {
       dispatch(makeUnreachable(17, 3));

@@ -17,4 +17,5 @@ export const spawnsList = [
   { id: 9, name: "Zoras R.", ab: "zr" },
   { id: 10, name: "Zoras D.", ab: "zd" },
   { id: 11, name: "Zoras F.", ab: "zf" },
+  { id: 12, name: "DMT fairy", ab: "tf" },
 ]
